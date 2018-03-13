@@ -1,5 +1,6 @@
 package lt.baltupiusoftas.project.app;
 
+import lt.baltupiusoftas.project.domain.Message;
 import lt.baltupiusoftas.project.service.messaging.MessagingService;
 
 import javax.enterprise.inject.Model;
@@ -15,6 +16,7 @@ public class HelloBean {
     private MessagingService messagingService;
 
     public String constructMessage() {
-        return messagingService.helloMessage(1);
+        Message message = messagingService.helloMessage();
+        return message.getText();
     }
 }

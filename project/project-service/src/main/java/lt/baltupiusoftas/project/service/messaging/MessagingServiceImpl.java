@@ -1,5 +1,6 @@
 package lt.baltupiusoftas.project.service.messaging;
 
+import lt.baltupiusoftas.project.domain.Message;
 import lt.baltupiusoftas.project.persistence.MessageRepository;
 
 import javax.inject.Inject;
@@ -14,21 +15,13 @@ public class MessagingServiceImpl implements MessagingService {
     @Inject
     private MessageRepository messageRepository;
 
-    public String helloMessage(Integer messageCode) {
+    public Message helloMessage() {
 
-        String message;
+        Message message = new Message();
+        message.setText("Hello world!");
+        message.setAuthor("Author");
 
-        switch (messageCode) {
-            case 1:
-                message = "Hello world!";
-                break;
-            case 2:
-                message = "Heelloo woorld!";
-                break;
-            default:
-                message = "Hi";
-                break;
-        }
+        messageRepository.create(message);
 
         return message;
     }

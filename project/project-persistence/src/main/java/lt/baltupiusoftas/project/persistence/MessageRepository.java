@@ -4,7 +4,6 @@ import lt.baltupiusoftas.project.domain.Message;
 
 import java.util.List;
 
-public interface MessageRepository {
+public interface MessageRepository extends GenericDao<Message> {
 
-    List<Message> findAllMessages(String author);
 }
