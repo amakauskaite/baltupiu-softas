@@ -1,4 +1,6 @@
 # baltupiu-softas
+## Paskirtis
+Šioje repositorijoje laikomi programiniai failai ir dokumentacija, susiję su 2018m pavasario semestrą vykdytu grupiniu darbu, skirtu dalykui "Programų sistemų kūrimas". Toliau pateikiamos diegimo instrukcijos ir reikalingos technologijos, norint pasileisti projektą. Dokumentacija, susijusi su projekto kūrimo ypatumai randama Wiki skiltyje.
 ## Naudojamos technologijos
 - JavaEE
 - Maven
@@ -15,7 +17,7 @@
 - Git
   - https://git-scm.com/
 - Modern Java IDE
-  - IntelliJ(recommended)
+  - IntelliJ (recomenduojama)
   - Eclipse
   - NetBeans
 ## Projekto paleidimo instrukcija
@@ -26,7 +28,7 @@
    - TomEE
      - http://tomee.apache.org/download-ng.html
      - TomEE plume
-   - Git(jei per IDE nereikia)
+   - Git (jei per IDE, nereikia)
 1. Clone baltupiu-softas iš github
    - IntelliJ
      - Check out from version control
