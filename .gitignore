@@ -1,4 +1,23 @@
+<<<<<<< HEAD
 baltupiu-softas.iml
 modules.xml
 vcs.xml
 workspace.xml
+=======
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
+>>>>>>> 338fa004b27f8da449984aa4c9f20b6d611ecd5f
