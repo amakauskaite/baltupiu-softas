@@ -30,6 +30,19 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+        <!-- http://www.h2database.com -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.196</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.2.10.Final</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
