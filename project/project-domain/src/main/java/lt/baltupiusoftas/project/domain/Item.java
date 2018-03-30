@@ -14,7 +14,7 @@ public class Item implements Serializable{
     @ManyToOne
     private Cart cart;
 
-    @OneToMany
+    @OneToOne
     private Category category;
 
     @Column(name="SKU")
