@@ -1,4 +1,4 @@
 package lt.baltupiusoftas.project.persistence;
 
-public class UserAddressRepositoryImpl {
+public class UserAddressRepositoryImpl implements UserAddressRepository {
 }

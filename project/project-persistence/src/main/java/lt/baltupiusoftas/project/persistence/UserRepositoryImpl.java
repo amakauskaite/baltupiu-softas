@@ -17,4 +17,6 @@ public class UserRepositoryImpl extends GenericDaoImpl<User> implements UserRepo
                 .setParameter("email", email)
                 .getResultList();
     }
+
+
 }
