@@ -15,7 +15,7 @@ public class UserRepositoryImpl extends GenericDaoImpl<User> implements UserRepo
     public User findByEmail(String email) {
         return (User) em.createNamedQuery("User.findByEmail")
                 .setParameter("email", email)
-                .getResultList();
+                .getSingleResult();
     }
 
 

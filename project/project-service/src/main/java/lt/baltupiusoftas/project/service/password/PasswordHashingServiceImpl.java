@@ -3,7 +3,7 @@ package lt.baltupiusoftas.project.service.password;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class PasswordHashingImpl implements PasswordHashing {
+public class PasswordHashingServiceImpl implements PasswordHashingService {
     @Override
     public String hashPassword (String password) {
         String generatedPassword = null;

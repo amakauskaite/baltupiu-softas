@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public User register(String email, String password, String firstname, String lastname, Integer phoneNumber, UserAddress address) {
+    public User register(String email, String password, String firstname, String lastname, String phoneNumber, UserAddress address) {
         User user = new User();
         user.setEmail(email);
         user.setPassword(password);

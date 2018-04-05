@@ -1,4 +1,6 @@
 package lt.baltupiusoftas.project.persistence;
 
-public class UserAddressRepositoryImpl implements UserAddressRepository {
+import lt.baltupiusoftas.project.domain.UserAddress;
+
+public class UserAddressRepositoryImpl extends GenericDaoImpl<UserAddress>implements UserAddressRepository {
 }

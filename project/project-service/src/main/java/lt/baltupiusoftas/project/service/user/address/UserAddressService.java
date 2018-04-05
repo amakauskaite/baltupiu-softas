@@ -5,6 +5,6 @@ import lt.baltupiusoftas.project.domain.UserAddress;
 
 public interface UserAddressService {
 
-     UserAddress updateUserAddress (Long id, String country, String city, String street, int house, int flat, int postcode);
-     UserAddress createUserAddress (User user, String country, String city, String street, int house, int flat, int postcode);
+     UserAddress updateUserAddress (Long id, String country, String city, String street, Integer house, Integer flat, Integer postcode);
+     UserAddress createUserAddress (String country, String city, String street, Integer house, Integer flat, Integer postcode);
 }
