@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Parduotuvė</title>
-	<link rel="stylesheet" href="Meniu.css" type="text/css"/>
+	<link rel="stylesheet" href="TaisyklesFormatavimo.css" type="text/css"/>
 </head>
 <style>
 
@@ -76,9 +76,7 @@ img {
 #element3 {
 	list-style: none;
 	display:inline-block;
-	padding-right: 100px;
 	vertical-align:top;
-	font-size: 17px;
 } 
 
 #element4 {
@@ -98,9 +96,7 @@ img {
 <body>
 
 <ul class = "Meniu">
-	<li class = "Meniu_li"><a class = "Meniu_a" href="Krepšelis.html">Krepšelis</a></li>
-	<li class = "Meniu_li"><a class = "Meniu_a" href="Prisijungti.html">Prisijungti</a></li>
-	<li class = "Meniu_li"><a class = "Meniu_a" href="Registuotis.html">Registruotis</a></li>
+	<li class = "Meniu_li"><a class = "Meniu_a" href="mainWebpage.html">Atsijungti</a></li>
 </ul>
 
 <br />
@@ -138,22 +134,28 @@ img {
 <table id = "element3">
 		<tr>
             <td><img src="obuolys.jpg" alt="obuolys" width="150" height=auto/></td>
-			<td><ul id = "element3">
-	<li>Pats skaniausias obuolys</li>
-	<li id = "kainaParyškintai">0,23Eur</li>
-	<li>Gamintojas: Naxima</li>
-	<li>Svoris: 0,1kg</li>
-	<li><img src="krepselis.png" alt="krepselis" width="50" height=auto/></li>
-</ul></td>
-        </tr>
-		<tr>
-			<td><h3>Aprašymas</h3></td>
+			<td><button type="button">Keisti nuotrauką</button></td>
         </tr>
         <tr>
-			<td><p>awfpiwhpaeoigbwogiuegbnopwiaw[goiabg[owaigbwg[wggwgagiuegb</p></td>
+			<td><textarea rows="5" cols="40">
+Pats skaniausias obuolys
+0,23Eur
+Gamintojas: Naxima
+Svoris: 0,1kg
+			</textarea></td>
         </tr>
+        <tr>
+			<td><textarea rows="10" cols="52">awfpiwhpaeoigbwogiuegbnopwiaw[goiabg[owaigbwg[wggwgagiuegb</textarea></td>
+        </tr>
+		<tr>
+			<td><button type="button">Atnaujinti aprašymą</button> </td>
+        </tr>
+		<tr>
+			<td><button type="button">Ištrinti prekę</button> </td>
+        </tr>
+
     </table>
-	
+
 <footer>
 	<p>2018 Baltupių Softas</p>
 </footer>

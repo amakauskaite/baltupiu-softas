@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Parduotuvė</title>
-	<link rel="stylesheet" href="Meniu.css" type="text/css"/>
+	<link rel="stylesheet" href="TaisyklesFormatavimo.css" type="text/css"/>
 </head>
 <style>
 
@@ -61,7 +61,7 @@ footer p {
 }
 	
 input[type=text], input[type=password], select {
-    width: 100%;
+    width: 15%;
 	border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
@@ -72,19 +72,13 @@ form {
     top:50%;
 	font-size: 18px;
 }
-table, form {
-	padding-left: 50px;
-    top:50%;
-	font-size: 18px;
-}
+
 </style>
 </head>
 <body>
 
 <ul class = "Meniu">
-	<li class = "Meniu_li"><a class = "Meniu_a" href="Krepšelis.html">Krepšelis</a></li>
 	<li class = "Meniu_li"><a class = "Meniu_a" href="Prisijungti.html">Prisijungti</a></li>
-	<li class = "Meniu_li"><a class = "Meniu_a" href="Registuotis.html">Registruotis</a></li>
 </ul>
 
 <br />
@@ -95,18 +89,17 @@ table, form {
 
 <h3 id="PastumtiHeadinga">Parduotuvė.lt</h3>
 
-    <table>
-        <tr>
-            <td><label>el. paštas</label></td>
-			<td><input type="text" name="elpaštas" required/></td>
-		<tr>
-            <td><label>slaptažodis</label></td>
-			<td><input type="password" name="slaptažodis" required/></td>
-        </tr>
-		<tr>
-            <td><input type="submit" value="Prisijungti"/></td>
-        </tr>
-    </table>
+<div>
+  <form>
+    <label>el. paštas</label>
+    <input type="text" name="elpaštas" required/>
+	<br/>
+    <label>slaptažodis</label>
+    <input type="password" name="slaptažodis" required/>
+	<br/>
+	<input type="submit" value="Prisijungti"/>
+  </form>
+</div>
 
 <footer>
 	<p>2018 Baltupių Softas</p>
