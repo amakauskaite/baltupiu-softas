@@ -31,9 +31,20 @@ public class UserRegistrationBean {
     private String firstname;
     private String lastname;
     private String phoneNumber;
+    private User user;
 
-    public User register() {
-        return userService.register(email, passwordHashingService.hashPassword(password), firstname, lastname, phoneNumber, userAddressService.createUserAddress(country, city, street, house, flat, postcode));
+
+
+    public void register() {
+        user = userService.register(email, passwordHashingService.hashPassword(password), firstname, lastname, phoneNumber, userAddressService.createUserAddress(country, city, street, house, flat, postcode));
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public String getFirstname() {

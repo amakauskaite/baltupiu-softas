@@ -17,10 +17,20 @@ public class UserPasswordUpdateBean implements Serializable {
     private String oldPassword;
     private String newPassword;
 
+    private User user;
+
     @Inject
     private UserService userService;
     @Inject
     private PasswordHashingService passwordHashing;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public Long getId() {
         return id;
@@ -46,9 +56,9 @@ public class UserPasswordUpdateBean implements Serializable {
         this.newPassword = newPassword;
     }
 
-    public User updatePassword () {
+    public void updatePassword () {
 
-        return userService.updatePassword(id, oldPassword, passwordHashing.hashPassword(newPassword));
+        user =  userService.updatePassword(id, oldPassword, passwordHashing.hashPassword(newPassword));
 
     }
 }

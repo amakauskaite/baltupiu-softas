@@ -19,11 +19,21 @@ public class UserAddressUpdateBean {
     private Integer flat; 
     private Integer postcode;
 
+    private UserAddress userAddress;
+
     @Inject
     private UserAddressService userAddressService;
 
-    public UserAddress updateAddress () {
-        return userAddressService.updateUserAddress(id, country, city, street, house, flat, postcode);
+    public void updateAddress () {
+        userAddress = userAddressService.updateUserAddress(id, country, city, street, house, flat, postcode);
+    }
+
+    public UserAddress getUserAddress() {
+        return userAddress;
+    }
+
+    public void setUserAddress(UserAddress userAddress) {
+        this.userAddress = userAddress;
     }
 
     public Long getId() {
