@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="lt"/>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Parduotuvė</title>
+	<link rel="stylesheet" href="Meniu.css" type="text/css"/>
+</head>
+<style>
+
+ul.Kategorijos {
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+}
+
+li.Kategorijos_li a.Kategorijos_a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color on hover */
+li.Kategorijos_li a:hover.Kategorijos_a {
+    background-color: #333;
+    color: white;
+}
+
+a img {
+	padding-left: 60px;
+}
+
+#Sarasas{
+	list-style: none;
+	font-size: 17px;
+}
+	
+#PastumtiHeadinga{
+	padding-left: 45px;	
+}
+	
+#element1 {
+	display:inline-block; <!--kad galima išlygiuoti būtų-->
+	margin-right:10px;
+	vertical-align:top
+} 
+
+#element2 {
+	display:inline-block;
+	vertical-align:top;
+} 
+	
+footer p {
+	position: fixed;     
+    text-align: center;    
+    bottom: 10px; 
+    width: 100%;
+}
+	
+input[type=text], input[type=password], select {
+    width: 100%;
+	border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form {
+    padding-left: 50px;
+    top:50%;
+	font-size: 18px;
+}
+table, form {
+	padding-left: 50px;
+    top:50%;
+	font-size: 18px;
+}
+</style>
+</head>
+<body>
+
+<ul class = "Meniu">
+	<li class = "Meniu_li"><a class = "Meniu_a" href="Krepšelis.html">Krepšelis</a></li>
+	<li class = "Meniu_li"><a class = "Meniu_a" href="Prisijungti.html">Prisijungti</a></li>
+	<li class = "Meniu_li"><a class = "Meniu_a" href="Registuotis.html">Registruotis</a></li>
+</ul>
+
+<br />
+
+<a href="mainWebpage.html">
+	<img src="bag.jpg" alt="Parduotuvė.lt" width="80" height=auto/>
+</a>
+
+<h3 id="PastumtiHeadinga">Parduotuvė.lt</h3>
+
+    <table>
+        <tr>
+            <td><label>el. paštas</label></td>
+			<td><input type="text" name="elpaštas" required/></td>
+		<tr>
+            <td><label>slaptažodis</label></td>
+			<td><input type="password" name="slaptažodis" required/></td>
+        </tr>
+		<tr>
+            <td><input type="submit" value="Prisijungti"/></td>
+        </tr>
+    </table>
+
+<footer>
+	<p>2018 Baltupių Softas</p>
+</footer>
+
+</body>
+</html>
