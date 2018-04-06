@@ -12,7 +12,7 @@ import java.io.Serializable;
 
 @Named
 @FlowScoped("userLoginBean")
-public class UserLoginBean implements Serializable {
+public class UserLoginBean {
 
     private String email;
     private String password;
