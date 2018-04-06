@@ -22,9 +22,12 @@ public class UserLoginBean implements Serializable {
     @Inject
     private PasswordHashingService passwordHashing;
 
+
     public void login () {
         user = userService.login(email, passwordHashing.hashPassword(password));
     }
+
+    public void logout () {user = null;}
 
     public String getEmail() {
         return email;
