@@ -50,4 +50,8 @@ public class AdminLoginBean implements Serializable {
     public void login () {
         administrator = adminService.login(username, passwordHashingService.hashPassword(password));
     }
+
+    public void logout () {
+        administrator = null;
+    }
 }
