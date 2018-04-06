@@ -5,12 +5,13 @@ import lt.baltupiusoftas.project.service.password.PasswordHashingService;
 import lt.baltupiusoftas.project.service.user.UserService;
 
 import javax.enterprise.context.SessionScoped;
+import javax.faces.flow.FlowScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
 
 @Named
-@SessionScoped
+@FlowScoped("userLoginBean")
 public class UserLoginBean implements Serializable {
 
     private String email;
