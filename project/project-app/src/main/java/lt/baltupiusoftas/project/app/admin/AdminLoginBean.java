@@ -5,12 +5,13 @@ import lt.baltupiusoftas.project.service.admin.AdminService;
 import lt.baltupiusoftas.project.service.password.PasswordHashingService;
 
 import javax.enterprise.context.SessionScoped;
+import javax.faces.flow.FlowScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
 
 @Named
-@SessionScoped
+@FlowScoped("adminLoginBean")
 public class AdminLoginBean implements Serializable {
 
     private String username;
