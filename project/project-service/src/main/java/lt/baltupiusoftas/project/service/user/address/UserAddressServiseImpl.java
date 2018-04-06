@@ -10,10 +10,9 @@ public class UserAddressServiseImpl implements UserAddressService {
     @Inject
     private UserAddressRepository addressRepository;
     @Override
-    public UserAddress updateUserAddress(Long id, String country, String city, String street, Integer house,  Integer flat, Integer postcode) {
-        UserAddress address = addressRepository.find(id);
-        address = setValues(address, country, city, street, house, flat, postcode);
-        return addressRepository.update(address);
+    public UserAddress updateUserAddress(UserAddress userAddress, String country, String city, String street, Integer house,  Integer flat, Integer postcode) {
+        userAddress = setValues(userAddress, country, city, street, house, flat, postcode);
+        return addressRepository.update(userAddress);
     }
 
     @Override

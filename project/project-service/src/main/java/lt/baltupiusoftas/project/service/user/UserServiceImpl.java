@@ -34,15 +34,9 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public User updatePassword(Long id, String oldPassword, String newPassword) {
-        if (oldPassword.equals(newPassword)) {
-            User user = userRepository.find(id);
+    public User updatePassword(User user,  String newPassword) {
             user.setPassword(newPassword);
             return userRepository.update(user);
-
-        }
-        //TODO error?
-        return null;
     }
 
 

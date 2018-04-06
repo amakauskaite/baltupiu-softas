@@ -13,8 +13,6 @@ import java.io.Serializable;
 @Model
 public class UserPasswordUpdateBean implements Serializable {
 
-    private Long id;
-    private String oldPassword;
     private String newPassword;
 
     private User user;
@@ -32,22 +30,6 @@ public class UserPasswordUpdateBean implements Serializable {
         this.user = user;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getOldPassword() {
-        return oldPassword;
-    }
-
-    public void setOldPassword(String oldPassword) {
-        this.oldPassword = oldPassword;
-    }
-
     public String getNewPassword() {
         return newPassword;
     }
@@ -58,7 +40,7 @@ public class UserPasswordUpdateBean implements Serializable {
 
     public void updatePassword () {
 
-        user =  userService.updatePassword(id, oldPassword, passwordHashing.hashPassword(newPassword));
+        user =  userService.updatePassword(user, passwordHashing.hashPassword(newPassword));
 
     }
 }

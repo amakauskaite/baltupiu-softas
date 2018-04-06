@@ -9,8 +9,6 @@ import javax.inject.Inject;
 
 @Model
 public class UserAddressUpdateBean {
-    
-    private Long id;
 
     private String country;
     private String city; 
@@ -25,7 +23,7 @@ public class UserAddressUpdateBean {
     private UserAddressService userAddressService;
 
     public void updateAddress () {
-        userAddress = userAddressService.updateUserAddress(id, country, city, street, house, flat, postcode);
+        userAddress = userAddressService.updateUserAddress(userAddress, country, city, street, house, flat, postcode);
     }
 
     public UserAddress getUserAddress() {
@@ -36,13 +34,6 @@ public class UserAddressUpdateBean {
         this.userAddress = userAddress;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getCountry() {
         return country;
