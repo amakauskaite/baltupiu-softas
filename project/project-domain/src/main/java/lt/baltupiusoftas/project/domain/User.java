@@ -3,28 +3,53 @@ package lt.baltupiusoftas.project.domain;
 import javax.persistence.*;
 import java.io.Serializable;
 
+/**
+ * User
+ *
+ * @author Audrius Tvarijonas
+ */
 @Entity
 @Table(name="USER")
 public class User implements Serializable{
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     @Column(name="EMAIL")
     private String email;
+
     @Column(name = "FIRSTNAME")
     private String firstname;
+
     @Column(name="LASTNAME")
     private String lastname;
+
     @Column(name="PASSWORD")
     private String password;
+
     @Column(name="PHONE_NUMBER")
     private Integer phonenumber;
+
     @Column(name="IS_BLOCKED")
     private Boolean isBlocked = false;
 
-    @OneToMany
+    @OneToOne
     private UserAddress userAddress;
+
+    public User() {
+
+    }
+
+    public User(String email, String firstname, String lastname, String password, Integer phonenumber, Boolean isBlocked, UserAddress userAddress) {
+        this.email = email;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.password = password;
+        this.phonenumber = phonenumber;
+        this.isBlocked = isBlocked;
+        this.userAddress = userAddress;
+    }
 
     public Long getId() {
         return id;

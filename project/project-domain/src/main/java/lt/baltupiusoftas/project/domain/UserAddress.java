@@ -3,25 +3,48 @@ package lt.baltupiusoftas.project.domain;
 import javax.persistence.*;
 import java.io.Serializable;
 
+/**
+ * User Address
+ *
+ * @author Audrius Tvarijonas
+ */
 @Entity
 @Table(name="USER_ADDRESS")
 public class UserAddress implements Serializable{
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     @Column(name = "COUNTRY")
     private String country;
+
     @Column(name = "CITY")
     private String city;
+
     @Column(name = "STREET")
     private String street;
+
     @Column(name = "HOUSE")
     private Integer house;
+
     @Column(name = "FLAT")
     private Integer flat;
+
     @Column(name = "POSTCODE")
     private Integer postcode;
+
+    public UserAddress() {
+    }
+
+    public UserAddress(String country, String city, String street, Integer house, Integer flat, Integer postcode) {
+        this.country = country;
+        this.city = city;
+        this.street = street;
+        this.house = house;
+        this.flat = flat;
+        this.postcode = postcode;
+    }
 
     public Long getId() {
         return id;

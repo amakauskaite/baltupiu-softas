@@ -6,7 +6,7 @@
     <!-- H2 Database -->
     <Resource id="ForumDataSource" type="DataSource">
         JdbcDriver = org.h2.Driver
-        JdbcUrl = jdbc:h2:~/h2database/e-shop-db;AUTO_SERVER=TRUE;INIT=RUNSCRIPT FROM 'classpath:create-db.sql'
+        JdbcUrl = jdbc:h2:~/h2database/e-shop-db-test;AUTO_SERVER=TRUE
         UserName = sa
         Password = sa
         InitialSize = 1
