@@ -1,38 +1,36 @@
 package lt.baltupiusoftas.project.domain;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 /**
- * Cart product
+ * Cart item
  *
  * @author Audrius Tvarijonas
  */
 @Entity
-@Table(name = "CART_PRODUCT")
-public class CartProduct {
+@Table(name = "CART_ITEM")
+public class CartItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "CART_ID")
-    private Cart cart;
-
-    @ManyToOne
     @JoinColumn(name = "PRODUCT_ID")
     private Product product;
 
-    @Column(name = "STATUS")
-    private String status;
+    /**
+     * Amount of money paid
+     */
+    @Column(name = "PRICE")
+    private BigDecimal price;
 
-    public CartProduct() {
+    public CartItem() {
     }
 
-    public CartProduct(Cart cart, Product product, String status) {
-        this.cart = cart;
+    public CartItem(Product product) {
         this.product = product;
-        this.status = status;
     }
 
     public Long getId() {
@@ -43,14 +41,6 @@ public class CartProduct {
         this.id = id;
     }
 
-    public Cart getCart() {
-        return cart;
-    }
-
-    public void setCart(Cart cart) {
-        this.cart = cart;
-    }
-
     public Product getProduct() {
         return product;
     }
@@ -59,11 +49,11 @@ public class CartProduct {
         this.product = product;
     }
 
-    public String getStatus() {
-        return status;
+    public BigDecimal getPrice() {
+        return price;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 }

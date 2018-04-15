@@ -17,14 +17,15 @@ public class Category implements Serializable{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    /**
-     * List of all products belonging to this category
-     */
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
-    private List<Product> products;
-
     @Column(name = "NAME")
     private String name;
+
+    public Category() {
+    }
+
+    public Category(String name) {
+        this.name = name;
+    }
 
     public Long getId() {
         return id;

@@ -1,7 +1,10 @@
 package lt.baltupiusoftas.project.domain;
 
+import lt.baltupiusoftas.project.domain.types.OrderStatusType;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,19 +24,19 @@ public class Cart implements Serializable {
     @JoinColumn(name = "USER_ID")
     private User user;
 
-    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)
-    private List<CartProduct> products;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "CART_ID")
+    private List<CartItem> items = new ArrayList<>();
 
-    @Column(name = "STATUS")
-    private String status;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "ORDER_STATUS")
+    private OrderStatusType orderStatus = OrderStatusType.INCOMPLETE;
 
     public Cart() {
     }
 
-    public Cart(User user, List<CartProduct> products, String status) {
+    public Cart(User user) {
         this.user = user;
-        this.products = products;
-        this.status = status;
     }
 
     public Long getId() {
@@ -52,19 +55,19 @@ public class Cart implements Serializable {
         this.user = user;
     }
 
-    public List<CartProduct> getProducts() {
-        return products;
+    public List<CartItem> getItems() {
+        return items;
     }
 
-    public void setProducts(List<CartProduct> products) {
-        this.products = products;
+    public void setItems(List<CartItem> items) {
+        this.items = items;
     }
 
-    public String getStatus() {
-        return status;
+    public OrderStatusType getOrderStatus() {
+        return orderStatus;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setOrderStatus(OrderStatusType orderStatus) {
+        this.orderStatus = orderStatus;
     }
 }

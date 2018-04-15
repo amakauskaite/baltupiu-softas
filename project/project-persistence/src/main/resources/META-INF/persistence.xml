@@ -10,13 +10,11 @@
         <jta-data-source>ForumDataSource</jta-data-source>
         <class>lt.baltupiusoftas.project.domain.Administrator</class>
         <class>lt.baltupiusoftas.project.domain.Cart</class>
+        <class>lt.baltupiusoftas.project.domain.CartItem</class>
         <class>lt.baltupiusoftas.project.domain.Category</class>
         <class>lt.baltupiusoftas.project.domain.Product</class>
         <class>lt.baltupiusoftas.project.domain.User</class>
         <class>lt.baltupiusoftas.project.domain.UserAddress</class>
-        <class>lt.baltupiusoftas.project.domain.CartProduct</class>
-        <class>lt.baltupiusoftas.project.domain.PurchaseHistory</class>
-        <class>lt.baltupiusoftas.project.domain.PurchasedItem</class>
 
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>

@@ -1,6 +1,7 @@
 package lt.baltupiusoftas.project.domain;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -27,7 +28,7 @@ public class Product {
     private String name;
 
     @Column(name = "PRICE")
-    private Integer price;
+    private BigDecimal price;
 
     @Column(name = "SUMMARY")
     private String summary;
@@ -41,7 +42,7 @@ public class Product {
     public Product() {
     }
 
-    public Product(Category category, String SKU, String name, Integer price, String summary, String photo, Date lastUpdated) {
+    public Product(Category category, String SKU, String name, BigDecimal price, String summary, String photo, Date lastUpdated) {
         this.category = category;
         this.SKU = SKU;
         this.name = name;
@@ -83,11 +84,11 @@ public class Product {
         this.name = name;
     }
 
-    public Integer getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 

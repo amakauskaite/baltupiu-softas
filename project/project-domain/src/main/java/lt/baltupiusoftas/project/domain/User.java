@@ -29,25 +29,25 @@ public class User implements Serializable{
     private String password;
 
     @Column(name="PHONE_NUMBER")
-    private Integer phonenumber;
+    private String phonenumber;
 
     @Column(name="IS_BLOCKED")
     private Boolean isBlocked = false;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "ADDRESS_ID")
     private UserAddress userAddress;
 
     public User() {
 
     }
 
-    public User(String email, String firstname, String lastname, String password, Integer phonenumber, Boolean isBlocked, UserAddress userAddress) {
+    public User(String email, String firstname, String lastname, String password, String phonenumber, UserAddress userAddress) {
         this.email = email;
         this.firstname = firstname;
         this.lastname = lastname;
         this.password = password;
         this.phonenumber = phonenumber;
-        this.isBlocked = isBlocked;
         this.userAddress = userAddress;
     }
 
@@ -91,11 +91,11 @@ public class User implements Serializable{
         this.password = password;
     }
 
-    public Integer getPhonenumber() {
+    public String getPhonenumber() {
         return phonenumber;
     }
 
-    public void setPhonenumber(Integer phonenumber) {
+    public void setPhonenumber(String phonenumber) {
         this.phonenumber = phonenumber;
     }
 

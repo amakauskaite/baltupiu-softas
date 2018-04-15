@@ -26,18 +26,18 @@ public class UserAddress implements Serializable{
     private String street;
 
     @Column(name = "HOUSE")
-    private Integer house;
+    private String house;
 
     @Column(name = "FLAT")
-    private Integer flat;
+    private String flat;
 
     @Column(name = "POSTCODE")
-    private Integer postcode;
+    private String postcode;
 
     public UserAddress() {
     }
 
-    public UserAddress(String country, String city, String street, Integer house, Integer flat, Integer postcode) {
+    public UserAddress(String country, String city, String street, String house, String flat, String postcode) {
         this.country = country;
         this.city = city;
         this.street = street;
@@ -78,27 +78,27 @@ public class UserAddress implements Serializable{
         this.street = street;
     }
 
-    public Integer getHouse() {
+    public String getHouse() {
         return house;
     }
 
-    public void setHouse(Integer house) {
+    public void setHouse(String house) {
         this.house = house;
     }
 
-    public Integer getFlat() {
+    public String getFlat() {
         return flat;
     }
 
-    public void setFlat(Integer flat) {
+    public void setFlat(String flat) {
         this.flat = flat;
     }
 
-    public Integer getPostcode() {
+    public String getPostcode() {
         return postcode;
     }
 
-    public void setPostcode(Integer postcode) {
+    public void setPostcode(String postcode) {
         this.postcode = postcode;
     }
 }
