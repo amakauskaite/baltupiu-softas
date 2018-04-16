@@ -20,6 +20,7 @@
             <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
             <!-- TODO remove in production -->
             <property name="hibernate.show_sql" value="true" />
+            <!-- TODO create-drop for developing purposes, change to validate, update in production -->
             <property name="hibernate.hbm2ddl.auto" value="create-drop" />
             <!-- TODO TomEE fix, maybe should be relocated to TomEE config -->
             <property name="tomee.jpa.factory.lazy" value="true" />
