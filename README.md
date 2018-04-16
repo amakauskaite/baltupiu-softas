@@ -57,5 +57,11 @@
      - Run > Edit Configurations... > + > TomEE Server > Local
      - Aplication server turi būti TomEE serverio pasirinkimas
      - Deployment tab > + > Artifact... > project-app:war exploded
-     
+5. Patikrinti DB
+	- Paleidus projektą turėtų automatiškai būti sukurta duomenų bazė
+		- Prie duombazių skilties '+' > Data Source > H2
+		- User: 'sa'
+		- Password: 'sa'
+		- URL: 'jdbc:h2:~/h2database/e-shop-db;AUTO_SERVER=TRUE;'
+	- Jei sukurta sėkmingai, turėtų pasirodyti sukurtos lentelės. Priešingu atveju siūloma patikrinti konfigūraciją arba perleisti iš naujo projektą.
 
