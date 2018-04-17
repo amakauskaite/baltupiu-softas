@@ -8,11 +8,12 @@ import javax.enterprise.context.SessionScoped;
 import javax.faces.flow.FlowScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.transaction.Transactional;
 import java.io.Serializable;
 
 @Named
-@FlowScoped("userLoginBean")
-public class UserLoginBean {
+@SessionScoped
+public class UserLoginBean implements Serializable {
 
     private String email;
     private String password;
@@ -22,13 +23,22 @@ public class UserLoginBean {
     private UserService userService;
     @Inject
     private PasswordHashingService passwordHashing;
+//    @Inject
+//    private UserAddressBean userAddressBean;
 
-
+    @Transactional(Transactional.TxType.REQUIRED)
     public void login () {
         user = userService.login(email, passwordHashing.hashPassword(password));
+//        userAddressBean.setUserAddress(user.getUserAddress());
     }
 
-    public void logout () {user = null;}
+    public void logout () {
+        user = null;
+        email = null;
+        password = null;
+//        userAddressBean.setUserAddress(null);
+
+    }
 
     public String getEmail() {
         return email;
@@ -52,5 +62,7 @@ public class UserLoginBean {
 
     public void setUser(User user) {
         this.user = user;
+        email = user.getEmail();
+        password = user.getPassword();
     }
 }

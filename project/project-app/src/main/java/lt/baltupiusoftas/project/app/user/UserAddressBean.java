@@ -5,26 +5,33 @@ import lt.baltupiusoftas.project.service.user.address.UserAddressService;
 
 import javax.enterprise.inject.Model;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
+import javax.inject.Named;
+import javax.transaction.Transactional;
+import java.io.Serializable;
 
-@Model
-public class UserAddressUpdateBean {
+@Named
+@SessionScoped
+public class UserAddressBean implements Serializable {
 
     private String country;
     private String city; 
     private String street; 
-    private Integer house; 
-    private Integer flat; 
-    private Integer postcode;
+    private String house;
+    private String flat;
+    private String postcode;
 
     private UserAddress userAddress;
 
     @Inject
     private UserAddressService userAddressService;
 
+    @Transactional(Transactional.TxType.REQUIRED)
     public void updateAddress () {
         userAddress = userAddressService.updateUserAddress(userAddress, country, city, street, house, flat, postcode);
     }
+
 
     public UserAddress getUserAddress() {
         return userAddress;
@@ -32,6 +39,12 @@ public class UserAddressUpdateBean {
 
     public void setUserAddress(UserAddress userAddress) {
         this.userAddress = userAddress;
+        this.country = userAddress.getCountry();
+        this.city = userAddress.getCity();
+        this.flat = userAddress.getFlat();
+        this.house = userAddress.getHouse();
+        this.street = userAddress.getStreet();
+        this.postcode = userAddress.getPostcode();
     }
 
 
@@ -59,27 +72,27 @@ public class UserAddressUpdateBean {
         this.street = street;
     }
 
-    public Integer getHouse() {
+    public String getHouse() {
         return house;
     }
 
-    public void setHouse(Integer house) {
+    public void setHouse(String house) {
         this.house = house;
     }
 
-    public Integer getFlat() {
+    public String getFlat() {
         return flat;
     }
 
-    public void setFlat(Integer flat) {
+    public void setFlat(String flat) {
         this.flat = flat;
     }
 
-    public Integer getPostcode() {
+    public String getPostcode() {
         return postcode;
     }
 
-    public void setPostcode(Integer postcode) {
+    public void setPostcode(String postcode) {
         this.postcode = postcode;
     }
 }
