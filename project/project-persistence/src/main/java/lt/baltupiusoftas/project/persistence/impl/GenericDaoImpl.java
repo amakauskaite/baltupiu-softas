@@ -1,14 +1,21 @@
-package lt.baltupiusoftas.project.persistence;
+package lt.baltupiusoftas.project.persistence.impl;
+
+import lt.baltupiusoftas.project.persistence.GenericDao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
+/**
+ * Generic DAO
+ *
+ * @param <T> Entity
+ */
 public abstract class GenericDaoImpl<T> implements GenericDao<T> {
 
     @PersistenceContext
-    protected EntityManager em;
+    protected EntityManager entityManager;
 
     private Class<T> type;
 
@@ -20,22 +27,22 @@ public abstract class GenericDaoImpl<T> implements GenericDao<T> {
 
     @Override
     public T create(final T t) {
-        this.em.persist(t);
+        this.entityManager.persist(t);
         return t;
     }
 
     @Override
     public void delete(final Object id) {
-        this.em.remove(this.em.getReference(type, id));
+        this.entityManager.remove(this.entityManager.getReference(type, id));
     }
 
     @Override
     public T find(final Object id) {
-        return (T) this.em.find(type, id);
+        return (T) this.entityManager.find(type, id);
     }
 
     @Override
     public T update(final T t) {
-        return this.em.merge(t);
+        return this.entityManager.merge(t);
     }
 }

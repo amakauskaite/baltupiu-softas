@@ -3,25 +3,48 @@ package lt.baltupiusoftas.project.domain;
 import javax.persistence.*;
 import java.io.Serializable;
 
+/**
+ * User Address
+ *
+ * @author Audrius Tvarijonas
+ */
 @Entity
 @Table(name="USER_ADDRESS")
 public class UserAddress implements Serializable{
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     @Column(name = "COUNTRY")
     private String country;
+
     @Column(name = "CITY")
     private String city;
+
     @Column(name = "STREET")
     private String street;
+
     @Column(name = "HOUSE")
-    private Integer house;
+    private String house;
+
     @Column(name = "FLAT")
-    private Integer flat;
+    private String flat;
+
     @Column(name = "POSTCODE")
-    private Integer postcode;
+    private String postcode;
+
+    public UserAddress() {
+    }
+
+    public UserAddress(String country, String city, String street, String house, String flat, String postcode) {
+        this.country = country;
+        this.city = city;
+        this.street = street;
+        this.house = house;
+        this.flat = flat;
+        this.postcode = postcode;
+    }
 
     public Long getId() {
         return id;
@@ -55,27 +78,27 @@ public class UserAddress implements Serializable{
         this.street = street;
     }
 
-    public Integer getHouse() {
+    public String getHouse() {
         return house;
     }
 
-    public void setHouse(Integer house) {
+    public void setHouse(String house) {
         this.house = house;
     }
 
-    public Integer getFlat() {
+    public String getFlat() {
         return flat;
     }
 
-    public void setFlat(Integer flat) {
+    public void setFlat(String flat) {
         this.flat = flat;
     }
 
-    public Integer getPostcode() {
+    public String getPostcode() {
         return postcode;
     }
 
-    public void setPostcode(Integer postcode) {
+    public void setPostcode(String postcode) {
         this.postcode = postcode;
     }
 }

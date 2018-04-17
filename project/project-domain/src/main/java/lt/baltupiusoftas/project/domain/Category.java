@@ -2,16 +2,30 @@ package lt.baltupiusoftas.project.domain;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
+/**
+ * Category
+ *
+ * @author Audrius Tvarijonas
+ */
 @Entity
 @Table(name = "CATEGORY")
 public class Category implements Serializable{
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     @Column(name = "NAME")
     private String name;
+
+    public Category() {
+    }
+
+    public Category(String name) {
+        this.name = name;
+    }
 
     public Long getId() {
         return id;
