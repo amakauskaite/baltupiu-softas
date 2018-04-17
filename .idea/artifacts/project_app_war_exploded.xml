@@ -1,0 +1,28 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="project-app:war exploded">
+    <output-path>$PROJECT_DIR$/project/project-app/target/project-app</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="project-app" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="archive" name="project-domain-1.0.jar">
+            <element id="module-output" name="project-domain" />
+          </element>
+          <element id="archive" name="project-service-1.0.jar">
+            <element id="module-output" name="project-service" />
+          </element>
+          <element id="archive" name="project-persistence-1.0.jar">
+            <element id="module-output" name="project-persistence" />
+          </element>
+          <element id="library" level="project" name="Maven: com.h2database:h2:1.4.196" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/project/project-app/target/project-app/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="project-app/web/Web" />
+    </root>
+  </artifact>
+</component>

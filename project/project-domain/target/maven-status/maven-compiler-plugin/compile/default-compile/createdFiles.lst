@@ -1,0 +1,9 @@
+lt\baltupiusoftas\project\domain\Category.class
+lt\baltupiusoftas\project\domain\Message.class
+lt\baltupiusoftas\project\domain\Administrator.class
+lt\baltupiusoftas\project\domain\Cart.class
+lt\baltupiusoftas\project\domain\UserAddress.class
+lt\baltupiusoftas\project\domain\User.class
+lt\baltupiusoftas\project\domain\PurchasedItems.class
+lt\baltupiusoftas\project\domain\PurchaseHistory.class
+lt\baltupiusoftas\project\domain\Item.class
