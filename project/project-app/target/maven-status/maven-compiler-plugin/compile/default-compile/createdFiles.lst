@@ -1,1 +1,5 @@
 lt\baltupiusoftas\project\app\UltimateBean.class
+lt\baltupiusoftas\project\app\user\UserPasswordUpdateBean.class
+lt\baltupiusoftas\project\app\user\UserRegistrationBean.class
+lt\baltupiusoftas\project\app\user\UserAddressBean.class
+lt\baltupiusoftas\project\app\user\UserLoginBean.class
