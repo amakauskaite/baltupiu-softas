@@ -7,15 +7,21 @@
     <persistence-unit name="ApplicationPersistence">
         <description> Persistence unit for application </description>
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>lt.baltupiusoftas.project.domain.Message</class>
+        <jta-data-source>ForumDataSource</jta-data-source>
+        <class>lt.baltupiusoftas.project.domain.Administrator</class>
+        <class>lt.baltupiusoftas.project.domain.Cart</class>
+        <class>lt.baltupiusoftas.project.domain.CartItem</class>
+        <class>lt.baltupiusoftas.project.domain.Category</class>
+        <class>lt.baltupiusoftas.project.domain.Product</class>
+        <class>lt.baltupiusoftas.project.domain.User</class>
+        <class>lt.baltupiusoftas.project.domain.UserAddress</class>
+
         <properties>
-            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
-            <property name="javax.persistence.jdbc.url" value="jdbc:h2:~/h2database/e-shop-db" />
-            <property name="javax.persistence.jdbc.user" value="sa" />
-            <property name="javax.persistence.jdbc.password" value="sa" />
             <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <!-- TODO remove in production -->
             <property name="hibernate.show_sql" value="true" />
-            <property name="hibernate.hbm2ddl.auto" value="update" />
+            <!-- TODO create-drop for developing purposes, change to validate, update in production -->
+            <property name="hibernate.hbm2ddl.auto" value="create-drop" />
             <!-- TODO TomEE fix, maybe should be relocated to TomEE config -->
             <property name="tomee.jpa.factory.lazy" value="true" />
         </properties>

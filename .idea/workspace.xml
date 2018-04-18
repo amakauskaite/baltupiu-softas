@@ -6,7 +6,55 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="571f1dbf-5fe6-4c2a-8821-61d6e64527e5" name="Default" comment="" />
+    <list default="true" id="571f1dbf-5fe6-4c2a-8821-61d6e64527e5" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/project_app_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/project_app_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_2_10_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_20_0_GA.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_0_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-app/project-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-app/project-app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-app/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-app/src/main/webapp/index.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-app/target/classes/lt/baltupiusoftas/project/app/HelloBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-app/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-app/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-app/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-app/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-app/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-app/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-app/target/project-app.war" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-app/target/project-app.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-app/target/project-app/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-app/target/project-app/WEB-INF/classes/lt/baltupiusoftas/project/app/HelloBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-app/target/project-app/WEB-INF/lib/project-domain-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-app/target/project-app/WEB-INF/lib/project-domain-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-app/target/project-app/WEB-INF/lib/project-persistence-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-app/target/project-app/WEB-INF/lib/project-persistence-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-app/target/project-app/WEB-INF/lib/project-service-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-app/target/project-app/WEB-INF/lib/project-service-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-app/target/project-app/WEB-INF/resources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-app/target/project-app/WEB-INF/resources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-app/target/project-app/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-app/target/project-app/index.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-domain/project-domain.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-domain/project-domain.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-domain/target/classes/lt/baltupiusoftas/project/domain/Administrator.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-domain/target/classes/lt/baltupiusoftas/project/domain/Administrator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-domain/target/classes/lt/baltupiusoftas/project/domain/Cart.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-domain/target/classes/lt/baltupiusoftas/project/domain/Cart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-domain/target/classes/lt/baltupiusoftas/project/domain/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-domain/target/classes/lt/baltupiusoftas/project/domain/Category.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-domain/target/classes/lt/baltupiusoftas/project/domain/Item.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-domain/target/classes/lt/baltupiusoftas/project/domain/Message.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-domain/target/classes/lt/baltupiusoftas/project/domain/PurchaseHistory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-domain/target/classes/lt/baltupiusoftas/project/domain/PurchasedItems.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-domain/target/classes/lt/baltupiusoftas/project/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-domain/target/classes/lt/baltupiusoftas/project/domain/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-domain/target/classes/lt/baltupiusoftas/project/domain/UserAddress.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-domain/target/classes/lt/baltupiusoftas/project/domain/UserAddress.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-domain/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-domain/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-domain/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-domain/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-domain/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-domain/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-domain/target/project-domain-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-domain/target/project-domain-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-persistence/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-persistence/target/classes/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-persistence/target/classes/create-db.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-persistence/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-persistence/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-persistence/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-persistence/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-service/project-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-service/project-service.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-service/target/classes/lt/baltupiusoftas/project/service/messaging/MessagingService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-service/target/classes/lt/baltupiusoftas/project/service/messaging/MessagingServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-service/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-service/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-service/target/project-service-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-service/target/project-service-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-service/target/surefire-reports/TEST-lt.baltupiusoftas.project.service.messaging.MessagingServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-service/target/surefire-reports/TEST-lt.baltupiusoftas.project.service.messaging.MessagingServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-service/target/surefire-reports/lt.baltupiusoftas.project.service.messaging.MessagingServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-service/target/surefire-reports/lt.baltupiusoftas.project.service.messaging.MessagingServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project/project.iml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/project/target/" />
     <ignored path="$PROJECT_DIR$/project/project-persistence/target/" />
     <ignored path="$PROJECT_DIR$/project/project-app/target/" />
@@ -34,7 +82,62 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project/project-app/src/main/webapp/index.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserLoginBean.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project/project-app/src/main/java/lt/baltupiusoftas/project/app/user/UserLoginBean.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-123">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project/project-app/src/main/webapp/login.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="80" selection-start-line="15" selection-start-column="80" selection-end-line="15" selection-end-column="80" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registration.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project/project-app/src/main/webapp/registration.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="166">
+              <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserRegistrationBean.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project/project-app/src/main/java/lt/baltupiusoftas/project/app/user/UserRegistrationBean.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserAddressRepositoryImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/project/project-persistence/src/main/java/lt/baltupiusoftas/project/persistence/UserAddressRepositoryImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -54,7 +157,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="user-interface" />
       </map>
     </option>
   </component>
@@ -72,10 +175,12 @@
         <option value="$PROJECT_DIR$/project/project-domain/src/main/java/lt/baltupiusoftas/project/domain/UserAddress.java" />
         <option value="$PROJECT_DIR$/project/project-domain/src/main/java/lt/baltupiusoftas/project/domain/Category.java" />
         <option value="$PROJECT_DIR$/project/project-domain/src/main/java/lt/baltupiusoftas/project/domain/PurchaseHistory.java" />
-        <option value="$PROJECT_DIR$/project/project-app/src/main/webapp/index.xhtml" />
         <option value="$PROJECT_DIR$/project/project-persistence/src/main/resources/create-db.sql" />
         <option value="$PROJECT_DIR$/project/project-persistence/src/main/resources/META-INF/persistence.xml" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/project/project-app/src/main/webapp/index.xhtml" />
+        <option value="$PROJECT_DIR$/project/project-app/src/main/webapp/registration.xhtml" />
+        <option value="$PROJECT_DIR$/project/project-app/src/main/webapp/login.xhtml" />
       </list>
     </option>
   </component>
@@ -87,7 +192,7 @@
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
-    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_WARNINGS" value="true" />
     <option name="FILTER_INFO" value="true" />
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
@@ -142,6 +247,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -180,43 +287,84 @@
               <item name="baltupiu-softas" type="462c0819:PsiDirectoryNode" />
               <item name="project" type="462c0819:PsiDirectoryNode" />
               <item name="project-app" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="baltupiu-softas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="baltupiu-softas" type="462c0819:PsiDirectoryNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="project-app" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="project-app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="baltupiu-softas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="baltupiu-softas" type="462c0819:PsiDirectoryNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="project-domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="baltupiu-softas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="baltupiu-softas" type="462c0819:PsiDirectoryNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="project-domain" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="baltupiu-softas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="baltupiu-softas" type="462c0819:PsiDirectoryNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="project-domain" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="baltupiu-softas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="baltupiu-softas" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="project-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="baltupiu-softas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="baltupiu-softas" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="project-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="baltupiu-softas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="baltupiu-softas" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="project-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="baltupiu-softas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="baltupiu-softas" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="project-persistence" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="baltupiu-softas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="baltupiu-softas" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="project-persistence" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="baltupiu-softas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="baltupiu-softas" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="project-persistence" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="baltupiu-softas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="baltupiu-softas" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="project-persistence" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="baltupiu-softas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="baltupiu-softas" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="project-persistence" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="persistence" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -234,6 +382,9 @@
   <component name="RecentsManager">
     <key name="OPEN_URL_DIALOG">
       <recent name="https://github.com/maciukaite/tp.git" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\auma\Desktop\uni stuff\6 semestras\TP\baltupiu-softas\project\project-app\src\main\webapp" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\auma\Desktop\uni stuff\6 semestras\TP\baltupiu-softas\project\project-persistence\src\main\resources" />
@@ -301,7 +452,7 @@
       <listeners />
     </configuration>
     <configuration name="Unnamed" type="TomeeConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="TomEE 8.5.6" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="UPDATING_POLICY" value="restart-server" />
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
         <artifact name="project-app:war exploded">
           <settings>
@@ -406,51 +557,117 @@
       <workItem from="1522277157393" duration="145000" />
       <workItem from="1522423395451" duration="3751000" />
       <workItem from="1523952459984" duration="469000" />
+      <workItem from="1524041823323" duration="1001000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25630000" />
+    <option name="totallyTimeSpent" value="29604000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.4160363" side_tool="true" weight="0.32993197" />
-      <window_info anchor="bottom" id="Application Servers" order="8" sideWeight="0.4969743" weight="0.32993197" />
-      <window_info anchor="right" id="Maven Projects" order="3" weight="0.22163388" />
-      <window_info anchor="bottom" id="Database Changes" order="9" weight="0.3293718" />
-      <window_info anchor="right" id="CDI" order="4" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Designer" order="2" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.21558245" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="JSF" order="4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info id="Image Layers" order="2" />
-      <window_info anchor="bottom" id="Java Enterprise" order="8" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.19864176" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5839637" weight="0.237691" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28441754" />
-      <window_info anchor="right" id="Bean Validation" order="4" />
-      <window_info id="Web" order="2" side_tool="true" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="8" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Database Console" order="9" visible="true" weight="0.32993197" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="14" />
+      <window_info anchor="bottom" id="Event Log" order="15" sideWeight="0.4160363" side_tool="true" weight="0.32993197" />
+      <window_info anchor="bottom" id="Application Servers" order="21" sideWeight="0.4969743" weight="0.32993197" />
+      <window_info anchor="right" id="Maven Projects" order="16" visible="true" weight="0.22163388" />
+      <window_info anchor="bottom" id="Database Changes" order="22" weight="0.3293718" />
+      <window_info anchor="right" id="CDI" order="19" />
+      <window_info id="Capture Tool" order="12" />
+      <window_info id="Designer" order="14" />
+      <window_info anchor="right" id="Database" order="17" weight="0.21558245" />
+      <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="JSF" order="20" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info id="UI Designer" order="13" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="bottom" id="Messages" order="13" />
+      <window_info anchor="right" id="Palette&#9;" order="15" />
+      <window_info id="Image Layers" order="11" />
+      <window_info anchor="bottom" id="Java Enterprise" order="20" />
+      <window_info anchor="right" id="Capture Analysis" order="10" />
+      <window_info anchor="bottom" id="Version Control" order="18" weight="0.19864176" />
+      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.5839637" visible="true" weight="0.29032257" />
+      <window_info anchor="bottom" id="Terminal" order="17" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.28895614" />
+      <window_info anchor="right" id="Bean Validation" order="18" />
+      <window_info id="Web" order="10" side_tool="true" />
+      <window_info anchor="right" id="Theme Preview" order="13" />
+      <window_info id="Favorites" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="13" />
+      <window_info active="true" anchor="bottom" id="Run" order="4" sideWeight="0.5839637" visible="true" weight="0.29032257" />
+      <window_info anchor="bottom" id="Event Log" order="15" sideWeight="0.4160363" side_tool="true" weight="0.32993197" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.28895614" />
+      <window_info anchor="right" id="Capture Analysis" order="10" />
+      <window_info id="Favorites" order="9" side_tool="true" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Java Enterprise" order="20" />
+      <window_info anchor="right" id="Theme Preview" order="13" />
+      <window_info anchor="bottom" id="Application Servers" order="21" sideWeight="0.4969743" weight="0.32993197" />
+      <window_info anchor="right" id="Palette" order="14" />
+      <window_info anchor="right" id="Palette&#9;" order="15" />
+      <window_info anchor="right" id="Maven Projects" order="16" weight="0.22163388" />
+      <window_info id="Web" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="22" weight="0.3293718" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info id="Image Layers" order="11" />
+      <window_info anchor="right" id="Bean Validation" order="18" />
+      <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Database" order="17" visible="true" weight="0.21558245" />
+      <window_info id="Capture Tool" order="12" />
+      <window_info anchor="bottom" id="Version Control" order="18" weight="0.19864176" />
+      <window_info anchor="right" id="CDI" order="19" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="right" id="JSF" order="20" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="Database Console" order="23" visible="true" weight="0.32993197" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info id="UI Designer" order="13" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32993197" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="17" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info id="Designer" order="14" />
     </layout>
+    <layout-to-restore>
+      <window_info anchor="bottom" id="Application Servers" order="12" sideWeight="0.4969743" weight="0.32993197" />
+      <window_info id="Designer" order="7" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="bottom" id="Database Console" order="14" visible="true" weight="0.32993197" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5839637" weight="0.237691" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="JSF" order="11" />
+      <window_info id="UI Designer" order="6" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.4160363" side_tool="true" weight="0.32993197" />
+      <window_info anchor="bottom" id="Messages" order="7" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info id="Image Layers" order="4" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" />
+      <window_info anchor="bottom" id="Database Changes" order="13" weight="0.3293718" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.19864176" />
+      <window_info anchor="right" id="Maven Projects" order="7" weight="0.22163388" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28441754" />
+      <window_info anchor="right" id="Database" order="8" visible="true" weight="0.21558245" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="Web" order="3" side_tool="true" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="CDI" order="10" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32993197" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -459,13 +676,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/project/project-domain/src/main/java/lt/baltupiusoftas/project/domain/Item.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/project/project-domain/src/main/java/lt/baltupiusoftas/project/domain/Item.java" />
     <entry file="file://$PROJECT_DIR$/project/project-persistence/src/main/resources/META-INF/persistence.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -473,13 +684,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/project-domain/src/main/java/lt/baltupiusoftas/project/domain/PurchaseHistory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/project/project-domain/src/main/java/lt/baltupiusoftas/project/domain/PurchaseHistory.java" />
     <entry file="file://$PROJECT_DIR$/project/project-app/src/main/webapp/index.xhtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -487,13 +692,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/project-persistence/src/main/resources/create-db.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="55" column="29" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/project/project-persistence/src/main/resources/create-db.sql" />
     <entry file="file://$PROJECT_DIR$/project/project-app/src/main/webapp/WEB-INF/resources.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -501,22 +700,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/project-domain/src/main/java/lt/baltupiusoftas/project/domain/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/project/project-domain/src/main/java/lt/baltupiusoftas/project/domain/Message.java" />
     <entry file="file://$PROJECT_DIR$/project/project-persistence/src/main/resources/META-INF/persistence.xml" />
     <entry file="file://$PROJECT_DIR$/project/project-persistence/src/main/resources/META-INF/persistence.xml" />
-    <entry file="file://$PROJECT_DIR$/project/project-domain/src/main/java/lt/baltupiusoftas/project/domain/PurchaseHistory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/project/project-domain/src/main/java/lt/baltupiusoftas/project/domain/PurchaseHistory.java" />
     <entry file="file://$PROJECT_DIR$/project/project-app/src/main/webapp/index.xhtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -524,13 +711,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/project-persistence/src/main/resources/create-db.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="55" column="29" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/project/project-persistence/src/main/resources/create-db.sql" />
     <entry file="file://$PROJECT_DIR$/project/project-app/src/main/webapp/WEB-INF/resources.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -538,13 +719,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/project-domain/src/main/java/lt/baltupiusoftas/project/domain/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/project/project-domain/src/main/java/lt/baltupiusoftas/project/domain/Message.java" />
     <entry file="file://$PROJECT_DIR$/project/project-persistence/src/main/resources/META-INF/persistence.xml" />
     <entry file="file://$PROJECT_DIR$/project/project-domain/src/main/sql/sql statements.sql" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4d96d906-f22e-4f74-8658-d56a80c07acf/console.sql">
@@ -554,13 +729,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/project-domain/src/main/java/lt/baltupiusoftas/project/domain/Item.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/project/project-domain/src/main/java/lt/baltupiusoftas/project/domain/Item.java" />
     <entry file="file://$PROJECT_DIR$/project/project-domain/src/main/java/lt/baltupiusoftas/project/domain/Cart.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -568,13 +737,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/project-domain/src/main/java/lt/baltupiusoftas/project/domain/PurchasedItems.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="29" lean-forward="true" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/project/project-domain/src/main/java/lt/baltupiusoftas/project/domain/PurchasedItems.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/com/sun/org/apache/bcel/internal/util/ClassPath.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -603,13 +766,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/project-domain/src/main/java/lt/baltupiusoftas/project/domain/Item.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/project/project-domain/src/main/java/lt/baltupiusoftas/project/domain/Item.java" />
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -631,7 +788,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/project/project-app/src/main/webapp/examples-for-ui/Administratoriaus/mainWebpage.html" />
-    <entry file="file://$PROJECT_DIR$/project/project-app/src/main/webapp/examples-for-ui/Vartotojo/mainWebpage.html" />
     <entry file="das://table:/c45a69b/68275e32-8192-4201-8bb2-c0dc76b97dfc/TEST.PUBLIC.ADMINISTRATOR">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -654,20 +810,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/project/project-domain/src/main/sql/sql statements.sql" />
-    <entry file="file://$PROJECT_DIR$/project/project-domain/src/main/java/lt/baltupiusoftas/project/domain/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/project-domain/src/main/java/lt/baltupiusoftas/project/domain/PurchasedItems.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/project/project-domain/src/main/java/lt/baltupiusoftas/project/domain/PurchasedItems.java" />
     <entry file="file://$PROJECT_DIR$/project/project-domain/src/main/java/lt/baltupiusoftas/project/domain/Cart.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -696,27 +839,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/project-domain/src/main/java/lt/baltupiusoftas/project/domain/PurchaseHistory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/project-app/src/main/webapp/index.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/project-persistence/src/main/resources/create-db.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="55" column="29" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/project/project-domain/src/main/java/lt/baltupiusoftas/project/domain/PurchaseHistory.java" />
+    <entry file="file://$PROJECT_DIR$/project/project-persistence/src/main/resources/create-db.sql" />
     <entry file="file://$PROJECT_DIR$/project/project-app/src/main/webapp/WEB-INF/resources.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -724,23 +848,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/project-domain/src/main/java/lt/baltupiusoftas/project/domain/Message.java">
+    <entry file="file://$PROJECT_DIR$/project/project-domain/src/main/java/lt/baltupiusoftas/project/domain/Message.java" />
+    <entry file="file://$PROJECT_DIR$/project/project-domain/src/main/java/lt/baltupiusoftas/project/domain/Item.java" />
+    <entry file="file://$PROJECT_DIR$/project/project-persistence/src/main/resources/META-INF/persistence.xml" />
+    <entry file="file://$PROJECT_DIR$/project/project-domain/src/main/java/lt/baltupiusoftas/project/domain/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/project-app/src/main/webapp/index.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/project-app/src/main/java/lt/baltupiusoftas/project/app/user/UserLoginBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-123">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/project-app/src/main/webapp/login.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="80" selection-start-line="15" selection-start-column="80" selection-end-line="15" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/project-app/src/main/webapp/registration.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/project-app/src/main/java/lt/baltupiusoftas/project/app/user/UserRegistrationBean.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/project-domain/src/main/java/lt/baltupiusoftas/project/domain/Item.java">
+    <entry file="file://$PROJECT_DIR$/project/project-persistence/src/main/java/lt/baltupiusoftas/project/persistence/UserAddressRepositoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+        <state relative-caret-position="68">
+          <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/project-persistence/src/main/resources/META-INF/persistence.xml" />
-    <entry file="file://$PROJECT_DIR$/project/project-app/target/project-app/index.xhtml">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">
