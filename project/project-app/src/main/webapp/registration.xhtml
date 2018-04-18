@@ -10,12 +10,12 @@
 <h1>User registration</h1>
 <h:form id="registration-form">
     <h:outputLabel id="emailL" value="Email::" for="emailF"/>
-    <h:inputText id="emailF" value="#{username}"/> <br/>
+    <h:inputText id="emailF" value="#{userRegistrationBean.email}"/> <br/>
     <h:outputLabel id="password1L" value="Password:" for="password1F"/>
-    <h:inputSecret id="password1F" value="#{password1}"/> <br/>
+    <h:inputSecret id="password1F" value="#{userRegistrationBean.password}"/> <br/>
     <h:outputLabel id="password2L" value="Repeat password:" for="password2F"/>
-    <h:inputSecret id="password2F" value="#{password2}"/> <br/>
-    <h:commandButton id="registrationBtn" value="Create account" action="#{ultimateBean.helloWorld()}"/> <!-- action="#{tryRegistration()}"-->
+    <h:inputSecret id="password2F" value="#{userRegistrationBean.password}"/> <br/>
+    <h:commandButton id="registrationBtn" value="Create account" action="#{userRegistrationBean.register()}"/>
 </h:form>
 </body>
 </html>

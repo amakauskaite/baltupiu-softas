@@ -7,13 +7,13 @@
 >
 <head><title>Parduotuvė</title></head>
 <body>
-<h1>User login</h1>
+<h1>Vartotojo prisijungimas</h1>
 <h:form id="login-form">
     <h:outputLabel id="emailL" value="Email:" for="emailF"/>
     <h:inputText id="emailF" value="#{userLoginBean.email}"/> <br/>
     <h:outputLabel id="passwordL" value="Password:" for="passwordF"/>
     <h:inputSecret id="passwordF" value="#{userLoginBean.password}"/> <br/>
-    <h:commandButton id="loginBtn" value="Login" action="#{userLoginBean.login()}"/> <!-- action="#{tryLogin()}"-->
+    <h:commandButton id="loginBtn" value="Login" action="#{userLoginBean.login()}"/>
 </h:form>
 </body>
 </html>
