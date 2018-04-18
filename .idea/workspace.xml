@@ -7,23 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="571f1dbf-5fe6-4c2a-8821-61d6e64527e5" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/project/project-app/src/main/webapp/resources/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/project-app/project-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-app/project-app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-app/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-app/src/main/webapp/index.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/project-app/src/main/webapp/login.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-app/src/main/webapp/login.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/project-app/src/main/webapp/registration.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-app/src/main/webapp/registration.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/project-domain/project-domain.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-domain/project-domain.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/project-domain/target/classes/lt/baltupiusoftas/project/domain/Administrator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/project-domain/target/classes/lt/baltupiusoftas/project/domain/Cart.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/project-domain/target/classes/lt/baltupiusoftas/project/domain/Category.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/project-domain/target/classes/lt/baltupiusoftas/project/domain/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/project-domain/target/classes/lt/baltupiusoftas/project/domain/UserAddress.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/project-domain/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/project-domain/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/project-domain/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/project-domain/target/project-domain-1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/project-persistence/project-persistence.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-persistence/project-persistence.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/project-service/project-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-service/project-service.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project/project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-app/target/project-app/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-app/target/project-app/index.xhtml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/project/target/" />
     <ignored path="$PROJECT_DIR$/project/project-persistence/target/" />
@@ -56,8 +45,8 @@
       <file leaf-file-name="index.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/project-app/src/main/webapp/index.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+            <state relative-caret-position="119">
+              <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -74,17 +63,26 @@
       <file leaf-file-name="login.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/project-app/src/main/webapp/login.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+            <state relative-caret-position="68">
+              <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="registration.xhtml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="registration.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/project-app/src/main/webapp/registration.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+            <state relative-caret-position="190">
+              <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/project/project-app/src/main/webapp/resources/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -144,6 +142,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -180,8 +179,9 @@
         <option value="$PROJECT_DIR$/project/project-persistence/src/main/resources/META-INF/persistence.xml" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/project/project-app/src/main/webapp/index.xhtml" />
-        <option value="$PROJECT_DIR$/project/project-app/src/main/webapp/login.xhtml" />
         <option value="$PROJECT_DIR$/project/project-app/src/main/webapp/registration.xhtml" />
+        <option value="$PROJECT_DIR$/project/project-app/src/main/webapp/login.xhtml" />
+        <option value="$PROJECT_DIR$/project/project-app/src/main/webapp/resources/css/style.css" />
       </list>
     </option>
   </component>
@@ -322,6 +322,27 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="baltupiu-softas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="baltupiu-softas" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="project-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="baltupiu-softas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="baltupiu-softas" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="project-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -330,15 +351,16 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="classpath&#9;PSI&#9;JAVA://com.sun.org.apache.bcel.internal.util.ClassPath" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="H2" />
     <property name="last_opened_file_path" value="$USER_HOME$/h2database" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="SearchEverywhereHistoryKey" value="classpath&#9;PSI&#9;JAVA://com.sun.org.apache.bcel.internal.util.ClassPath" />
     <property name="settings.editor.selected.configurable" value="Errors" />
-    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="H2" />
   </component>
   <component name="RecentsManager">
     <key name="OPEN_URL_DIALOG">
@@ -522,16 +544,15 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32029000" />
+    <option name="totallyTimeSpent" value="36264000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="14" />
       <window_info anchor="bottom" id="Event Log" order="15" sideWeight="0.4160363" side_tool="true" weight="0.32993197" />
       <window_info anchor="bottom" id="Application Servers" order="21" sideWeight="0.4969743" weight="0.3293718" />
-      <window_info anchor="right" id="Maven Projects" order="16" visible="true" weight="0.22163388" />
+      <window_info anchor="right" id="Maven Projects" order="16" weight="0.22163388" />
       <window_info anchor="bottom" id="Database Changes" order="22" weight="0.3293718" />
       <window_info anchor="right" id="CDI" order="19" />
       <window_info id="Capture Tool" order="12" />
@@ -549,9 +570,9 @@
       <window_info anchor="bottom" id="Java Enterprise" order="20" />
       <window_info anchor="right" id="Capture Analysis" order="10" />
       <window_info anchor="bottom" id="Version Control" order="18" weight="0.19864176" />
-      <window_info active="true" anchor="bottom" id="Run" order="4" sideWeight="0.5839637" visible="true" weight="0.23259762" />
+      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.5839637" weight="0.39728352" />
       <window_info anchor="bottom" id="Terminal" order="17" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.22995462" />
+      <window_info content_ui="combo" id="Project" order="2" weight="0.22995462" />
       <window_info anchor="right" id="Bean Validation" order="18" />
       <window_info id="Web" order="10" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="13" />
@@ -595,28 +616,29 @@
     <layout-to-restore>
       <window_info anchor="bottom" id="Application Servers" order="12" sideWeight="0.4969743" weight="0.32993197" />
       <window_info id="Designer" order="7" />
-      <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="bottom" id="Database Console" order="14" visible="true" weight="0.32993197" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5839637" weight="0.237691" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info id="Image Layers" order="4" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.5839637" visible="true" weight="0.29032257" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" id="JSF" order="11" />
       <window_info id="UI Designer" order="6" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info id="Capture Tool" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="JSF" order="11" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.4160363" side_tool="true" weight="0.32993197" />
       <window_info anchor="bottom" id="Messages" order="7" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info id="Image Layers" order="4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="13" weight="0.3293718" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.19864176" />
       <window_info anchor="right" id="Maven Projects" order="7" weight="0.22163388" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28441754" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32993197" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28895614" />
       <window_info anchor="right" id="Database" order="8" visible="true" weight="0.21558245" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Web" order="3" side_tool="true" />
@@ -625,9 +647,8 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="CDI" order="10" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32993197" />
-      <window_info anchor="right" id="Bean Validation" order="9" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -637,7 +658,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/project/project-domain/src/main/java/lt/baltupiusoftas/project/domain/Item.java" />
     <entry file="file://$PROJECT_DIR$/project/project-persistence/src/main/resources/META-INF/persistence.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -819,20 +839,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/project-app/src/main/webapp/index.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/project-app/src/main/java/lt/baltupiusoftas/project/app/user/UserLoginBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-106">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project/project-persistence/src/main/java/lt/baltupiusoftas/project/persistence/UserAddressRepositoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -887,17 +893,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/project-app/src/main/webapp/login.xhtml">
+    <entry file="file://$PROJECT_DIR$/project/project-app/src/main/java/lt/baltupiusoftas/project/app/user/UserLoginBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+        <state relative-caret-position="-106">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/project-app/src/main/webapp/index.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/project/project-app/src/main/webapp/registration.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+        <state relative-caret-position="190">
+          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/project-app/src/main/webapp/login.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/project-app/src/main/webapp/resources/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
         </state>
       </provider>
     </entry>
