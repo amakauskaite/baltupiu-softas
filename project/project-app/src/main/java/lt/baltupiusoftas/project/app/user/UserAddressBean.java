@@ -32,6 +32,11 @@ public class UserAddressBean implements Serializable {
         userAddress = userAddressService.updateUserAddress(userAddress, country, city, street, house, flat, postcode);
     }
 
+    @Transactional(Transactional.TxType.REQUIRED)
+    public void createAddress () {
+        userAddress = userAddressService.createUserAddress(country, city, street, house, flat, postcode);
+    }
+
 
     public UserAddress getUserAddress() {
         return userAddress;

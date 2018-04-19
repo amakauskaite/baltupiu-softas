@@ -2,6 +2,7 @@ package lt.baltupiusoftas.project.app;
 
 import lt.baltupiusoftas.project.app.user.UserAddressBean;
 import lt.baltupiusoftas.project.app.user.UserLoginBean;
+import lt.baltupiusoftas.project.app.user.UserPasswordUpdateBean;
 import lt.baltupiusoftas.project.app.user.UserRegistrationBean;
 import lt.baltupiusoftas.project.domain.*;
 import lt.baltupiusoftas.project.persistence.CartDao;
@@ -25,9 +26,10 @@ public class UltimateBean {
 
     @Inject
     private UserLoginBean userLoginBean;
-//
-//    @Inject
-//    private UserAddressBean userAddressBean;
+
+
+    @Inject
+    private UserPasswordUpdateBean userPasswordUpdateBean;
 
     @Inject
     private UserRegistrationBean userRegistrationBean;
@@ -35,7 +37,9 @@ public class UltimateBean {
     @Transactional
     public String helloWorld() {
 
-        //registraate user
+        String result = "";
+
+        //registrate user
         userRegistrationBean.setCity("vilnius");
         userRegistrationBean.setCountry("lithuania");
         userRegistrationBean.setEmail("mail@email.com");
@@ -48,56 +52,68 @@ public class UltimateBean {
         userRegistrationBean.setStreet("street");
         userRegistrationBean.setPostcode("1111");
         userRegistrationBean.register();
-
         if (userRegistrationBean.getUser() != null) {
-            return "Registered with email " + userRegistrationBean.getEmail();
+            result += "Registered with email " + userRegistrationBean.getEmail();
         } else {
-            return "User exist";
+            result +=  "User exist";
         }
 
-//        userLoginBean.setEmail("mail@email.com");
-//        userLoginBean.setPassword("secret");
-//
-//        return userLoginBean.getUser().getFirstname();
-//        // Create category
-//        Category category = new Category("Entirety");
-//
-//        /* Persist */
-//        categoryDao.create(category);
-//
-//        // Create product
-//        Product product = new Product(category, "0000", "Shampoo", new BigDecimal(20), "veri good shampoo", null, null);
-//
-//        /* Persist */
-//        productDao.create(product);
-//
-//        // Create user
-//        User user = new User("i@am", "FistName", "LastName", "qwerty", "666566",
-//                new UserAddress("Lithuania", "Vilnius", "Street", "00", "0", "000"));
-//        /* Persist */
-//        userDao.create(user);
-//
-//        // Create cart
-//        Cart cart = new Cart(user);
-//
-//        /* Persist */
-//        cartDao.create(cart);
-//
-//        /*
-//         * Buy some of that Shampoo
-//         */
-//        cart.getItems().add(new CartItem(product));
-//        cart.getItems().add(new CartItem(product));
-//
-//        /* Persist */
-//        cartDao.update(cart);
-//
-//        // Harvest
-//
-//        List<Cart> cartList = cartDao.findUserCarts(user.getId());
-//        Cart myCart = cartList.get(0);
-//
-//        return String.format("I'm trying to buy %s for %f", myCart.getItems().get(0).getProduct().getName(),
-//                myCart.getItems().get(0).getProduct().getPrice());
+        result += "\n";
+
+        userLoginBean.setEmail("mail@email.com");
+        userLoginBean.setPassword("secret");
+        userLoginBean.login();
+
+        if (userLoginBean.getUser() != null) {
+            result += "Login with email " + userLoginBean.getEmail();
+
+
+
+        } else {
+            result += "Cannot find user to login";
+        }
+
+        result += "\n";
+
+
+
+
+        return result;
+    }
+
+    public String update () {
+        String result = "";
+        if (userLoginBean.getUser() != null) {
+            userPasswordUpdateBean.setUser(userLoginBean.getUser());
+            userPasswordUpdateBean.setNewPassword("secret1");
+            userPasswordUpdateBean.setOldPassword("secret");
+            userPasswordUpdateBean.updatePassword();
+
+            if (userPasswordUpdateBean.isUpdated()) {
+                result += "Password updated";
+            } else {
+                result += "Password not updated";
+            }
+
+            userLoginBean.logout();
+
+            userLoginBean.setEmail("mail@email.com");
+            userLoginBean.setPassword("secret1");
+            userLoginBean.login();
+
+            if (userLoginBean.getUser() != null) {
+                result += "Login with email " + userLoginBean.getEmail();
+
+
+
+            } else {
+                result += "Cannot find user to login";
+            }
+
+            result += "\n";
+
+        }
+
+        return  result;
     }
 }
