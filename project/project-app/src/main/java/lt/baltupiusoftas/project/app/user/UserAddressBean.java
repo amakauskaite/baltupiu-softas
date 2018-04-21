@@ -3,9 +3,7 @@ package lt.baltupiusoftas.project.app.user;
 import lt.baltupiusoftas.project.domain.UserAddress;
 import lt.baltupiusoftas.project.service.user.address.UserAddressService;
 
-import javax.enterprise.inject.Model;
-import javax.faces.bean.RequestScoped;
-import javax.faces.bean.SessionScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.transaction.Transactional;
@@ -16,8 +14,8 @@ import java.io.Serializable;
 public class UserAddressBean implements Serializable {
 
     private String country;
-    private String city; 
-    private String street; 
+    private String city;
+    private String street;
     private String house;
     private String flat;
     private String postcode;
@@ -27,9 +25,17 @@ public class UserAddressBean implements Serializable {
     @Inject
     private UserAddressService userAddressService;
 
+    @Inject
+    private  UserLoginBean userLoginBean;
+
     @Transactional(Transactional.TxType.REQUIRED)
     public void updateAddress () {
         userAddress = userAddressService.updateUserAddress(userAddress, country, city, street, house, flat, postcode);
+    }
+
+    @Transactional(Transactional.TxType.REQUIRED)
+    public void createAddress () {
+        userAddress = userAddressService.createUserAddress(country, city, street, house, flat, postcode, userLoginBean.getUser());
     }
 
 

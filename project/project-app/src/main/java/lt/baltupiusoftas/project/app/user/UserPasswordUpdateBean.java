@@ -11,7 +11,8 @@ import javax.inject.Named;
 import javax.transaction.Transactional;
 import java.io.Serializable;
 
-@Model
+@Named
+@SessionScoped
 public class UserPasswordUpdateBean implements Serializable {
 
 
@@ -19,14 +20,15 @@ public class UserPasswordUpdateBean implements Serializable {
     private UserService userService;
     @Inject
     private PasswordHashingService passwordHashing;
-    @Inject
-    private UserLoginBean userLoginBean;
+
 
     private String newPassword;
 
     private String oldPassword;
 
-    private User user = userLoginBean.getUser();
+    private boolean updated = false;
+
+    private User user;
 
     public User getUser() {
         return user;
@@ -52,10 +54,21 @@ public class UserPasswordUpdateBean implements Serializable {
         this.oldPassword = oldPassword;
     }
 
+    public boolean isUpdated() {
+        return updated;
+    }
+
+    public void setUpdated(boolean updated) {
+        this.updated = updated;
+    }
+
     @Transactional(Transactional.TxType.REQUIRED)
     public void updatePassword () {
 
-        user =  userService.updatePassword(user, passwordHashing.hashPassword(newPassword));
+        String old = user.getPassword();
 
+        user =  userService.updatePassword(user, passwordHashing.hashPassword(oldPassword), passwordHashing.hashPassword(newPassword));
+
+        updated = ! user.getPassword().equals(old) ;
     }
 }

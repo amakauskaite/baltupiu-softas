@@ -42,7 +42,7 @@ public class UserRegistrationBean{
 
 @Transactional(Transactional.TxType.REQUIRED)
     public void register() {
-        user = userService.register(email, passwordHashingService.hashPassword(password), firstname, lastname, phoneNumber, userAddressService.createUserAddress(country, city, street, house, flat, postcode));
+        user = userService.register(email, passwordHashingService.hashPassword(password), firstname, lastname, phoneNumber);
     }
 
     public User getUser() {

@@ -1,8 +1,5 @@
 package lt.baltupiusoftas.project.domain;
 
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
-
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -13,11 +10,6 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name="USER")
-@EqualsAndHashCode(of = "email")
-@ToString(of = {"email", "firstname", "lastname"})
-@NamedQueries({
-        @NamedQuery(name="User.findByEmail",query="SELECT c FROM User c WHERE c.email = :email")
-})
 public class User implements Serializable{
 
     @Id

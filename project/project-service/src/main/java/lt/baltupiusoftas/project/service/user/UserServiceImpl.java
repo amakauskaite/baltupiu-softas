@@ -20,7 +20,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public User register(String email, String password, String firstname, String lastname, String phoneNumber, UserAddress address) {
+    public User register(String email, String password, String firstname, String lastname, String phoneNumber) {
         User user = userDao.findByEmail(email);
         if (user == null) {
             user = new User();
@@ -30,7 +30,6 @@ public class UserServiceImpl implements UserService{
             user.setLastname(lastname);
             user.setBlocked(false);
             user.setPhonenumber(phoneNumber);
-            user.setUserAddress(address);
             return userDao.create(user);
         }
         return null;
@@ -38,9 +37,13 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public User updatePassword(User user,  String newPassword) {
+    public User updatePassword(User user,  String oldPassword, String newPassword) {
+        if (user.getPassword().equals(oldPassword)) {
             user.setPassword(newPassword);
             return userDao.update(user);
+
+        }
+        return user;
     }
 
 

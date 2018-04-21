@@ -28,14 +28,17 @@ public class UserLoginBean implements Serializable {
 
     @Transactional(Transactional.TxType.REQUIRED)
     public void login () {
-        user = userService.login(email, passwordHashing.hashPassword(password));
+        if (user == null) {
+            user = userService.login(email, passwordHashing.hashPassword(password));
+            password = null;
 //        userAddressBean.setUserAddress(user.getUserAddress());
-    }
+
+        }
+        }
 
     public void logout () {
         user = null;
         email = null;
-        password = null;
 //        userAddressBean.setUserAddress(null);
 
     }
@@ -63,6 +66,5 @@ public class UserLoginBean implements Serializable {
     public void setUser(User user) {
         this.user = user;
         email = user.getEmail();
-        password = user.getPassword();
     }
 }
