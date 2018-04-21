@@ -11,7 +11,8 @@ import javax.inject.Named;
 import javax.transaction.Transactional;
 import java.io.Serializable;
 
-@Model
+@Named
+@SessionScoped
 public class UserPasswordUpdateBean implements Serializable {
 
 
