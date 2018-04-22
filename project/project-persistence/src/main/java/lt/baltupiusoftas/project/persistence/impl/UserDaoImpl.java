@@ -10,4 +10,8 @@ import lt.baltupiusoftas.project.persistence.impl.GenericDaoImpl;
  * @author Audrius Tvarijonas
  */
 public class UserDaoImpl extends GenericDaoImpl<User> implements UserDao {
+    @Override
+    public User findByEmail(String email) {
+        return null;
+    }
 }

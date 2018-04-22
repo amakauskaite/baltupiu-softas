@@ -8,4 +8,6 @@ import lt.baltupiusoftas.project.domain.User;
  * @author Audrius Tvarijonas
  */
 public interface UserDao extends GenericDao<User> {
+    User findByEmail (String email);
+
 }

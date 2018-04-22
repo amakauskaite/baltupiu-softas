@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+        xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+
+    <persistence-unit name="ApplicationPersistence">
+        <description> Persistence unit for application </description>
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <jta-data-source>ForumDataSource</jta-data-source>
+        <class>lt.baltupiusoftas.project.domain.Administrator</class>
+        <class>lt.baltupiusoftas.project.domain.Cart</class>
+        <class>lt.baltupiusoftas.project.domain.CartItem</class>
+        <class>lt.baltupiusoftas.project.domain.Category</class>
+        <class>lt.baltupiusoftas.project.domain.Product</class>
+        <class>lt.baltupiusoftas.project.domain.User</class>
+        <class>lt.baltupiusoftas.project.domain.UserAddress</class>
+
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <!-- TODO remove in production -->
+            <property name="hibernate.show_sql" value="true" />
+            <!-- TODO create-drop for developing purposes, change to validate, update in production -->
+            <property name="hibernate.hbm2ddl.auto" value="create-drop" />
+            <!-- TODO TomEE fix, maybe should be relocated to TomEE config -->
+            <property name="tomee.jpa.factory.lazy" value="true" />
+        </properties>
+    </persistence-unit>
+</persistence>

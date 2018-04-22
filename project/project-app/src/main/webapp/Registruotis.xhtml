@@ -3,6 +3,7 @@
                 xmlns:f="http://xmlns.jcp.org/jsf/core"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:pa="http://xmlns.jcp.org/jsf/passthrough"
                 xmlns:p="http://primefaces.org/ui">
 
     <ui:define name="title"> Application </ui:define>
@@ -13,54 +14,17 @@
 
     <!-- Content starts here -->
     <ui:define name="content">
-        <form>
-            <table>
-                <tr>
-                    <td><label>vardas</label></td>
-                    <td><input type="text" name="vardas"/></td>
-                </tr>
-                <tr>
-                    <td><label>pavardė</label></td>
-                    <td><input type="text" name="pavardė"/></td>
-                </tr>
-                <tr>
-                    <td><label>el. paštas</label></td>
-                    <td><input type="text" name="elpaštas"/></td>
-                </tr>
-                <tr>
-                    <td><label>miestas</label></td>
-                    <td><input type="text" name="elpaštas"/></td>
-                </tr>
-                <tr>
-                    <td><label>adresas: </label></td>
-                    <td><label>gatvė</label></td>
-                    <td><input type="text" name="gatvė"/></td>
-                    <td><label>numeris</label></td>
-                    <td><input type="text" name="numeris"/></td>
-                    <td><label>butas</label></td>
-                    <td><input type="text" name="butas"/></td>
-                </tr>
-                <tr>
-                    <td><label>apskritis</label></td>
-                    <td><input type="text" name="apskritis"/></td>
-                </tr>
-                <tr>
-                    <td><label>pašto kodas</label></td>
-                    <td><input type="text" name="paštokodas"/></td>
-                </tr>
-                <tr>
-                    <td><label>slaptažodis</label></td>
-                    <td><input type="password" name="slaptažodis"/></td>
-                </tr>
-                <tr>
-                    <td><label>pakartoti slaptažodį</label></td>
-                    <td><input type="password" name=" pakartoti slaptažodį"/></td>
-                </tr>
-                <tr>
-                    <td><input type="submit" value="Registruotis"/></td>
-                </tr>
-            </table>
-        </form>
+        <h:form id="registration-form">
+            <h2>Naujo vartotojo registracija</h2>
+            <h:inputText id="firstname" pa:class="nameInput" pa:placeholder="Vardas" value="#{userRegistrationBean.firstname}"/>
+            <h:inputText id="lastname"  pa:class="nameInput" pa:placeholder="Pavardė" value="#{userRegistrationBean.lastname}"/><br/>
+            <h:inputText id="phonenumber" pa:placeholder="Mobiliojo telefono numeris" pa:maxlenght="11" value="#{userRegistrationBean.phoneNumber}"/><br/>
+            <h:inputText id="email" pa:placeholder="El. paštas" pa:type="email" value="#{userRegistrationBean.email}"/> <br/>
+            <h:inputSecret id="password1Field" pa:placeholder="Slaptažodis" value="#{userRegistrationBean.password}"/> <br/>
+            <h:inputSecret id="password2Field" pa:placeholder="Pakartokite slaptažodį" value="#{userRegistrationBean.password}"/> <br/>
+            <h:commandButton id="registrationBtn" styleClass="form-buttons" value="Sukurti paskyrą" action="#{userRegistrationBean.register()}"/>
+            <input id="resetBtn" type="reset" />
+        </h:form>
     </ui:define>
     <!-- Content ends here -->
 
