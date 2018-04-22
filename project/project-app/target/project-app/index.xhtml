@@ -1,0 +1,61 @@
+<<<<<<< HEAD:project/project-app/src/main/webapp/index.xhtml
+<ui:composition template="masterTemplate.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="title"> Application </ui:define>
+
+    <!-- -->
+    <!-- Define custom header here -->
+    <!-- -->
+
+    <!-- Content starts here -->
+    <ui:define name="content">
+        <div>
+            <form>
+                <select name="Rūšiuoti">
+                    <option value="nuopigiausioikibrangiausio">nuo pigiausios iki brangiausios</option>
+                    <option value="nuobrangiausiosikipigiausios">nuo brangiausios iki pigiausios</option>
+                </select>
+            </form>
+        </div>
+        <div id="element1">
+            <ul class="Kategorijos">
+                <li class="Kategorijos_li"><a class="Kategorijos_a" href="#k1">Maistas</a></li>
+                <li class="Kategorijos_li"><a class="Kategorijos_a" href="#k2">Kiti dalykai</a></li>
+                <li class="Kategorijos_li"><a class="Kategorijos_a" href="#k3">...</a></li>
+            </ul>
+        </div>
+        <div id="element2">
+            <ul id="Sarasas">
+                <h:outputLink value="DetaliPreke.xhtml">
+                    <li>Prekės pavadinimas, Kaina</li>
+                </h:outputLink>
+            </ul>
+        </div>
+    </ui:define>
+    <!-- Content ends here -->
+
+    <!-- -->
+    <!-- Define custom footer here -->
+    <!-- -->
+
+</ui:composition>
+=======
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+>
+<h:head><title>Parduotuvė</title></h:head>
+<body>
+    <h:link id="index-login" value="Login" outcome="login" /> <br/>
+    <h:link id="index-registration" value="Registation" outcome="registration" />
+</body>
+</html>
+>>>>>>> user_login_registration_backend:project/project-app/target/project-app/index.xhtml
