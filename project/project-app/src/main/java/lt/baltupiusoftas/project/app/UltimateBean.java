@@ -39,7 +39,7 @@ public class UltimateBean {
         userRegistrationBean.setLastname("surname");
         userRegistrationBean.setStreet("street");
         userRegistrationBean.setPostcode("1111");
-        userRegistrationBean.register();
+        result += userRegistrationBean.register();
         if (userRegistrationBean.getUser() != null) {
             result += "Registered with email " + userRegistrationBean.getEmail();
         } else {
@@ -50,7 +50,7 @@ public class UltimateBean {
 
         userLoginBean.setEmail("mail@email.com");
         userLoginBean.setPassword("secret");
-        userLoginBean.login();
+        result += userLoginBean.login();
 
         if (userLoginBean.getUser() != null) {
             result += "Login with email " + userLoginBean.getEmail();
