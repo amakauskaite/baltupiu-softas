@@ -24,6 +24,7 @@
     <orderEntry type="module" module-name="project-domain" />
     <orderEntry type="module" module-name="project-service" />
     <orderEntry type="module" module-name="project-persistence" />
+    <orderEntry type="library" name="Maven: org.primefaces:primefaces:6.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax:javaee-api:7.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.sun.mail:javax.mail:1.5.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.activation:activation:1.1" level="project" />
