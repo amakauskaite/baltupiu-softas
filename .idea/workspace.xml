@@ -6,7 +6,19 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="571f1dbf-5fe6-4c2a-8821-61d6e64527e5" name="Default" comment="" />
+    <list default="true" id="571f1dbf-5fe6-4c2a-8821-61d6e64527e5" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-app/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-app/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-app/target/project-app.war" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-app/target/project-app.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-app/target/project-app/WEB-INF/lib/project-domain-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-app/target/project-app/WEB-INF/lib/project-domain-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-app/target/project-app/WEB-INF/lib/project-persistence-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-app/target/project-app/WEB-INF/lib/project-persistence-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-app/target/project-app/WEB-INF/lib/project-service-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-app/target/project-app/WEB-INF/lib/project-service-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-domain/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-domain/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-domain/target/project-domain-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-domain/target/project-domain-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-service/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-service/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-service/target/project-service-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-service/target/project-service-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project-service/target/surefire-reports/lt.baltupiusoftas.project.service.messaging.MessagingServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/project/project-service/target/surefire-reports/lt.baltupiusoftas.project.service.messaging.MessagingServiceTest.txt" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/project/target/" />
     <ignored path="$PROJECT_DIR$/project/project-persistence/target/" />
     <ignored path="$PROJECT_DIR$/project/project-app/target/" />
@@ -47,7 +59,7 @@
       <file leaf-file-name="UserLoginBean.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/project-app/src/main/java/lt/baltupiusoftas/project/app/user/UserLoginBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
+            <state relative-caret-position="102">
               <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
             </state>
           </provider>
@@ -56,8 +68,8 @@
       <file leaf-file-name="login.xhtml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/project/project-app/src/main/webapp/login.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="46" lean-forward="true" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+            <state relative-caret-position="119">
+              <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -83,7 +95,7 @@
       <file leaf-file-name="UserRegistrationBean.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/project-app/src/main/java/lt/baltupiusoftas/project/app/user/UserRegistrationBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
+            <state relative-caret-position="85">
               <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
             </state>
           </provider>
@@ -110,7 +122,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="user-interface" />
+        <entry key="$PROJECT_DIR$" value="user" />
       </map>
     </option>
   </component>
@@ -150,6 +162,13 @@
     <option name="FILTER_INFO" value="true" />
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
@@ -196,6 +215,7 @@
       </profile-state>
     </entry>
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -365,6 +385,16 @@
       </option>
       <patterns />
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <module name="" />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -498,7 +528,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36578000" />
+    <option name="totallyTimeSpent" value="37366000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -506,39 +536,62 @@
     <layout>
       <window_info anchor="right" id="Palette" order="14" />
       <window_info anchor="bottom" id="Event Log" order="15" sideWeight="0.4160363" side_tool="true" weight="0.32993197" />
-      <window_info anchor="bottom" id="Application Servers" order="21" sideWeight="0.4969743" weight="0.32993197" />
-      <window_info anchor="right" id="Maven Projects" order="16" weight="0.22163388" />
+      <window_info anchor="bottom" id="Application Servers" order="21" sideWeight="0.4969743" weight="0.3293718" />
+      <window_info anchor="right" id="Maven Projects" order="16" visible="true" weight="0.22163388" />
       <window_info anchor="bottom" id="Database Changes" order="22" weight="0.3293718" />
       <window_info anchor="right" id="CDI" order="19" />
       <window_info id="Capture Tool" order="12" />
       <window_info id="Designer" order="14" />
-      <window_info anchor="right" id="Database" order="17" visible="true" weight="0.21558245" />
+      <window_info anchor="right" id="Database" order="17" weight="0.21558245" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="JSF" order="20" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info id="UI Designer" order="13" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="right" id="Palette&#9;" order="15" />
       <window_info id="Image Layers" order="11" />
       <window_info anchor="bottom" id="Java Enterprise" order="20" />
       <window_info anchor="right" id="Capture Analysis" order="10" />
       <window_info anchor="bottom" id="Version Control" order="18" weight="0.19864176" />
-      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.5839637" weight="0.29032257" />
+      <window_info active="true" anchor="bottom" id="Run" order="4" sideWeight="0.5839637" visible="true" weight="0.32088286" />
       <window_info anchor="bottom" id="Terminal" order="17" />
       <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.2934947" />
       <window_info anchor="right" id="Bean Validation" order="18" />
       <window_info id="Web" order="10" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="13" />
       <window_info id="Favorites" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="13" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.5839637" weight="0.29032257" />
+      <window_info anchor="bottom" id="Event Log" order="15" sideWeight="0.4160363" side_tool="true" weight="0.32993197" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.2934947" />
+      <window_info anchor="right" id="Capture Analysis" order="10" />
+      <window_info id="Favorites" order="9" side_tool="true" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="17" />
+      <window_info anchor="bottom" id="Application Servers" order="21" sideWeight="0.4969743" weight="0.32993197" />
+      <window_info anchor="right" id="Palette" order="14" />
+      <window_info anchor="right" id="Palette&#9;" order="15" />
+      <window_info anchor="right" id="Maven Projects" order="16" weight="0.22163388" />
+      <window_info anchor="bottom" id="Database Changes" order="22" weight="0.3293718" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info id="Image Layers" order="11" />
+      <window_info anchor="right" id="Theme Preview" order="13" />
+      <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32993197" />
+      <window_info id="Capture Tool" order="12" />
+      <window_info anchor="bottom" id="Version Control" order="18" weight="0.19864176" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Database Console" order="23" visible="true" weight="0.32993197" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32993197" />
+      <window_info id="UI Designer" order="13" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Messages" order="13" />
+      <window_info anchor="right" id="Database" order="17" visible="true" weight="0.21558245" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info id="Designer" order="14" />
     </layout>
     <layout-to-restore>
       <window_info anchor="bottom" id="Application Servers" order="12" sideWeight="0.4969743" weight="0.32993197" />
@@ -653,13 +706,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/c45a69b/68275e32-8192-4201-8bb2-c0dc76b97dfc/TEST.PUBLIC.ADMINISTRATOR">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://table:/c45a69b/68275e32-8192-4201-8bb2-c0dc76b97dfc/TEST.PUBLIC.ADMINISTRATOR" />
     <entry file="file://$PROJECT_DIR$/project/project-app/src/main/webapp/index.xhtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -696,13 +743,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/project/project-app/src/main/webapp/examples-for-ui/Administratoriaus/mainWebpage.html" />
-    <entry file="das://table:/c45a69b/68275e32-8192-4201-8bb2-c0dc76b97dfc/TEST.PUBLIC.ADMINISTRATOR">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://table:/c45a69b/68275e32-8192-4201-8bb2-c0dc76b97dfc/TEST.PUBLIC.ADMINISTRATOR" />
     <entry file="file://$PROJECT_DIR$/project/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -767,24 +808,17 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/project/project-persistence/src/main/java/lt/baltupiusoftas/project/persistence/UserAddressRepositoryImpl.java" />
-    <entry file="file://$PROJECT_DIR$/project/project-app/src/main/java/lt/baltupiusoftas/project/app/user/UserRegistrationBean.java">
+    <entry file="file://$PROJECT_DIR$/project/project-app/src/main/webapp/index.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        <state relative-caret-position="119">
+          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/project/project-app/src/main/java/lt/baltupiusoftas/project/app/user/UserLoginBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
+        <state relative-caret-position="102">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/project-app/src/main/webapp/index.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -802,10 +836,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/project/project-app/src/main/java/lt/baltupiusoftas/project/app/user/UserRegistrationBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/project/project-app/src/main/webapp/login.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="46" lean-forward="true" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+        <state relative-caret-position="119">
+          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
         </state>
       </provider>
     </entry>
