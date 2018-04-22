@@ -23,23 +23,27 @@ public class UserLoginBean implements Serializable {
     private UserService userService;
     @Inject
     private PasswordHashingService passwordHashing;
-//    @Inject
-//    private UserAddressBean userAddressBean;
 
     @Transactional(Transactional.TxType.REQUIRED)
-    public void login () {
+    public String login () {
         if (user == null) {
-            user = userService.login(email, passwordHashing.hashPassword(password));
-            password = null;
-//        userAddressBean.setUserAddress(user.getUserAddress());
+            user = userService.login(email, password);
+            if (user == null) {
+                return "error_login_user_do_not_exist";
+
+            } else {
+                return "success_login_user";
+            }
 
         }
+        return "error_login_user_is_not_null";
         }
 
-    public void logout () {
+    public String logout () {
         user = null;
         email = null;
-//        userAddressBean.setUserAddress(null);
+        password = null;
+        return "success_logout_user";
 
     }
 
@@ -56,7 +60,7 @@ public class UserLoginBean implements Serializable {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = passwordHashing.hashPassword(password);
     }
 
     public User getUser() {

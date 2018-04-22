@@ -1,8 +1,6 @@
 package lt.baltupiusoftas.project.app;
 
-import lt.baltupiusoftas.project.app.user.UserAddressBean;
 import lt.baltupiusoftas.project.app.user.UserLoginBean;
-import lt.baltupiusoftas.project.app.user.UserPasswordUpdateBean;
 import lt.baltupiusoftas.project.app.user.UserRegistrationBean;
 
 import javax.enterprise.inject.Model;
@@ -20,12 +18,6 @@ public class UltimateBean {
     @Inject
     private UserLoginBean userLoginBean;
 
-    @Inject
-    private UserAddressBean userAddressBean;
-
-
-    @Inject
-    private UserPasswordUpdateBean userPasswordUpdateBean;
 
     @Inject
     private UserRegistrationBean userRegistrationBean;
@@ -72,66 +64,10 @@ public class UltimateBean {
         result += "\n";
 
 
-        userAddressBean.setCity("vilnius");
-        userAddressBean.setCountry("lithuania");
-        userAddressBean.setFlat("101");
-        userAddressBean.setHouse("10");
-        userAddressBean.setPostcode("100001");
-        userAddressBean.setStreet("didlaukio g.");
-        userAddressBean.createAddress();
-
-        if (userAddressBean.getUserAddress() != null) {
-            result += "address added @" + userAddressBean.getCity();
-            userAddressBean.setStreet("not didlaukio g.");
-            userAddressBean.updateAddress();
-            result += " " + userAddressBean.getUserAddress().getStreet();
-        } else {
-            result += "ADDRESS NOT ADDED";
-        }
 
 
 
 
         return result;
-    }
-
-
-    public String update () {
-        System.out.println(userLoginBean.getUser().getPassword());
-        String result = "";
-        if (userLoginBean.getUser() != null) {
-            System.out.println(userLoginBean.getUser().getPassword());
-            userPasswordUpdateBean.setUser(userLoginBean.getUser());
-            userPasswordUpdateBean.setNewPassword("secret1");
-            userPasswordUpdateBean.setOldPassword("secret");
-            userPasswordUpdateBean.updatePassword();
-
-            if (userPasswordUpdateBean.isUpdated()) {
-                System.out.println(userLoginBean.getUser().getPassword());
-                result += "Password updated";
-            } else {
-                result += "Password not updated";
-            }
-
-//            userLoginBean.logout();
-//
-//            userLoginBean.setEmail("mail@email.com");
-//            userLoginBean.setPassword("secret1");
-//            userLoginBean.login();
-//
-//            if (userLoginBean.getUser() != null) {
-//                result += "Login with email " + userLoginBean.getEmail();
-//
-//
-//
-//            } else {
-//                result += "Cannot find user to login";
-//            }
-//
-//            result += "\n";
-
-        }
-
-        return  result;
     }
 }

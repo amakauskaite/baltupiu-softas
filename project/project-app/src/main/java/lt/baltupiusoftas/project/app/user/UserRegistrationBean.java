@@ -20,11 +20,7 @@ public class UserRegistrationBean{
     private UserService userService;
 
     @Inject
-    private UserAddressService userAddressService;
-
-    @Inject
     private PasswordHashingService passwordHashingService;
-
 
     private String country;
     private String city;
@@ -41,8 +37,15 @@ public class UserRegistrationBean{
 
 
 @Transactional(Transactional.TxType.REQUIRED)
-    public void register() {
-        user = userService.register(email, passwordHashingService.hashPassword(password), firstname, lastname, phoneNumber);
+    public String register() {
+        user = userService.register(email, password, firstname, lastname, phoneNumber);
+
+        if (user == null) {
+            return "error_register_user_exist";
+
+        } else {
+            return "success_register_user";
+        }
     }
 
     public User getUser() {
@@ -139,6 +142,6 @@ public class UserRegistrationBean{
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = passwordHashingService.hashPassword(password);
     }
 }
