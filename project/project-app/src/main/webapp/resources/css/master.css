@@ -1,25 +1,6 @@
-ul.Meniu {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-
-li.Meniu_li {
-    float: right !important;
-}
-
-li a.Meniu_a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li.Meniu_li a:hover.Meniu_a {
-    background-color: #111;
+body
+{
+    background: whitesmoke;
 }
 
 ul.Kategorijos {
@@ -41,9 +22,6 @@ li.Kategorijos_li a:hover.Kategorijos_a {
     color: white;
 }
 
-a img {
-    padding-left: 60px;
-}
 
 #Sarasas {
     list-style: none;
@@ -70,14 +48,6 @@ footer p {
     text-align: center;
     bottom: 10px;
     width: 100%;
-}
-
-input[type=text], select {
-    width: 15%;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    float: right !important;
 }
 
 #element3 {
@@ -127,11 +97,70 @@ tr:nth-child(even) {
     font-weight: bold;
 }
 
+/*Header*/
+.menu-right
+{
+    float: right !important;
+}
+
+header
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+a {text-decoration: none;}
+
+/*Form*/
+
 form {
     padding-left: 50px;
-    top: 50%;
+    top: 20%;
     font-size: 18px;
+    position: absolute;
+    width: 50%;
+    left: 25%;
+
+}
+
+input
+{
+    font-size: 18px;
+    width: 80%;
+    border-radius: 2px;
+    padding: 1%;
+}
+
+.nameInput
+{
+    width: 38.75%;
 }
 
 
+.top-link
+{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    float: left;
+}
 
+.top-link:hover
+{
+    background-color: #111;
+}
+
+.form-buttons, #resetBtn, .login-btn
+{
+    width: 40%;
+    border-radius: 4px;
+}
+
+.login-btn
+{
+    width: 80%;
+}
