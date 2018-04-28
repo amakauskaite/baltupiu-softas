@@ -12,8 +12,6 @@ import java.util.List;
 @ApplicationScoped
 @Model
 public class ProductBean {
-    //paimt prekiu sarasa
-    //surasti viena preke
     private List<Product> products;
     private Product product;
 
@@ -26,8 +24,6 @@ public class ProductBean {
         products = productService.findAll();
         return products;
     }
-
-    //get product by id?
 
     public Product getProduct() {
         return product;
