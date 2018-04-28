@@ -8,4 +8,6 @@ import lt.baltupiusoftas.project.domain.Administrator;
  * @author Audrius Tvarijonas
  */
 public interface AdministratorDao extends GenericDao<Administrator> {
+    Administrator findByUsername (String username);
+
 }

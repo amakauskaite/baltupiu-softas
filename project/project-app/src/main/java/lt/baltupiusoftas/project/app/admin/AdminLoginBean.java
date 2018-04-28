@@ -4,14 +4,15 @@ import lt.baltupiusoftas.project.domain.Administrator;
 import lt.baltupiusoftas.project.service.admin.AdminService;
 import lt.baltupiusoftas.project.service.password.PasswordHashingService;
 
+import javax.enterprise.context.SessionScoped;
 import javax.faces.flow.FlowScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
 
 @Named
-@FlowScoped("adminLoginBean")
-public class AdminLoginBean {
+@SessionScoped
+public class AdminLoginBean implements Serializable {
 
     private String username;
     private String password;
@@ -53,5 +54,7 @@ public class AdminLoginBean {
 
     public void logout () {
         administrator = null;
+        username = null;
+        password = null;
     }
 }

@@ -1,22 +1,21 @@
 package lt.baltupiusoftas.project.service.admin;
 
 import lt.baltupiusoftas.project.domain.Administrator;
-import lt.baltupiusoftas.project.persistence.AdminRepository;
+import lt.baltupiusoftas.project.persistence.AdministratorDao;
 
 import javax.inject.Inject;
 
 public class AdminServiceImpl implements AdminService {
 
     @Inject
-    private AdminRepository adminRepository;
+    private AdministratorDao administratorDao;
 
     @Override
     public Administrator login(String username, String password) {
-        Administrator admin = adminRepository.findByUsername(username);
+        Administrator admin = administratorDao.findByUsername(username);
         if (admin != null && admin.getPassword().equals(password) ) {
             return admin;
         }
-        //TODO maybe error?
         return null;
     }
 }
