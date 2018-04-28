@@ -4,7 +4,9 @@ import lt.baltupiusoftas.project.domain.Administrator;
 import lt.baltupiusoftas.project.domain.Cart;
 import lt.baltupiusoftas.project.persistence.AdministratorDao;
 
+import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
+import java.util.List;
 
 /**
  * Administrator DAO
@@ -14,13 +16,18 @@ import javax.persistence.TypedQuery;
 public class AdministratorDaoImpl extends GenericDaoImpl<Administrator> implements AdministratorDao{
     @Override
     public Administrator findByUsername(String username) {
+        Administrator administrator = null;
         String findAdmin = "select a " +
                 "from Administrator a " +
                 "where a.username = :username";
-
         TypedQuery<Administrator> query = entityManager.createQuery(findAdmin, Administrator.class);
         query.setParameter("username", username);
-        Administrator administrator = query.getSingleResult();
+        try {
+
+            administrator = query.getSingleResult();
+        } catch (NoResultException ignored) {
+
+        }
         return administrator;
     }
 }

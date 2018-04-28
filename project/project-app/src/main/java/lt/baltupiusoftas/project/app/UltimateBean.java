@@ -1,14 +1,13 @@
 package lt.baltupiusoftas.project.app;
 
+
 import lt.baltupiusoftas.project.app.admin.AdminLoginBean;
-import lt.baltupiusoftas.project.domain.*;
-import lt.baltupiusoftas.project.persistence.*;
+import lt.baltupiusoftas.project.domain.Administrator;
+import lt.baltupiusoftas.project.persistence.AdministratorDao;
 
 import javax.enterprise.inject.Model;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
-import java.math.BigDecimal;
-import java.util.List;
 
 /**
  * The ultimate bean
@@ -17,25 +16,21 @@ import java.util.List;
  */
 @Model
 public class UltimateBean {
+    @Inject
+    AdministratorDao administratorDao;
 
     @Inject
-    private AdministratorDao administratorDao;
-
-    @Inject
-    private AdminLoginBean adminLoginBean;
+    AdminLoginBean adminLoginBean;
 
     @Transactional
     public String helloWorld() {
 
-//        Administrator administrator = new Administrator();
-//        administrator.setUsername("admin");
-//        administrator.setPassword("5ebe2294ecd0e0f08eab7690d2a6ee69");
-//        administratorDao.create(administrator);
+
 
         adminLoginBean.setUsername("admin");
         adminLoginBean.setPassword("secret");
-        adminLoginBean.login();
+        String result = adminLoginBean.login();
 
-        return "Logined" +  adminLoginBean.getAdministrator().getUsername();
+        return result;
     }
 }
