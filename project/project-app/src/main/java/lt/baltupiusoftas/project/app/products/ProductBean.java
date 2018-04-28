@@ -4,11 +4,13 @@ import lt.baltupiusoftas.project.domain.Product;
 import lt.baltupiusoftas.project.service.Products.ProductService;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.inject.Model;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import java.util.List;
 
 @ApplicationScoped
+@Model
 public class ProductBean {
     //paimt prekiu sarasa
     //surasti viena preke
@@ -32,5 +34,8 @@ public class ProductBean {
     }
     public void setProduct(Product product){
         this.product = product;
+    }
+    public List<Product> getProducts(){
+    return products;
     }
 }

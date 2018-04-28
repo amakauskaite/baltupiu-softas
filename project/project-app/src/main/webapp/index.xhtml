@@ -6,41 +6,33 @@
                 xmlns:pa="http://xmlns.jcp.org/jsf/passthrough"
                 xmlns:p="http://primefaces.org/ui">
 
-    <ui:define name="title"> Application </ui:define>
+    <ui:define name="title"> Parduotuvė </ui:define>
 
-    <!-- -->
-    <!-- Define custom header here -->
-    <!-- -->
-
-    <!-- Content starts here -->
     <ui:define name="content">
-        <div>
-            <form>
-                <select name="Rūšiuoti">
-                    <option value="nuopigiausioikibrangiausio">nuo pigiausios iki brangiausios</option>
-                    <option value="nuobrangiausiosikipigiausios">nuo brangiausios iki pigiausios</option>
-                </select>
-            </form>
-        </div>
-        <div id="element1">
-            <ul class="Kategorijos">
-                <li class="Kategorijos_li"><a class="Kategorijos_a" href="#k1">Maistas</a></li>
-                <li class="Kategorijos_li"><a class="Kategorijos_a" href="#k2">Kiti dalykai</a></li>
-                <li class="Kategorijos_li"><a class="Kategorijos_a" href="#k3">...</a></li>
-            </ul>
-        </div>
-        <div id="element2">
-            <ul id="Sarasas">
-                <h:outputLink value="DetaliPreke.xhtml">
-                    <li>Prekės pavadinimas, Kaina</li>
-                </h:outputLink>
-            </ul>
-        </div>
-    </ui:define>
-    <!-- Content ends here -->
 
-    <!-- -->
-    <!-- Define custom footer here -->
-    <!-- -->
+        <h:inputHidden value="#{ultimateBean.helloWorld()}"/>
+        <h:inputHidden value="#{productBean.showAllProducts()}"/>
+
+        <h:form id="form">
+        <p:dataGrid var="product" value="#{productBean.products}" columns="4" layout="grid"
+                    rows="12" paginator="true" id="products"
+                    paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}">
+
+
+            <p:panel header="#{product.name}">
+                <h:panelGrid columns="1">
+                    <h:outputText value="Kaina: #{product.price} eur" />
+                    <h:outputText value="Kategorija: #{product.category.name}"/>
+
+                    <p:commandButton value = "Peržiūrėti" action = "DetaliPreke">
+                        <f:setPropertyActionListener value="#{product}" target="#{productBean.product}" />
+                    </p:commandButton>
+                </h:panelGrid>
+            </p:panel>
+
+        </p:dataGrid>
+        </h:form>
+
+    </ui:define>
 
 </ui:composition>
