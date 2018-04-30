@@ -7,7 +7,7 @@ import lt.baltupiusoftas.project.persistence.UserDao;
 
 import javax.inject.Inject;
 
-public class UserAddressServiseImpl implements UserAddressService {
+public class UserAddressServiceImpl implements UserAddressService {
     @Inject
     private UserAddressDao userAddressDao;
 
