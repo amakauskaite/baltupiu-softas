@@ -12,8 +12,11 @@
     <!-- Define custom header here -->
     <!-- -->
 
+    <ui:define name="left-sidebar"/>
+
     <!-- Content starts here -->
     <ui:define name="content">
+        <section class="main">
         <h:form id="registration-form">
             <h2>Naujo vartotojo registracija</h2>
             <h:inputText id="firstname" pa:class="nameInput" pa:placeholder="Vardas" value="#{userRegistrationBean.firstname}"/>
@@ -25,6 +28,7 @@
             <h:commandButton id="registrationBtn" styleClass="form-buttons" value="Sukurti paskyrą" action="#{userRegistrationBean.register()}"/>
             <input id="resetBtn" type="reset" value = "Nustatyti iš naujo"/>
         </h:form>
+        </section>
     </ui:define>
     <!-- Content ends here -->
 
