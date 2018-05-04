@@ -1,0 +1,44 @@
+<ui:composition template="masterTemplate.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="title"> Application </ui:define>
+
+    <!-- -->
+    <!-- Define custom header here -->
+    <!-- -->
+
+    <!-- Content starts here -->
+    <ui:define name="content">
+        <h2 id="PastumtiHeadinga2">Pirkimo istorija</h2>
+        <p:dataTable>
+            <p:column headerText="Prekė">
+                <h:outputText value="#{purchaseHistoryBean.product}}" />
+            </p:column>
+
+            <p:column headerText="Kiekis">
+                <h:outputText value="#{purchaseHistoryBean.count}" />
+            </p:column>
+
+            <p:column headerText="Kaina">
+                <h:outputText value="#{purchaseHistoryBean.price}" />
+            </p:column>
+
+            <p:column headerText="Būsena">
+                <h:outputText value="#{purchaseHistoryBean.state}" />
+            </p:column>
+            <p:column headerText="Pirkimo data">
+                <h:outputText value="#{purchaseHistoryBean.date}" />
+            </p:column>
+        </p:dataTable>
+    </ui:define>
+    <!-- Content ends here -->
+
+    <!-- -->
+    <!-- Define custom footer here -->
+    <!-- -->
+
+</ui:composition>
