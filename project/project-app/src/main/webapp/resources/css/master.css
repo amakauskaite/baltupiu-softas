@@ -1,74 +1,81 @@
 body
 {
     background: whitesmoke;
-}
-
-ul.Kategorijos {
-    padding: 0;
-    width: 200px;
-    background-color: #f1f1f1;
-}
-
-li.Kategorijos_li a.Kategorijos_a {
-    display: block;
-    color: #000;
-    padding: 8px 16px;
-    text-decoration: none;
-}
-
-/* Change the link color on hover */
-li.Kategorijos_li a:hover.Kategorijos_a {
-    background-color: #333;
-    color: white;
-}
-
-
-#Sarasas {
-    list-style: none;
-    font-size: 17px;
-}
-
-#PastumtiHeadinga {
-    padding-left: 45px;
-}
-
-#element1 {
-    display: inline-block;
-    margin-right: 10px;
-    vertical-align: top
-}
-
-#element2 {
-    display: inline-block;
-    vertical-align: top;
-}
-
-footer p {
-    position: fixed;
-    text-align: center;
-    bottom: 10px;
+    margin: 0;
+    height: 100%;
     width: 100%;
 }
 
-#element3 {
-    list-style: none;
-    display: inline-block;
-    padding-right: 100px;
-    vertical-align: top;
-    font-size: 17px;
+.center-content
+{
+    position: absolute;
+    display: block;
+    overflow: auto;
+    top: 8%;
+    bottom: 5%;
+    height: 90%;
+    width: 95%;
+
 }
 
-#element4 {
-    display: inline-block;
-    padding-right: 0px;
-    vertical-align: middle;
+footer{
+   /* position: absolute;
+    display: block;
+    */
+    overflow: hidden;
+    position: fixed;
+    text-align: center;
+    height: 5%;
+    width: 100%;
+    background: whitesmoke;
+    bottom: 0;
 }
 
-#kainaParyskintai {
-    font-size: 22px;
-    color: red;
-    font-weight: bold;
+/*footer p {
+
+    bottom: 10px;
+    width: 100%;
+}*/
+
+/*Header*/
+.menu-right
+{
+    float: right !important;
 }
+
+header
+{
+    list-style-type: none;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: absolute;
+    height: 8%;
+    width: 100%;
+}
+
+a {text-decoration: none;}
+
+
+.top-link
+{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    height: 100%;
+    font-size: 100%;
+    float: left;
+}
+
+.top-link:hover
+{
+    background-color: #111;
+}
+
+/* Table and it's contents */
 
 table {
     font-family: arial, sans-serif;
@@ -87,32 +94,6 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
-
-#PastumtiHeadinga2 {
-    padding-left: 50px;
-}
-
-#Pastumtipastraipa {
-    font-size: 17px;
-    font-weight: bold;
-}
-
-/*Header*/
-.menu-right
-{
-    float: right !important;
-}
-
-header
-{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-
-a {text-decoration: none;}
 
 /*Form*/
 
@@ -140,20 +121,6 @@ input
 }
 
 
-.top-link
-{
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    float: left;
-}
-
-.top-link:hover
-{
-    background-color: #111;
-}
-
 .form-buttons, #resetBtn, .login-btn
 {
     width: 40%;
@@ -163,4 +130,51 @@ input
 .login-btn
 {
     width: 80%;
+}
+
+/* Sidebar (re-used from w3schools)*/
+
+/* The sidebar menu */
+.sideNav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 15%; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 8%;
+    left: 0;
+    background-color: rgba(17, 17, 17, 0.95); /* Black */
+    overflow: auto;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+}
+
+/* The navigation menu links */
+.sideNav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sideNav a:hover {
+    color: #f1f1f1;
+}
+
+/* Style page content */
+.main {
+    margin-left: 20%; /* Same as the width of the sidebar */
+    padding: 0 10px;
+}
+
+.cart-main {
+    margin-left: 0;
+    padding: 0 10px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sideNav {padding-top: 15px;}
+    .sideNav a {font-size: 18px;}
 }
