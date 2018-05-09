@@ -14,22 +14,16 @@
     <!-- Content starts here -->
     <ui:define name="content">
         <h2 id="PastumtiHeadinga2">Pirkimo istorija</h2>
-        <table>
-            <tr>
-                <th>Prekė</th>
-                <th>Kiekis</th>
-                <th>Kaina</th>
-                <th>Būsena</th>
-                <th>Pirkimo data</th>
-            </tr>
-            <tr>
-                <td>Obuolys, Naksima, 0,1kg</td>
-                <td>1</td>
-                <td>0,23Eur</td>
-                <td>Pristatyta</td>
-                <td>2017-03-20</td>
-            </tr>
-        </table>
+        <p:dataTable var="purchase" value="#{purchaseHistoryBean.l}">
+            <p:column headerText="Prekė">
+                <h:outputText value="#{purchase.items.product.product.name}}" />
+            </p:column>
+
+            <p:column headerText="Kaina">
+                <h:outputText value="#{purchase.items.product.product.price}" />
+            </p:column>
+
+        </p:dataTable>
     </ui:define>
     <!-- Content ends here -->
 

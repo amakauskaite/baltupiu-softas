@@ -14,8 +14,10 @@
 
     <!-- Content starts here -->
     <ui:define name="content">
+        <h2>Prisijungimas</h2>
         <h:form id="login-form">
-            <h2>Prisijungimas</h2>
+            <p:growl id="loginGrowl" life="100"/>
+
             <h:inputText id="emailField" pa:placeholder="El. paštas" pa:type="email" value="#{userLoginBean.email}"/> <br/>
             <h:inputSecret id="passwordField" pa:placeholder="Slaptažodis" value="#{userLoginBean.password}"/> <br/>
             <h:commandButton id="loginBtn" styleClass="login-btn" value="Prisijungti" action="#{userLoginBean.login()}"/>

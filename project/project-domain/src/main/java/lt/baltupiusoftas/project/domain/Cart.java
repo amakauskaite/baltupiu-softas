@@ -1,7 +1,9 @@
 package lt.baltupiusoftas.project.domain;
 
-import jdk.nashorn.internal.objects.annotations.Getter;
-import jdk.nashorn.internal.objects.annotations.Setter;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import lt.baltupiusoftas.project.domain.types.OrderStatusType;
 
 import javax.persistence.*;
@@ -16,10 +18,9 @@ import java.util.List;
  */
 @Entity
 @Table(name = "CART")
-@NamedQueries({
-        @NamedQuery(name="Cart.findAllCartsForPurchaseHistory",query="SELECT c FROM Cart c WHERE c.user = :user and orderStatusType = 'COMPLETED'"),
-        @NamedQuery(name="Cart.findAllCarts",query="SELECT c FROM Cart c")
-})
+@Getter
+@Setter
+
 public class Cart implements Serializable {
 
     @Id
