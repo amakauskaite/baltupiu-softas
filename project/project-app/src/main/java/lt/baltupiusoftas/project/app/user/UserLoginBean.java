@@ -10,7 +10,6 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
-import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 @Named
@@ -26,6 +25,9 @@ public class UserLoginBean implements Serializable {
     private String email;
 
     private String password;
+
+    private Boolean loginReg = true;
+    private Boolean logoutUsr = false;
 
 
     @Inject
@@ -43,6 +45,7 @@ public class UserLoginBean implements Serializable {
         // If user is registered and login successful
         if (user != null) {
             login.setUser(user);
+            showLogoutAndUserProfile();
             return "index";
         }
         // If user is not registered and login failed
@@ -55,10 +58,38 @@ public class UserLoginBean implements Serializable {
     public String logout() {
         if (isLoggedIn()) {
             login.setUser(null);
-            return "success_logout_user";
+            showLoginAndRegistration();
+            return "login";//success_logout_user
         } else {
             return "index";
         }
+    }
+
+    public void showLoginAndRegistration(){
+        loginReg = true;
+        logoutUsr = false;
+    }
+
+    public void showLogoutAndUserProfile()
+    {
+        loginReg = false;
+        logoutUsr = true;
+    }
+
+    public boolean isLoginReg() {
+        return loginReg;
+    }
+
+    public void setLoginReg(boolean loginReg) {
+        this.loginReg = loginReg;
+    }
+
+    public boolean isLogoutUsr() {
+        return logoutUsr;
+    }
+
+    public void setLogoutUsr(boolean logoutUsr) {
+        this.logoutUsr = logoutUsr;
     }
 
     private Boolean isLoggedIn() {
