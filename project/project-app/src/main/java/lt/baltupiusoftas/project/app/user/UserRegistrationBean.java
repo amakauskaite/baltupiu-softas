@@ -8,6 +8,8 @@ import lt.baltupiusoftas.project.service.user.address.UserAddressService;
 
 import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Model;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.transaction.Transactional;
@@ -41,11 +43,24 @@ public class UserRegistrationBean{
         user = userService.register(email, password, firstname, lastname, phoneNumber);
 
         if (user == null) {
-            return "error_register_user_exist";
+            FacesContext.getCurrentInstance().addMessage("registrationBtn", new FacesMessage(FacesMessage.SEVERITY_ERROR,"Klaida!",  "Vartotojas jau egzistuoja"));
+            return "registration"; //error_register_user_exist
 
         } else {
-            return "success_register_user";
+            FacesContext.getCurrentInstance().addMessage("registrationBtn", new FacesMessage(FacesMessage.SEVERITY_INFO,"Sėkminga",  "Registracija pavyko"));
+            //clearFields();
+            return "index"; //success_register_user
         }
+    }
+
+    private void clearFields()
+    {
+        // Sets all registration form fields to null, if the registration was successful
+        setFirstname(null);
+        setLastname(null);
+        setPassword(null);
+        setEmail(null);
+        setPhoneNumber(null);
     }
 
     public User getUser() {
