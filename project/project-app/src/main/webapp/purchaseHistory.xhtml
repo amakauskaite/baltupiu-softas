@@ -13,7 +13,8 @@
 
     <!-- Content starts here -->
     <ui:define name="content">
-        <h2 id="PastumtiHeadinga2">Pirkimo istorija</h2>
+        <section class="main">
+        <h2>Pirkimo istorija</h2>
         <p:dataTable>
             <p:column headerText="Prekė">
                 <h:outputText value="#{purchaseHistoryBean.product}}" />
@@ -34,6 +35,7 @@
                 <h:outputText value="#{purchaseHistoryBean.date}" />
             </p:column>
         </p:dataTable>
+        </section>
     </ui:define>
     <!-- Content ends here -->
 
