@@ -10,6 +10,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 @Named
@@ -23,7 +24,9 @@ public class UserLoginBean implements Serializable {
     private Login login;
 
     private String email;
+
     private String password;
+
 
     @Inject
     private UserService userService;
@@ -37,11 +40,14 @@ public class UserLoginBean implements Serializable {
             return "index";
         }
         User user = userService.login(email, password);
+        // If user is registered and login successful
         if (user != null) {
             login.setUser(user);
             return "index";
-        } else {
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Failure",  null));
+        }
+        // If user is not registered and login failed
+        else {
+            FacesContext.getCurrentInstance().addMessage("loginBtn", new FacesMessage(FacesMessage.SEVERITY_ERROR,"Klaida!",  "Vartotojas neegzistuoja arba blogi duomenys"));
             return "login";
         }
     }
