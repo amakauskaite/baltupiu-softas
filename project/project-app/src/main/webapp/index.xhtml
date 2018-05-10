@@ -9,29 +9,23 @@
     <ui:define name="title"> Parduotuvė </ui:define>
 
     <ui:define name="content">
-
-        <h:inputHidden value="#{productBean.showAllProducts()}"/>
-
-        <h:form id="form">
-        <p:dataGrid var="product" value="#{productBean.products}" columns="4" layout="grid"
-                    rows="12" paginator="true" id="products"
+        <section class="main">
+            <h:inputHidden value="#{productBean.showAllProducts()}"/>
+            <p:dataGrid var="product" value="#{productBean.products}" layout="grid"
+                    paginator="true" id="products"
                     paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}">
-
-
-            <p:panel header="#{product.name}">
-                <h:panelGrid columns="1">
-                    <h:outputText value="Kaina: #{product.price} eur" />
-                    <h:outputText value="Kategorija: #{product.category.name}"/>
-
-                    <p:commandButton value = "Peržiūrėti" action = "DetaliPreke">
-                        <f:setPropertyActionListener value="#{product}" target="#{productBean.product}" />
-                    </p:commandButton>
-                </h:panelGrid>
-            </p:panel>
-
-        </p:dataGrid>
-        </h:form>
-
+                <p:panel header="#{product.name}">
+                    <h:panelGrid columns="1">
+                        <img src = "#{product.photo}"/>
+                        <h:outputText value="Kaina: #{product.price} eur" />
+                        <h:outputText value="Kategorija: #{product.category.name}"/>
+                        <p:commandButton value = "Peržiūrėti" action = "DetaliPreke">
+                            <f:setPropertyActionListener value="#{product}" target="#{productBean.product}" />
+                        </p:commandButton>
+                    </h:panelGrid>
+                </p:panel>
+            </p:dataGrid>
+        </section>
     </ui:define>
 
 </ui:composition>

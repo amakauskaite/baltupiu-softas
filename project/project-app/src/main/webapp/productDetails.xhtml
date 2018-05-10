@@ -14,39 +14,16 @@
     <!-- Content starts here -->
     <ui:define name="content">
     <section class="main">
-        <div id="element1">
-            <ul class="Kategorijos">
-                <li class="Kategorijos_li"><a class="Kategorijos_a" href="#k1">Maistas</a></li>
-                <li class="Kategorijos_li"><a class="Kategorijos_a" href="#k2">Kiti dalykai</a></li>
-                <li class="Kategorijos_li"><a class="Kategorijos_a" href="#k3">...</a></li>
-                <li class="Kategorijos_li"><a class="Kategorijos_a" href="#k2">Kiti dalykai</a></li>
-                <li class="Kategorijos_li"><a class="Kategorijos_a" href="#k3">...</a></li>
-                <li class="Kategorijos_li"><a class="Kategorijos_a" href="#k2">Kiti dalykai</a></li>
-                <li class="Kategorijos_li"><a class="Kategorijos_a" href="#k3">...</a></li>
-                <li class="Kategorijos_li"><a class="Kategorijos_a" href="#k2">Kiti dalykai</a></li>
-                <li class="Kategorijos_li"><a class="Kategorijos_a" href="#k3">...</a></li>
-                <li class="Kategorijos_li"><a class="Kategorijos_a" href="#k2">Kiti dalykai</a></li>
-                <li class="Kategorijos_li"><a class="Kategorijos_a" href="#k3">...</a></li>
-                <li class="Kategorijos_li"><a class="Kategorijos_a" href="#k2">Kiti dalykai</a></li>
-                <li class="Kategorijos_li"><a class="Kategorijos_a" href="#k3">...</a></li>
-                <li class="Kategorijos_li"><a class="Kategorijos_a" href="#k2">Kiti dalykai</a></li>
-                <li class="Kategorijos_li"><a class="Kategorijos_a" href="#k3">...</a></li>
-                <li class="Kategorijos_li"><a class="Kategorijos_a" href="#k2">Kiti dalykai</a></li>
-                <li class="Kategorijos_li"><a class="Kategorijos_a" href="#k3">...</a></li>
-                <li class="Kategorijos_li"><a class="Kategorijos_a" href="#k2">Kiti dalykai</a></li>
-                <li class="Kategorijos_li"><a class="Kategorijos_a" href="#k3">...</a></li>
-            </ul>
-        </div>
 
         <table id="table1">
             <tr>
                 <td><img src="resources/images/obuolys.jpg" alt="obuolys" width="150" height="auto"/></td>
+                <!--<td><img src="#{productBean.product.photo}" alt="obuolys" width="150" height="auto"/></td>-->
                 <td>
-                    <ul id="element3">
-                        <li>Pats skaniausias obuolys</li>
-                        <li id="kainaParyskintai">0,23Eur</li>
-                        <li>Gamintojas: Naxima</li>
-                        <li>Svoris: 0,1kg</li>
+                    <ul>
+                        <li>#{productBean.product.name}</li>
+                        <li>#{productBean.product.price} Eur</li>
+                        <li>#{productBean.product.category}</li>
                         <li><img src="krepselis.png" alt="krepselis" width="50" height="auto"/></li>
                     </ul>
                 </td>
@@ -55,7 +32,7 @@
                 <td><h3>Aprašymas</h3></td>
             </tr>
             <tr>
-                <td><p>awfpiwhpaeoigbwogiuegbnopwiaw[goiabg[owaigbwg[wggwgagiuegb</p></td>
+                <td><p>#{productBean.product.summary}</p></td>
             </tr>
         </table>
     </section>
