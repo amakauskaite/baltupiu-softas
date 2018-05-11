@@ -1,12 +1,10 @@
 package lt.baltupiusoftas.project.persistence.impl;
 
 import lt.baltupiusoftas.project.domain.Administrator;
-import lt.baltupiusoftas.project.domain.Cart;
 import lt.baltupiusoftas.project.persistence.AdministratorDao;
 
 import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
-import java.util.List;
 
 /**
  * Administrator DAO

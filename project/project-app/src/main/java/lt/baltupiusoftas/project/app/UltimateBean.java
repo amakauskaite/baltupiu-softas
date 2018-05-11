@@ -1,9 +1,8 @@
 package lt.baltupiusoftas.project.app;
 
-
-import lt.baltupiusoftas.project.app.admin.AdminLoginBean;
-import lt.baltupiusoftas.project.domain.Administrator;
-import lt.baltupiusoftas.project.persistence.AdministratorDao;
+import lt.baltupiusoftas.project.app.administrator.AdministratorLoginBean;
+import lt.baltupiusoftas.project.app.user.UserLoginBean;
+import lt.baltupiusoftas.project.app.user.UserRegistrationBean;
 
 import javax.enterprise.inject.Model;
 import javax.inject.Inject;
@@ -16,21 +15,63 @@ import javax.transaction.Transactional;
  */
 @Model
 public class UltimateBean {
-    @Inject
-    AdministratorDao administratorDao;
 
     @Inject
-    AdminLoginBean adminLoginBean;
+    private Login login;
+
+    @Inject
+    private UserLoginBean userLoginBean;
+
+
+    @Inject
+    private UserRegistrationBean userRegistrationBean;
+
+    @Inject
+    private AdministratorLoginBean administratorLoginBean;
 
     @Transactional
     public String helloWorld() {
 
-
-
-        adminLoginBean.setUsername("admin");
-        adminLoginBean.setPassword("secret");
-        String result = adminLoginBean.login();
-
-        return result;
+//        String result = "";
+//
+//        //registrate user
+//        userRegistrationBean.setCity("vilnius");
+//        userRegistrationBean.setCountry("lithuania");
+//        userRegistrationBean.setEmail("mail@email.com");
+//        userRegistrationBean.setFirstname("name");
+//        userRegistrationBean.setHouse("10");
+//        userRegistrationBean.setFlat("412q");
+//        userRegistrationBean.setPassword("secret");
+//        userRegistrationBean.setPhoneNumber("112");
+//        userRegistrationBean.setLastname("surname");
+//        userRegistrationBean.setStreet("street");
+//        userRegistrationBean.setPostcode("1111");
+//        result += userRegistrationBean.register();
+//        if (userRegistrationBean.getUser() != null) {
+//            result += "Registered with email " + userRegistrationBean.getEmail();
+//        } else {
+//            result += "User exist";
+//        }
+//
+//        result += "\n";
+//
+//        userLoginBean.setEmail("mail@email.com");
+//        userLoginBean.setPassword("secret");
+//        result += userLoginBean.login();
+//
+//        if (userLoginBean.getUser() != null) {
+//            result += "Login with email " + userLoginBean.getEmail();
+//
+//
+//        } else {
+//            result += "Cannot find user to login";
+//        }
+//
+//        result += "\n";
+//
+//        return result;
+        administratorLoginBean.setUsername("admin");
+        administratorLoginBean.setPassword("test");
+        return administratorLoginBean.login() + "admin";
     }
 }

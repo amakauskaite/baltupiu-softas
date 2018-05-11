@@ -9,5 +9,4 @@ import lt.baltupiusoftas.project.domain.Administrator;
  */
 public interface AdministratorDao extends GenericDao<Administrator> {
     Administrator findByUsername (String username);
-
 }

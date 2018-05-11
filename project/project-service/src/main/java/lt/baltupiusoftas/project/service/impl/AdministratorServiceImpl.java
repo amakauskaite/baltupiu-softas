@@ -1,12 +1,12 @@
-package lt.baltupiusoftas.project.service.admin;
-
+package lt.baltupiusoftas.project.service.impl;
 
 import lt.baltupiusoftas.project.domain.Administrator;
 import lt.baltupiusoftas.project.persistence.AdministratorDao;
+import lt.baltupiusoftas.project.service.AdministratorService;
 
 import javax.inject.Inject;
 
-public class AdminServiceImpl implements AdminService {
+public class AdministratorServiceImpl implements AdministratorService {
 
     @Inject
     private AdministratorDao administratorDao;
