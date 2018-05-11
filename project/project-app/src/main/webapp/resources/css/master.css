@@ -68,6 +68,7 @@ a {text-decoration: none;}
     height: 100%;
     font-size: 100%;
     float: left;
+    position: relative;
 }
 
 .top-link:hover
@@ -75,6 +76,12 @@ a {text-decoration: none;}
     background-color: #111;
 }
 
+
+/* Logged in and logged out link display */
+.logout-user
+{
+    display: none;
+}
 /* Table and it's contents */
 
 table {
@@ -105,6 +112,24 @@ form {
     width: 50%;
     left: 25%;
 
+
+}
+
+.link-form
+{
+    padding: 0;
+    top: auto;
+    font-size: 100%;
+    width: auto;
+    left: auto;
+    height: 0;
+    position: relative;
+
+}
+
+.link-in-form
+{
+    height: 18px;
 }
 
 input
