@@ -55,30 +55,30 @@ public class UserUpdateBean {
     public String updatePassword () {
             user =  userService.updatePassword(userId, oldPassword, newPassword);
             if (user == null) {
-                return "error_update_user_passwords_do_not_match";
+                return "userInfoUpdate";
             }
-        return "success_update_user_password";
+        return "profile";
     }
 
     @Transactional(Transactional.TxType.REQUIRED)
     public String updateAddress () {
         userAddress = userAddressService.updateUserAddress(userAddress, country, city, street, house, flat, postcode);
-        return "success_update_user_address";
+        return "profile";
     }
 
     @Transactional(Transactional.TxType.REQUIRED)
     public String createAddress () {
         userAddress = userAddressService.createUserAddress(country, city, street, house, flat, postcode, userId);
-        return "success_create_user_address";
+        return "profile";
     }
 
     @Transactional(Transactional.TxType.REQUIRED)
     public String updateUserInfo () {
         user = userService.updateUserInfo(userId, firstname, lastname, email, phoneNumber);
         if (user == null) {
-            return "error_update_user_info";
+            return "userInfoUpdate";
         }
-        return "success_update_user_info";
+        return "profile";
 
     }
 
