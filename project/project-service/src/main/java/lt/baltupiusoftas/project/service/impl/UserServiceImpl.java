@@ -1,7 +1,8 @@
-package lt.baltupiusoftas.project.service.user;
+package lt.baltupiusoftas.project.service.impl;
 
 import lt.baltupiusoftas.project.domain.User;
 import lt.baltupiusoftas.project.persistence.UserDao;
+import lt.baltupiusoftas.project.service.UserService;
 
 import javax.inject.Inject;
 import javax.transaction.Transactional;
@@ -39,13 +40,31 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User updatePassword(User user, String oldPassword, String newPassword) {
-        if (user.getPassword().equals(oldPassword)) {
-            user.setPassword(newPassword);
-            return userDao.update(user);
+    public User updatePassword(Long userId, String oldPassword, String newPassword) {
+        User user = userDao.find(userId);
+        if (user != null) {
+
+            if (user.getPassword().equals(oldPassword)) {
+                user.setPassword(newPassword);
+                return userDao.update(user);
+
+            }
 
         }
-        return user;
+        return null;
+    }
+
+    @Override
+    public User updateUserInfo(Long userId, String firstname, String lastname, String email, String phoneNumber) {
+        User user = userDao.find(userId);
+        if (user != null) {
+            user.setFirstname(firstname);
+            user.setLastname(lastname);
+            user.setEmail(email);
+            user.setPhonenumber(phoneNumber);
+            return userDao.update(user);
+        }
+        return null;
     }
 
 

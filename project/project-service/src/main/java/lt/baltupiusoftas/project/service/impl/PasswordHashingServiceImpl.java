@@ -1,4 +1,6 @@
-package lt.baltupiusoftas.project.service.password;
+package lt.baltupiusoftas.project.service.impl;
+
+import lt.baltupiusoftas.project.service.PasswordHashingService;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
