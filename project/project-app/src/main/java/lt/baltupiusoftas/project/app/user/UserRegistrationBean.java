@@ -24,6 +24,9 @@ public class UserRegistrationBean{
     @Inject
     private PasswordHashingService passwordHashingService;
 
+    @Inject
+    private UserLoginBean userLoginBean;
+
     private String country;
     private String city;
     private String street;
@@ -49,6 +52,12 @@ public class UserRegistrationBean{
         } else {
             FacesContext.getCurrentInstance().addMessage("registrationBtn", new FacesMessage(FacesMessage.SEVERITY_INFO,"Sėkminga",  "Registracija pavyko"));
             //clearFields();
+
+            //try to login after registration
+            if (userLoginBean.login().equals("login")) {
+                return "registration";
+            }
+
             return "index"; //success_register_user
         }
     }
@@ -150,6 +159,7 @@ public class UserRegistrationBean{
 
     public void setEmail(String email) {
         this.email = email;
+        userLoginBean.setEmail(email);
     }
 
     public String getPassword() {
@@ -157,6 +167,8 @@ public class UserRegistrationBean{
     }
 
     public void setPassword(String password) {
+
         this.password = passwordHashingService.hashPassword(password);
+        userLoginBean.setPassword(password);
     }
 }
