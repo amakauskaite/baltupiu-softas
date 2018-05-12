@@ -25,6 +25,12 @@ public class ProductBean {
         return products;
     }
 
+    @Transactional
+    public String toSeeProductDetails(Long id){
+        product = productService.productById(id);
+        return "productDetails";
+    }
+
     public Product getProduct() {
         return product;
     }

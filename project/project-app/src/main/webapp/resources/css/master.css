@@ -14,7 +14,7 @@ body
     top: 8%;
     bottom: 5%;
     height: 90%;
-    width: 95%;
+    width: 100%; /*todo ask why 95%?*/
 
 }
 
@@ -76,7 +76,6 @@ a {text-decoration: none;}
 }
 
 /* Table and it's contents */
-
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -164,8 +163,8 @@ input
 
 /* Style page content */
 .main {
-    margin-left: 20%; /* Same as the width of the sidebar */
-    padding: 0 10px;
+    margin-left: 15%; /* Same as the width of the sidebar */
+    padding: 0px;
 }
 
 .cart-main {
@@ -177,4 +176,52 @@ input
 @media screen and (max-height: 450px) {
     .sideNav {padding-top: 15px;}
     .sideNav a {font-size: 18px;}
+}
+
+/*product list*/
+/*to rewrite form tag for all products*/
+.all-products{
+    width: 100%;
+    height: 100%;
+    padding-left: 0;
+    top: 0;
+    font-size: 18px;
+    position: static;
+    left: 0;
+    margin-bottom: 15px;
+}
+.product-in-list{
+    font: inherit;
+}
+.pic-in-list{
+    width: 41%;
+    height: 41%;
+    align-self: center;
+}
+.pic-in-details{
+    position: center;
+    height: 200px;
+}
+.products-list{
+    font: inherit !important;
+}
+.details-in-list{
+    position: static;
+    width: 100%;
+    align-self: center;
+}
+.product-details{
+    width: 100%;
+}
+.product-submit-to-cart{
+    margin: 10px;
+    padding-left: 0;
+    top: 0;
+    font-size: 18px;
+    position: static;
+    width: 150px;
+    left: 0;
+}
+.products-button{
+    margin: 5px;
 }
