@@ -14,8 +14,7 @@ body
     top: 8%;
     bottom: 5%;
     height: 90%;
-    width: 100%; /*todo ask why 95%?*/
-
+    width: 95%;
 }
 
 footer{
@@ -163,8 +162,8 @@ input
 
 /* Style page content */
 .main {
-    margin-left: 15%; /* Same as the width of the sidebar */
-    padding: 0px;
+    margin-left: 20%; /* Same as the width of the sidebar */
+    padding: 0 10px;
 }
 
 .cart-main {
@@ -180,23 +179,28 @@ input
 
 /*product list*/
 /*to rewrite form tag for all products*/
+.main-products{
+    padding: 0px;
+}
+
 .all-products{
-    width: 100%;
+    width: 84%;
+    margin-left: 16%;
     height: 100%;
     padding-left: 0;
     top: 0;
     font-size: 18px;
-    position: static;
     left: 0;
-    margin-bottom: 15px;
+;
 }
 .product-in-list{
     font: inherit;
+    height: 100%;
 }
 .pic-in-list{
     width: 41%;
     height: 41%;
-    align-self: center;
+    padding-left: 29%;
 }
 .pic-in-details{
     position: center;
@@ -204,11 +208,6 @@ input
 }
 .products-list{
     font: inherit !important;
-}
-.details-in-list{
-    position: static;
-    width: 100%;
-    align-self: center;
 }
 .product-details{
     width: 100%;
