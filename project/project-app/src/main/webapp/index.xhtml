@@ -6,32 +6,28 @@
                 xmlns:pa="http://xmlns.jcp.org/jsf/passthrough"
                 xmlns:p="http://primefaces.org/ui">
 
-    <ui:define name="title"> Application </ui:define>
+    <ui:define name="title"> Parduotuvė </ui:define>
 
-    <!-- -->
-    <!-- Define custom header here -->
-    <!-- -->
-
-    <!-- Content starts here -->
     <ui:define name="content">
-        <section class="main">
-            <h2>Čia bus prekių sąrašas</h2>
-            <p>Laikinas teksto gabalas, tikrinti side nav:</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tristique nibh orci, maximus mollis ipsum interdum in. Aenean efficitur risus quis felis placerat, at congue ex cursus. Donec nisl ante, ultricies quis elit a, facilisis condimentum felis. Aenean sed mi dictum, placerat nisi quis, eleifend erat. Aliquam erat volutpat. In id turpis laoreet, pharetra massa a, faucibus urna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-            </p>
-            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse nec tincidunt ante, ac tempor lorem. Integer eu arcu id nisi molestie euismod. Mauris sem lectus, mattis quis metus quis, vehicula laoreet urna. In hac habitasse platea dictumst. Vivamus nunc ex, gravida ac magna faucibus, facilisis sagittis elit. Vestibulum a augue metus. Sed a sollicitudin urna. Nam ac rutrum ante, id pellentesque dui. Ut vel purus nisi. Ut non laoreet mi. Sed tellus eros, pellentesque a vulputate eu, malesuada ut nisi.
-            </p>
-            <p>Fusce cursus fringilla lectus, at ultrices est dignissim ultricies. Curabitur in lectus et purus iaculis tincidunt at sed nibh. Donec mollis ante ligula, ut sollicitudin leo sagittis sit amet. Quisque consectetur dui vitae convallis ultrices. Sed et nisi nec ipsum ullamcorper convallis sit amet sed orci. Nulla ut vulputate nisl. Ut vel mi at nisl iaculis dignissim sit amet sit amet lorem. Mauris et iaculis dolor. Duis congue diam ut nulla ullamcorper finibus. Duis nunc sem, consectetur sit amet bibendum vel, consectetur ut mi.
-            </p>
-            <p>Sed et felis non quam blandit hendrerit at euismod libero. In sagittis faucibus nibh, interdum posuere ligula consequat eget. Sed vulputate consequat nulla sed fermentum. Aliquam sagittis, dui sit amet vestibulum commodo, libero ante facilisis elit, et elementum urna elit ut neque. Praesent sit amet dolor odio. Nullam eros lacus, sodales vitae ligula a, posuere sagittis risus. Curabitur egestas dignissim nisi, ut mollis dui rutrum ac. Nulla mi metus, tristique ut nunc at, commodo pellentesque odio. Vivamus commodo, tortor ut convallis pulvinar, leo justo imperdiet arcu, vitae tempor mauris augue id nisi. Fusce aliquet imperdiet nulla, et ultrices ante ultricies vel. Nunc interdum, velit et dignissim vestibulum, enim ex mollis nunc, et tempor nisi quam eget erat. Mauris sagittis odio lectus, quis aliquam mi bibendum vel. Donec metus justo, vehicula nec tempus ut, laoreet vitae nunc. Sed imperdiet magna purus, in rhoncus mauris convallis non.
-            </p>
-            <p>Quisque quis tortor nulla. Phasellus fermentum tempor metus sed sollicitudin. Nullam sapien tortor, aliquet sit amet orci lacinia, ullamcorper dapibus dolor. Nam quis malesuada tortor, vulputate fermentum neque. Duis odio leo, elementum et dapibus nec, cursus luctus urna. Quisque enim turpis, placerat sit amet elementum in, dapibus ac magna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+        <section class="main-products">
+            <h:form class = "all-products">
+                <p:dataGrid class = "products-list" var="product" value="#{productBean.showAllProducts()}" layout="grid"
+                            columns="4" rows="20" paginator="true" id="products"  currentPageReportTemplate="Iš viso: {totalRecords}" rowsPerPageTemplate="12,20,40"
+                            paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
+                    <p:panel class = "product-in-list" header="#{product.name}">
+                        <img class = "pic-in-list" src = "#{product.photo}"/>
+                        <h:panelGrid class = "products-list" columns="2">
+                            <h:outputText value="Kaina, eur"/>
+                            <h:outputText value="#{product.price}" />
+                            <h:outputText value="Kategorija"/>
+                            <h:outputText value="#{product.category.name}"/>
+                        </h:panelGrid>
+                        <h:commandButton class="products-button" value="Plačiau" action="#{productBean.toSeeProductDetails(product.id)}"/>
+                        <h:commandButton class="products-button" value = "į krepšelį"/>
+                    </p:panel>
+                </p:dataGrid>
+            </h:form>
         </section>
     </ui:define>
-    <!-- Content ends here -->
-
-    <!-- -->
-    <!-- Define custom footer here -->
-    <!-- -->
 
 </ui:composition>
