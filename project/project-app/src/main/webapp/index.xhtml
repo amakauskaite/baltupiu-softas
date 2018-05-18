@@ -11,7 +11,7 @@
     <ui:define name="content">
         <section class="main-products">
             <h:form class = "all-products">
-                <p:dataGrid class = "products-list" var="product" value="#{productBean.showAllProducts()}" layout="grid"
+                <p:dataGrid class = "products-list" var="product" value="#{productsBean.products}" layout="grid"
                             columns="4" rows="20" paginator="true" id="products"  currentPageReportTemplate="Iš viso: {totalRecords}" rowsPerPageTemplate="12,20,40"
                             paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
                     <p:panel class = "product-in-list" header="#{product.name}">
@@ -22,7 +22,9 @@
                             <h:outputText value="Kategorija"/>
                             <h:outputText value="#{product.category.name}"/>
                         </h:panelGrid>
-                        <h:commandButton class="products-button" value="Plačiau" action="#{productBean.toSeeProductDetails(product.id)}"/>
+                        <h:button class="products-button" value="Plačiau" outcome="productDetails">
+                            <f:param name="id" value="#{product.id}" />
+                        </h:button>
                         <h:commandButton class="products-button" value = "į krepšelį"/>
                     </p:panel>
                 </p:dataGrid>
