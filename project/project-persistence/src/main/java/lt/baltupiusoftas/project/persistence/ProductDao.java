@@ -13,6 +13,6 @@ import java.util.List;
 public interface ProductDao extends GenericDao<Product> {
     List<Product> findBlockOfProducts(int blockSize);
     List<Product> findAllProducts();
-    Product findById(long productId);
     int numberOfProducts();
+    List<Product> findByCategory(Long categoryId);
 }

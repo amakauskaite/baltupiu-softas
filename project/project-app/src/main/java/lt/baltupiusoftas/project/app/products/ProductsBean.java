@@ -1,24 +1,27 @@
 package lt.baltupiusoftas.project.app.products;
 
+import com.sun.istack.internal.Nullable;
 import lt.baltupiusoftas.project.domain.Product;
 import lt.baltupiusoftas.project.service.ProductService;
 
 import javax.annotation.PostConstruct;
+import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Model;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
+import java.util.List;
 import java.util.Map;
 
 @RequestScoped
 @Model
-public class ProductBean {
+public class ProductsBean {
+    private List<Product> products;
 
     @Inject
     private ProductService productService;
 
-    private Product product;
 
     @Transactional(Transactional.TxType.REQUIRED)
     @PostConstruct
@@ -28,16 +31,17 @@ public class ProductBean {
         Map<String,String> params =
                 fc.getExternalContext().getRequestParameterMap();
         String param = params.get("id");
-        Long id =  Long.parseLong(param);
-        product = productService.productById(id);
+        if (param != null) {
+            Long id =  Long.parseLong(param);
+            products = productService.findByCategory(id);
 
+        }
+        else {
+            products = productService.findAll();
+        }
     }
 
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
+    public List<Product> getProducts(){
+    return products;
     }
 }
