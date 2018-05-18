@@ -15,6 +15,7 @@
         <class>lt.baltupiusoftas.project.domain.Product</class>
         <class>lt.baltupiusoftas.project.domain.User</class>
         <class>lt.baltupiusoftas.project.domain.UserAddress</class>
+        <class>lt.baltupiusoftas.project.domain.Logger</class>
 
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
