@@ -1,5 +1,7 @@
 package lt.baltupiusoftas.project.app.user;
 
+
+import lt.baltupiusoftas.project.app.HeaderStatusBean;
 import lt.baltupiusoftas.project.app.Login;
 import lt.baltupiusoftas.project.domain.User;
 import lt.baltupiusoftas.project.service.password.PasswordHashingService;
@@ -26,9 +28,9 @@ public class UserLoginBean implements Serializable {
 
     private String password;
 
-    private Boolean loginReg = true;
-    private Boolean logoutUsr = false;
 
+    @Inject
+    HeaderStatusBean headerStatusBean;
 
     @Inject
     private UserService userService;
@@ -45,7 +47,8 @@ public class UserLoginBean implements Serializable {
         // If user is registered and login successful
         if (user != null) {
             login.setUser(user);
-            showLogoutAndUserProfile();
+
+            headerStatusBean.showLogoutAndUserProfile();
             return "index";
         }
         // If user is not registered and login failed
@@ -58,39 +61,14 @@ public class UserLoginBean implements Serializable {
     public String logout() {
         if (isLoggedIn()) {
             login.setUser(null);
-            showLoginAndRegistration();
+
+            headerStatusBean.showLoginAndRegistration();
             return "login";//success_logout_user
         } else {
             return "index";
         }
     }
 
-    public void showLoginAndRegistration(){
-        loginReg = true;
-        logoutUsr = false;
-    }
-
-    public void showLogoutAndUserProfile()
-    {
-        loginReg = false;
-        logoutUsr = true;
-    }
-
-    public boolean isLoginReg() {
-        return loginReg;
-    }
-
-    public void setLoginReg(boolean loginReg) {
-        this.loginReg = loginReg;
-    }
-
-    public boolean isLogoutUsr() {
-        return logoutUsr;
-    }
-
-    public void setLogoutUsr(boolean logoutUsr) {
-        this.logoutUsr = logoutUsr;
-    }
 
     private Boolean isLoggedIn() {
         return login.getUser() != null;

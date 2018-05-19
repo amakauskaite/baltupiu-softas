@@ -5,12 +5,15 @@
                 xmlns:p="http://primefaces.org/ui"
                 xmlns:pa="http://xmlns.jcp.org/jsf/passthrough">
 
-    <aside class="sideNav">
+    <h:inputHidden  value="#{categoryBean.findAllCategories()}"/>
 
-        <h:outputLink value="/" styleClass="side-link">Pirma kategorija</h:outputLink>
-        <h:outputLink value="/" styleClass="side-link">Antra kategorija</h:outputLink>
-        <h:outputLink value="/" styleClass="side-link">Trečia kategorija</h:outputLink>
-        <h:outputLink value="/" styleClass="side-link">Ketvirta kategorija</h:outputLink>
+    <aside class="sideNav">
+        <h:link value="Viskas" outcome="index"/>
+            <ui:repeat value="#{categoryBean.categories}" var="category">
+                    <h:link value="#{category.name}" outcome="index">
+                        <f:param name="id" value="#{category.id}" />
+                    </h:link>
+            </ui:repeat>
 
     </aside>
 
