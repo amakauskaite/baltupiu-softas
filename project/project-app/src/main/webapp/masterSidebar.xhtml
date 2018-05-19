@@ -4,10 +4,9 @@
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:p="http://primefaces.org/ui"
                 xmlns:pa="http://xmlns.jcp.org/jsf/passthrough">
-    <h:inputHidden  value="#{categoryBean.findAllCategories()}"/>
 
     <aside class="sideNav">
-        <h:link value="Viskas" outcome="index"/>
+        <h:link value="Visos prekės"  outcome="index"/>
             <ui:repeat value="#{categoryBean.categories}" var="category">
                     <h:link value="#{category.name}" outcome="index">
                         <f:param name="id" value="#{category.id}" />
