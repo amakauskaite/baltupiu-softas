@@ -12,9 +12,8 @@ body
     display: block;
     overflow: auto;
     top: 8%;
-    bottom: 5%;
     height: 90%;
-    width: 95%;
+    width: 100%;
 }
 
 footer{
@@ -22,12 +21,20 @@ footer{
     display: block;
     */
     overflow: hidden;
-    position: fixed;
+    position: absolute;
     text-align: center;
-    height: 5%;
     width: 100%;
     background: whitesmoke;
     bottom: 0;
+    height: auto;
+}
+
+.index-footer{
+    width: 15%;
+    background: transparent;
+    color: rgba(0, 0, 0, 0.76);
+    z-index: 0;
+    position: fixed;
 }
 
 /*footer p {
