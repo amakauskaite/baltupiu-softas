@@ -1,0 +1,50 @@
+<ui:composition template="masterTemplate.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:pa="http://xmlns.jcp.org/jsf/passthrough">
+
+    <ui:define name="title">Parduotuvė</ui:define>
+
+    <!-- -->
+    <!-- Define custom header here -->
+    <!-- -->
+
+    <ui:define name="left-sidebar">
+        <ui:include src="userSidebar.xhtml" />
+    </ui:define>
+
+    <!-- Content starts here -->
+    <ui:define name="content">
+        <section class="main">
+            <h:form id="user-address-update-form">
+                <p:messages id="messages" showDetail="true" closable="true">
+                    <p:autoUpdate />
+                </p:messages>
+                <h2>Redaguoti vartotojo adresą</h2>
+                <h:outputLabel value="Šalis" for="countryUpdate"/> <br/>
+                <p:inputText id="countryUpdate" pa:placeholder="#{userUpdateBean.userAddress.country}" value="#{userUpdateBean.userAddress.country}"/> <br/>
+                <h:outputLabel value="Miestas" for="cityUpdate"/> <br/>
+                <p:inputText id="cityUpdate" pa:placeholder="#{userUpdateBean.userAddress.city}" value="#{userUpdateBean.userAddress.city}"/><br/>
+                <h:outputLabel for="streetUpdate" value="Gatvė"/> <br/>
+                <p:inputText id="streetUpdate" pa:placeholder="#{userUpdateBean.userAddress.street}" value="#{userUpdateBean.userAddress.street}"/><br/>
+                <h:outputLabel value="Namo nr." for="houseUpdate"/><br/>
+                <p:inputText id="houseUpdate" pa:placeholder="#{userUpdateBean.userAddress.house}" value="#{userUpdateBean.userAddress.house}"/> <br/>
+                <h:outputLabel value="Buto nr." for="flatUpdate"/><br/>
+                <p:inputText id="flatUpdate" pa:placeholder="#{userUpdateBean.userAddress.flat}" value="#{userUpdateBean.userAddress.flat}"/> <br/>
+                <h:outputLabel value="Pašto kodas" for="postcodeUpdate"/> <br/>
+                <p:inputText id="postcodeUpdate" pa:placeholder="#{userUpdateBean.userAddress.postcode}" value="#{userUpdateBean.userAddress.postcode}"/> <br/>
+                <h:commandButton id="addressUpdateBtn" styleClass="form-buttons" value="Išsaugoti" action="#{userUpdateBean.updateAddress()}"/>
+                <input id="resetBtn" type="reset" />
+            </h:form>
+        </section>
+    </ui:define>
+    <!-- Content ends here -->
+
+    <!-- -->
+    <!-- Define custom footer here -->
+    <!-- -->
+
+</ui:composition>
