@@ -1,18 +1,26 @@
 package lt.baltupiusoftas.project.app.user;
 
+import lt.baltupiusoftas.project.app.Login;
 import lt.baltupiusoftas.project.domain.User;
 import lt.baltupiusoftas.project.domain.UserAddress;
+import lt.baltupiusoftas.project.persistence.UserAddressDao;
+import lt.baltupiusoftas.project.persistence.impl.UserDaoImpl;
 import lt.baltupiusoftas.project.service.PasswordHashingService;
 import lt.baltupiusoftas.project.service.UserService;
 import lt.baltupiusoftas.project.service.UserAddressService;
 
+import javax.annotation.PostConstruct;
+import javax.ejb.SessionContext;
+import javax.el.ELException;
 import javax.enterprise.inject.Model;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
+import java.io.IOException;
 
 @Model
 public class UserUpdateBean {
-
 
 
     //USER
@@ -48,38 +56,96 @@ public class UserUpdateBean {
     @Inject
     private PasswordHashingService passwordHashing;
 
+    @Inject
+    private UserDaoImpl userDao;
+    @Inject
+    private UserAddressDao userAddressDao;
+
+    @Inject
+    private Login login;
 
 
+
+    @PostConstruct
+    //@Transactional(Transactional.TxType.REQUIRED)
+    public void init()
+    {
+        /*this.user = userDao.findByEmail(login.getUser().getEmail());*/
+        try {
+            this.user = userDao.findByEmail(login.getUser().getEmail());
+            //this.userAddress = userAddressDao.find(user.getUserAddress());
+        }
+        catch (NullPointerException npe)
+        {
+            try {
+                FacesContext.getCurrentInstance().getExternalContext().redirect("error.xhtml");
+            }
+            catch (IOException ioe)
+            {
+                System.out.println("Failed to forward to another page in "+this.getClass().getName());
+            }
+
+        }
+
+    }
 
     @Transactional(Transactional.TxType.REQUIRED)
     public String updatePassword () {
-            user =  userService.updatePassword(userId, oldPassword, newPassword);
+        oldPassword = user.getPassword();
+            this.user =  userService.updatePassword(userId, oldPassword, newPassword);
             if (user == null) {
-                return "userInfoUpdate";
+                FacesContext.getCurrentInstance().addMessage("passUpdateBtn", new FacesMessage(FacesMessage.SEVERITY_ERROR,"Klaida!",  "Nepavyko pakeisti slaptažodžio."));
+                return "passwordChange";
             }
-        return "profile";
+        return "passwordChange";
     }
 
     @Transactional(Transactional.TxType.REQUIRED)
     public String updateAddress () {
-        userAddress = userAddressService.updateUserAddress(userAddress, country, city, street, house, flat, postcode);
-        return "profile";
+        setEmptyUserAddress();
+        this.userAddress = userAddressService.updateUserAddress(userAddress, country, city, street, house, flat, postcode);
+        if(userAddress == null)
+        {
+            FacesContext.getCurrentInstance().addMessage("addressUpdateBtn", new FacesMessage(FacesMessage.SEVERITY_ERROR,"Klaida!",  "Nepavyko išsaugoti adreso. Bandykite dar kartą."));
+            return "addressChange";
+        }
+        return "addressChange";
     }
 
     @Transactional(Transactional.TxType.REQUIRED)
     public String createAddress () {
-        userAddress = userAddressService.createUserAddress(country, city, street, house, flat, postcode, userId);
+        this.userAddress = userAddressService.createUserAddress(country, city, street, house, flat, postcode, userId);
         return "profile";
     }
 
     @Transactional(Transactional.TxType.REQUIRED)
     public String updateUserInfo () {
-        user = userService.updateUserInfo(userId, firstname, lastname, email, phoneNumber);
+        setUserInfo();
+        this.user = userService.updateUserInfo(userId, firstname, lastname, email, phoneNumber);
         if (user == null) {
-            return "userInfoUpdate";
+            FacesContext.getCurrentInstance().addMessage("userUpdateBtn", new FacesMessage(FacesMessage.SEVERITY_ERROR,"Klaida!",  "Nepavyko išsaugoti naujos informacijos. Bandykite dar kartą."));
+            return "profile";
         }
         return "profile";
 
+    }
+
+    private void setUserInfo()
+    {
+        if(firstname.isEmpty()) this.firstname = user.getFirstname();
+        if(lastname.isEmpty()) this.lastname = user.getLastname();
+        if(email.isEmpty()) this.email = user.getEmail();
+        if(phoneNumber.isEmpty()) this.phoneNumber = user.getPhonenumber();
+    }
+
+    private void setEmptyUserAddress()
+    {
+        if(country.isEmpty()) country = userAddress.getCountry();
+        if(city.isEmpty()) city = userAddress.getCity();
+        if(street.isEmpty()) street = userAddress.getStreet();
+        if(house.isEmpty()) house = userAddress.getHouse();
+        if(flat.isEmpty()) flat = userAddress.getFlat();
+        if(postcode.isEmpty()) postcode = userAddress.getPostcode();
     }
 
 

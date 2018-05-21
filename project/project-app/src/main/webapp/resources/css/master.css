@@ -111,10 +111,10 @@ tr:nth-child(even) {
 
 form {
     padding-left: 50px;
-    top: 20%;
+    top: 8%;
     font-size: 18px;
     position: absolute;
-    width: 50%;
+    width: 60%;
     left: 25%;
 
 
@@ -134,7 +134,7 @@ form {
 
 .link-in-form
 {
-    height: 18px;
+    height: 40px;
 }
 
 input
@@ -153,13 +153,13 @@ input
 
 .form-buttons, #resetBtn, .login-btn
 {
-    width: 40%;
+    width: 41%;
     border-radius: 4px;
 }
 
 .login-btn
 {
-    width: 80%;
+    width: 81.5%;
 }
 
 /* Sidebar (re-used from w3schools)*/
@@ -260,3 +260,8 @@ input
     /*padding-left: 0;*/
     /*padding-top: 0;*/
 /*}*/
+/*Error*/
+.redirected_error
+{
+    position: center;
+}
