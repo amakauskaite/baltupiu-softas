@@ -4,6 +4,8 @@ package lt.baltupiusoftas.project.app.user;
 import lt.baltupiusoftas.project.app.HeaderStatusBean;
 import lt.baltupiusoftas.project.app.Login;
 import lt.baltupiusoftas.project.domain.User;
+import lt.baltupiusoftas.project.service.LoggerService;
+import lt.baltupiusoftas.project.service.intersector.LoggedInvocation;
 import lt.baltupiusoftas.project.service.password.PasswordHashingService;
 import lt.baltupiusoftas.project.service.user.UserService;
 
@@ -12,15 +14,15 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.transaction.Transactional;
 import java.io.Serializable;
 
 @Named
 @RequestScoped
+@LoggedInvocation
 public class UserLoginBean implements Serializable {
 
-    /*
-     * Session scoped login bean
-     */
+
     @Inject
     private Login login;
 
@@ -36,8 +38,12 @@ public class UserLoginBean implements Serializable {
     private UserService userService;
 
     @Inject
+    private LoggerService loggerService;
+
+    @Inject
     private PasswordHashingService passwordHashing;
 
+    @Transactional(Transactional.TxType.REQUIRED)
     public String login() {
         // Ignore if logged in already
         if (isLoggedIn()) {
@@ -49,6 +55,7 @@ public class UserLoginBean implements Serializable {
             login.setUser(user);
 
             headerStatusBean.showLogoutAndUserProfile();
+            loggerService.setUserAndIsAdmin(email, false);
             return "index";
         }
         // If user is not registered and login failed

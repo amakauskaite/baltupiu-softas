@@ -2,31 +2,38 @@ package lt.baltupiusoftas.project.service.intersector;
 
 import lt.baltupiusoftas.project.domain.Logger;
 import lt.baltupiusoftas.project.persistence.LoggerDao;
+import lt.baltupiusoftas.project.service.LoggerService;
 
+import javax.ejb.EJB;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
 import javax.inject.Inject;
 import javax.interceptor.AroundInvoke;
 import javax.interceptor.Interceptor;
 import javax.interceptor.InvocationContext;
 import javax.transaction.Transactional;
+import java.io.Serializable;
 import java.util.Date;
 
 @Interceptor
 @LoggedInvocation
-public class ActionsLoggerServiceImpl implements ActionsLoggerService {
+public class ActionsLoggerServiceImpl implements ActionsLoggerService, Serializable {
 
-    @Inject
-    private LoggerDao loggerDao;
-
+    @EJB
+    private LoggerService loggerService;
 
     @Override
     @AroundInvoke
-    @Transactional(Transactional.TxType.REQUIRED)
     public Object logMethodInvocation(InvocationContext context) throws Exception {
-        Logger logger = new Logger();
-        logger.setDate(new Date());
-        System.out.println(context.getParameters().toString());
-        logger.setAction(context.getClass().getName() + "." + context.getMethod().getName());
-        loggerDao.create(logger);
-        return context.proceed();
+        Object proceed = null;
+        try {
+            proceed = loggerService.executeTransaction(()->context.proceed(), context);
+            //If you reach here, you will be guaranteed of commit and then you can do the elastic search update
+            return proceed;
+        } catch (Exception e) {
+            //If this happens, and you propagate it, then for sure the transaction will be rolledback, and never get committed. Since all db calls were being done within this transaction, then no DB commit will be done.
+            throw e;
+        }
+
     }
 }

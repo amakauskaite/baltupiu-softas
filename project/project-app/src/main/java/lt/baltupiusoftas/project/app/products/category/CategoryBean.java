@@ -2,6 +2,7 @@ package lt.baltupiusoftas.project.app.products.category;
 
 import lt.baltupiusoftas.project.domain.Category;
 import lt.baltupiusoftas.project.service.CategoryService;
+import lt.baltupiusoftas.project.service.intersector.LoggedInvocation;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
@@ -11,7 +12,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Model
-@RequestScoped
+@LoggedInvocation
 public class CategoryBean {
 
     @Inject
