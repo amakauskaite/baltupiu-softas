@@ -16,7 +16,6 @@ import java.util.List;
 import java.util.Map;
 
 @Model
-@Transactional(Transactional.TxType.REQUIRED)
 @LoggedInvocation
 public class ProductsBean {
     private List<Product> products;

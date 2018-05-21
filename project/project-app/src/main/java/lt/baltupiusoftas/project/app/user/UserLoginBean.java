@@ -70,6 +70,7 @@ public class UserLoginBean implements Serializable {
             login.setUser(null);
 
             headerStatusBean.showLoginAndRegistration();
+            loggerService.setUserAndIsAdmin(null, false);
             return "login";//success_logout_user
         } else {
             return "index";

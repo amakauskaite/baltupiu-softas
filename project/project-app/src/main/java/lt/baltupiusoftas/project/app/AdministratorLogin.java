@@ -9,6 +9,7 @@ import java.io.Serializable;
 
 @Named
 @SessionScoped
+
 public class AdministratorLogin implements Serializable{
 
     private Administrator administrator;

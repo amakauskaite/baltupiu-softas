@@ -3,8 +3,11 @@ package lt.baltupiusoftas.project.app.administrator;
 import lt.baltupiusoftas.project.app.AdministratorLogin;
 import lt.baltupiusoftas.project.domain.Administrator;
 import lt.baltupiusoftas.project.service.AdministratorService;
+import lt.baltupiusoftas.project.service.LoggerService;
+import lt.baltupiusoftas.project.service.intersector.LoggedInvocation;
 import lt.baltupiusoftas.project.service.password.PasswordHashingService;
 
+import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -12,8 +15,9 @@ import javax.transaction.Transactional;
 import java.io.Serializable;
 
 @Named
-@SessionScoped
-public class AdministratorLoginBean implements Serializable {
+@RequestScoped
+@LoggedInvocation
+public class AdministratorLoginBean{
 
     @Inject
     private AdministratorLogin adminLogin;
@@ -23,6 +27,9 @@ public class AdministratorLoginBean implements Serializable {
 
     @Inject
     private AdministratorService adminService;
+
+    @Inject
+    private LoggerService loggerService;
 
     @Inject
     private PasswordHashingService passwordHashingService;
@@ -53,6 +60,7 @@ public class AdministratorLoginBean implements Serializable {
             Administrator administrator = adminService.login(username, password);
             if (administrator == null) {
                 adminLogin.setAdministrator(administrator);
+                loggerService.setUserAndIsAdmin(username, true);
                 return "login";
             } else {
                 return "index";
@@ -69,6 +77,7 @@ public class AdministratorLoginBean implements Serializable {
 
     public String logout () {
         if (isLoggedIn()) {
+            loggerService.setUserAndIsAdmin(null, false);
             adminLogin.setAdministrator(null);
             return "login";
 
