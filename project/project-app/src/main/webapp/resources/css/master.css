@@ -253,3 +253,30 @@ input
     /*padding-left: 0;*/
     /*padding-top: 0;*/
 /*}*/
+
+.blocked-user{
+    color: red;
+    font-weight: bold;
+}
+.users-list-form{
+    width: 100%;
+    height: 100%;
+    padding-left: 10%;
+    padding-top: 10%;
+    padding-right: 10%;
+    left: 0;
+    top: 0;
+    font-size: 18px;
+    position: absolute;
+    font-family: inherit; !important;
+}
+.block-user{
+    background-color: rgba(179, 56, 27, 0.84);
+}
+.unblocked-user{
+    background-color: #4c813b;
+}
+.main-admin{
+    margin-left: 0;
+    padding: 0;
+}

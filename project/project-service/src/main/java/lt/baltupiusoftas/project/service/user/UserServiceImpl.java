@@ -5,6 +5,7 @@ import lt.baltupiusoftas.project.persistence.UserDao;
 
 import javax.inject.Inject;
 import javax.transaction.Transactional;
+import java.util.List;
 
 public class UserServiceImpl implements UserService {
 
@@ -45,6 +46,21 @@ public class UserServiceImpl implements UserService {
             return userDao.update(user);
 
         }
+        return user;
+    }
+
+    @Override
+    public List<User> getAllUsers() {
+        return userDao.findAll();
+    }
+
+    @Transactional(Transactional.TxType.REQUIRED)
+    @Override
+    public User changeBlockStatus(Long userId, boolean status) {
+        User user = userDao.find(userId);
+        if(user.getBlocked() == status)return user;
+        user.setBlocked(status);
+        user = userDao.update(user);
         return user;
     }
 

@@ -12,12 +12,6 @@ public class ProductServiceImpl implements ProductService {
     private ProductDao productDao;
 
     @Override
-    public List<Product> blockOfProducts(int blockSize) {
-        //not yet implemented
-        return null;
-    }
-
-    @Override
     public Product productById(Long productId) {
         return productDao.find(productId);
     }
