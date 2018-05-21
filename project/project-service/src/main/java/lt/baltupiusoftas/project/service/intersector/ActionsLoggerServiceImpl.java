@@ -1,19 +1,12 @@
 package lt.baltupiusoftas.project.service.intersector;
 
-import lt.baltupiusoftas.project.domain.Logger;
-import lt.baltupiusoftas.project.persistence.LoggerDao;
 import lt.baltupiusoftas.project.service.LoggerService;
 
 import javax.ejb.EJB;
-import javax.ejb.TransactionAttribute;
-import javax.ejb.TransactionAttributeType;
-import javax.inject.Inject;
 import javax.interceptor.AroundInvoke;
 import javax.interceptor.Interceptor;
 import javax.interceptor.InvocationContext;
-import javax.transaction.Transactional;
 import java.io.Serializable;
-import java.util.Date;
 
 @Interceptor
 @LoggedInvocation
