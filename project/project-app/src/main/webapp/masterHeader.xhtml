@@ -12,11 +12,13 @@
         </h:outputLink>
         <h:outputLink value="/" styleClass="top-link">Parduotuvė.lt</h:outputLink>
         <h:outputLink id="cartLink" styleClass="top-link menu-right" value="cart.xhtml">Krepšelis</h:outputLink>
+
         <h:panelGroup id="log-reg" rendered="#{headerStatusBean.loginReg}">
             <h:outputLink id="loginLink" styleClass="top-link menu-right" value="login.xhtml">Prisijungti</h:outputLink>
             <h:outputLink id="registrLink" styleClass="top-link menu-right"
                           value="registration.xhtml">Registruotis</h:outputLink>
         </h:panelGroup>
+
         <h:panelGroup id="log-usr" rendered="#{headerStatusBean.logoutUsr}">
             <h:form styleClass="link-form">
                 <h:commandLink id="logoutLink" styleClass="top-link menu-right link-in-form" value="Atsijungti"

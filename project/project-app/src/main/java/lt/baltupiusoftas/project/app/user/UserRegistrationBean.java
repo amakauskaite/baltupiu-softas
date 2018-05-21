@@ -24,6 +24,7 @@ public class UserRegistrationBean{
     @Inject
     private PasswordHashingService passwordHashingService;
 
+
     @Inject
     private UserLoginBean userLoginBean;
 
@@ -167,7 +168,6 @@ public class UserRegistrationBean{
     }
 
     public void setPassword(String password) {
-
         this.password = passwordHashingService.hashPassword(password);
         userLoginBean.setPassword(password);
     }

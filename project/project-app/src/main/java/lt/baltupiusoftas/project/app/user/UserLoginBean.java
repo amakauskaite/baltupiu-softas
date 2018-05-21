@@ -1,5 +1,6 @@
 package lt.baltupiusoftas.project.app.user;
 
+
 import lt.baltupiusoftas.project.app.HeaderStatusBean;
 import lt.baltupiusoftas.project.app.Login;
 import lt.baltupiusoftas.project.domain.User;
@@ -7,7 +8,6 @@ import lt.baltupiusoftas.project.service.password.PasswordHashingService;
 import lt.baltupiusoftas.project.service.user.UserService;
 
 import javax.enterprise.context.RequestScoped;
-import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
@@ -15,8 +15,7 @@ import javax.inject.Named;
 import java.io.Serializable;
 
 @Named
-@SessionScoped
-//@RequestScoped
+@RequestScoped
 public class UserLoginBean implements Serializable {
 
     /*
@@ -28,6 +27,7 @@ public class UserLoginBean implements Serializable {
     private String email;
 
     private String password;
+
 
     @Inject
     HeaderStatusBean headerStatusBean;
@@ -47,6 +47,7 @@ public class UserLoginBean implements Serializable {
         // If user is registered and login successful
         if (user != null) {
             login.setUser(user);
+
             headerStatusBean.showLogoutAndUserProfile();
             return "index";
         }
@@ -60,6 +61,7 @@ public class UserLoginBean implements Serializable {
     public String logout() {
         if (isLoggedIn()) {
             login.setUser(null);
+
             headerStatusBean.showLoginAndRegistration();
             return "login";//success_logout_user
         } else {

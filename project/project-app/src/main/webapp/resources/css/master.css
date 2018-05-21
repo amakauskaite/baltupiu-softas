@@ -89,6 +89,7 @@ a {text-decoration: none;}
     display: none;
 }
 /* Table and it's contents */
+
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -207,6 +208,7 @@ input
 @media screen and (max-height: 450px) {
     .sideNav {padding-top: 15px;}
     .sideNav a {font-size: 18px;}
+
 }
 
 /*product list*/
@@ -256,7 +258,4 @@ input
 .products-button{
     margin: 5px;
 }
-/*ul {*/
-    /*padding-left: 0;*/
-    /*padding-top: 0;*/
-/*}*/
+
