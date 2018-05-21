@@ -2,10 +2,12 @@ package lt.baltupiusoftas.project.app.user;
 
 import lt.baltupiusoftas.project.domain.User;
 import lt.baltupiusoftas.project.domain.UserAddress;
+import lt.baltupiusoftas.project.service.intersector.LoggedInvocation;
 import lt.baltupiusoftas.project.service.password.PasswordHashingService;
 import lt.baltupiusoftas.project.service.user.UserService;
 import lt.baltupiusoftas.project.service.user.address.UserAddressService;
 
+import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Model;
 import javax.faces.application.FacesMessage;
@@ -16,6 +18,7 @@ import javax.transaction.Transactional;
 import java.io.Serializable;
 
 @Model
+@LoggedInvocation
 public class UserRegistrationBean{
 
     @Inject
