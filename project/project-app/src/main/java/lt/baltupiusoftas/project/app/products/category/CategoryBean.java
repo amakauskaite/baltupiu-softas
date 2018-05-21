@@ -3,6 +3,7 @@ package lt.baltupiusoftas.project.app.products.category;
 import lt.baltupiusoftas.project.domain.Category;
 import lt.baltupiusoftas.project.service.CategoryService;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Model;
 import javax.inject.Inject;
@@ -18,9 +19,9 @@ public class CategoryBean {
 
     private List<Category> categories;
 
-    @Transactional
+    @PostConstruct
     public void findAllCategories () {
-        categories = categoryService.findAllCategories();
+        this.categories = categoryService.findAllCategories();
 
     }
 

@@ -9,6 +9,7 @@
     <ui:define name="title"> Parduotuvė </ui:define>
 
     <ui:define name="content">
+
         <section class="main-products">
             <h:form class = "all-products">
                 <p:dataGrid class = "products-list" var="product" value="#{productsBean.products}" layout="grid"
@@ -30,6 +31,14 @@
                 </p:dataGrid>
             </h:form>
         </section>
+
+    </ui:define>
+
+    <ui:define name="footer">
+
+        <footer class="index-footer">
+            <p>2018 Baltupių Softas</p>
+        </footer>
     </ui:define>
 
 </ui:composition>

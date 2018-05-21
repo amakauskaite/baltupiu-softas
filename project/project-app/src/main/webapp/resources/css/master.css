@@ -12,9 +12,8 @@ body
     display: block;
     overflow: auto;
     top: 8%;
-    bottom: 5%;
     height: 90%;
-    width: 95%;
+    width: 100%;
 }
 
 footer{
@@ -22,12 +21,20 @@ footer{
     display: block;
     */
     overflow: hidden;
-    position: fixed;
+    position: absolute;
     text-align: center;
-    height: 5%;
     width: 100%;
     background: whitesmoke;
     bottom: 0;
+    height: auto;
+}
+
+.index-footer{
+    width: 15%;
+    background: transparent;
+    color: rgba(0, 0, 0, 0.76);
+    z-index: 0;
+    position: fixed;
 }
 
 /*footer p {
@@ -82,6 +89,7 @@ a {text-decoration: none;}
     display: none;
 }
 /* Table and it's contents */
+
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -200,6 +208,7 @@ input
 @media screen and (max-height: 450px) {
     .sideNav {padding-top: 15px;}
     .sideNav a {font-size: 18px;}
+
 }
 
 /*product list*/
@@ -249,6 +258,7 @@ input
 .products-button{
     margin: 5px;
 }
+
 /*ul {*/
     /*padding-left: 0;*/
     /*padding-top: 0;*/
@@ -268,7 +278,7 @@ input
     top: 0;
     font-size: 18px;
     position: absolute;
-    font-family: inherit; !important;
+    font-family: inherit !important;
 }
 .block-user{
     background-color: rgba(179, 56, 27, 0.84);
