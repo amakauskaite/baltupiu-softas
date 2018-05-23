@@ -34,6 +34,8 @@ public class CartDaoImpl extends GenericDaoImpl<Cart> implements CartDao{
     }
 
 
+    //todo tas pats del pavadinimo
+    //todo reikia rasti visus, ne tik completed
     @Override
     public List<Cart> findAllCartsForPurchaseHistory(User user){
         String findAllCartsForPurchaseHistory = "select cart" +

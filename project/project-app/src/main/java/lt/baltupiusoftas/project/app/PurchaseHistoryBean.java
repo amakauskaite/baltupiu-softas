@@ -11,14 +11,16 @@ import java.util.List;
 
 @Named
 //@RequestScoped
+//todo reikia requestscoped
 public class PurchaseHistoryBean {
     private String product;
     private Integer count;
     private double price;
     private String state;
     private String date;
-    private List<Cart> l;
+    private List<Cart> l; //todo aiskus pavadinimai
     private User user;
+    //todo truksta inject
     private PurchaseHistoryService purchaseHistoryService;
 
     public List<Cart> getL() {
@@ -70,7 +72,9 @@ public class PurchaseHistoryBean {
     }
 
     @PostConstruct
+    //todo reikia nustatyti saraso reiksme ne per set metoda, o priskiriant
     public void init(){
         setL(purchaseHistoryService.findAllCartsForPurchaseHistory(user));
     }
+    //todo seno krepselio (ar prekes, pasitiksink uzsaakovo klausimuose) pridejimas i nauja
 }

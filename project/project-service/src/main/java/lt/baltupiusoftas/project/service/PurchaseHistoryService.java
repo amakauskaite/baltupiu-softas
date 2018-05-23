@@ -14,10 +14,12 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 
+//todo sukurti interfeisa PurchaseHistoryService ir jo implementacija (kaip ir su kitais)
 public class PurchaseHistoryService {
     @Inject
     private CartDao cartDAO;
 
+    //TODO istrinti sita metoda
     public Cart createList (List<CartItem> items, OrderStatusType orderStatus){
         Cart cart = new Cart();
         cart.setItems(items);
@@ -25,6 +27,8 @@ public class PurchaseHistoryService {
         return cart;
     }
 
+    //todo pakeisti user i userid
+    //todo galetum sutrumpinti pavadinima ir aiskesni ji padaryt pvz findUserCartHistory
     public List<Cart> findAllCartsForPurchaseHistory(User user){
         return cartDAO.findAllCartsForPurchaseHistory(user);
 
