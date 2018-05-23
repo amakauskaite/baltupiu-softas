@@ -1,0 +1,18 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:pa="http://xmlns.jcp.org/jsf/passthrough">
+
+    <aside class="sideNav">
+        <h:link value="Visos prekės"  outcome="index"/>
+            <ui:repeat value="#{categoryBean.categories}" var="category">
+                    <h:link value="#{category.name}" outcome="index">
+                        <f:param name="id" value="#{category.id}" />
+                    </h:link>
+            </ui:repeat>
+
+    </aside>
+
+</ui:composition>

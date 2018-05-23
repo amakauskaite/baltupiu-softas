@@ -20,15 +20,17 @@ import java.util.List;
 public class CartDaoImpl extends GenericDaoImpl<Cart> implements CartDao{
 
     @Override
-    public List<Cart> findUserCarts(Long userId) {
-        String findUserCart = "select cart " +
+    public Cart findActiveCart(Long userId) {
+        String findActiveCart = "select cart " +
                 "from Cart cart " +
-                "where cart.user.id = :userId";
+                "where cart.user.id = :userId " +
+                "order by cart.id desc";
 
-        TypedQuery<Cart> query = entityManager.createQuery(findUserCart, Cart.class);
+        TypedQuery<Cart> query = entityManager.createQuery(findActiveCart, Cart.class);
         query.setParameter("userId", userId);
+        query.setMaxResults(1);
 
-        return query.getResultList();
+        return query.getSingleResult();
     }
 
 

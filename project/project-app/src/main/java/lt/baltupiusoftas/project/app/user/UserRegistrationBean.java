@@ -1,17 +1,13 @@
 package lt.baltupiusoftas.project.app.user;
 
 import lt.baltupiusoftas.project.domain.User;
-import lt.baltupiusoftas.project.domain.UserAddress;
 import lt.baltupiusoftas.project.service.password.PasswordHashingService;
 import lt.baltupiusoftas.project.service.user.UserService;
-import lt.baltupiusoftas.project.service.user.address.UserAddressService;
 
-import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Model;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
-import javax.inject.Named;
-import javax.transaction.Transactional;
-import java.io.Serializable;
 
 @Model
 public class UserRegistrationBean{
@@ -21,6 +17,10 @@ public class UserRegistrationBean{
 
     @Inject
     private PasswordHashingService passwordHashingService;
+
+
+    @Inject
+    private UserLoginBean userLoginBean;
 
     private String country;
     private String city;
@@ -36,16 +36,34 @@ public class UserRegistrationBean{
     private User user;
 
 
-@Transactional(Transactional.TxType.REQUIRED)
     public String register() {
         user = userService.register(email, password, firstname, lastname, phoneNumber);
 
         if (user == null) {
-            return "error_register_user_exist";
+            FacesContext.getCurrentInstance().addMessage("registrationBtn", new FacesMessage(FacesMessage.SEVERITY_ERROR,"Klaida!",  "Vartotojas jau egzistuoja"));
+            return "registration"; //error_register_user_exist
 
         } else {
-            return "success_register_user";
+            FacesContext.getCurrentInstance().addMessage("registrationBtn", new FacesMessage(FacesMessage.SEVERITY_INFO,"Sėkminga",  "Registracija pavyko"));
+            //clearFields();
+
+            //try to login after registration
+            if (userLoginBean.login().equals("login")) {
+                return "registration";
+            }
+
+            return "index"; //success_register_user
         }
+    }
+
+    private void clearFields()
+    {
+        // Sets all registration form fields to null, if the registration was successful
+        setFirstname(null);
+        setLastname(null);
+        setPassword(null);
+        setEmail(null);
+        setPhoneNumber(null);
     }
 
     public User getUser() {
@@ -135,6 +153,7 @@ public class UserRegistrationBean{
 
     public void setEmail(String email) {
         this.email = email;
+        userLoginBean.setEmail(email);
     }
 
     public String getPassword() {
@@ -143,5 +162,6 @@ public class UserRegistrationBean{
 
     public void setPassword(String password) {
         this.password = passwordHashingService.hashPassword(password);
+        userLoginBean.setPassword(password);
     }
 }
