@@ -1,0 +1,32 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:pa="http://xmlns.jcp.org/jsf/passthrough">
+
+    <header>
+        <h:outputLink value="/" styleClass="top-link">
+            <h:graphicImage id="bagImg" value="resources/images/bag-white.jpg" alt="Parduotuvė.lt" width="18"
+                            height="auto"/>
+        </h:outputLink>
+        <h:outputLink value="/" styleClass="top-link">Parduotuvė.lt</h:outputLink>
+
+        <h:panelGroup id="login-admin" rendered="#{adminHeaderStatusBean.loginAdm}">
+            <h:outputLink id="loginLink" styleClass="top-link menu-right" value="admin.xhtml">Prisijungti</h:outputLink>
+        </h:panelGroup>
+
+        <h:panelGroup id="logout-admin" rendered="#{adminHeaderStatusBean.logoutAdm}">
+            <h:form styleClass="link-form">
+                <h:commandLink id="logoutLink" styleClass="top-link menu-right link-in-form" value="Atsijungti"
+                               action="#{administratorLoginBean.logout()}"/>
+            </h:form>
+            <h:outputLink id="orderLink" styleClass="top-link menu-right" value="adminOrders.xhtml">Užsakymai</h:outputLink>
+            <h:outputLink id="usersLink" styleClass="top-link menu-right" value="userList.xhtml">Vartotojai</h:outputLink>
+            <h:outputLink id="itemsLink" styleClass="top-link menu-right" value="adminIndex.xhtml">Prekės</h:outputLink>
+        </h:panelGroup>
+    </header>
+
+    <br/>
+
+</ui:composition>
