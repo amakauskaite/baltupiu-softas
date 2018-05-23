@@ -73,7 +73,7 @@ public class UserUpdateBean {
         /*this.user = userDao.findByEmail(login.getUser().getEmail());*/
         try {
             this.user = userDao.findByEmail(login.getUser().getEmail());
-            //this.userAddress = userAddressDao.find(user.getUserAddress());
+            this.userAddress = userAddressDao.find(user.getUserAddress());
         }
         catch (NullPointerException npe)
         {
