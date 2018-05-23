@@ -50,10 +50,6 @@ public class UserAddress implements Serializable{
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getCountry() {
         return country;
     }
