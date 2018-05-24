@@ -30,7 +30,7 @@ public class UserLoginBean implements Serializable {
 
 
     @Inject
-    HeaderStatusBean headerStatusBean;
+    private HeaderStatusBean headerStatusBean;
 
     @Inject
     private UserService userService;
