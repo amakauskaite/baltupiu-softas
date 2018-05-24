@@ -1,11 +1,15 @@
 package lt.baltupiusoftas.project.app.administrator;
 
+import lt.baltupiusoftas.project.app.AdminHeaderStatusBean;
 import lt.baltupiusoftas.project.app.AdministratorLogin;
+import lt.baltupiusoftas.project.app.HeaderStatusBean;
 import lt.baltupiusoftas.project.domain.Administrator;
 import lt.baltupiusoftas.project.service.AdministratorService;
 import lt.baltupiusoftas.project.service.password.PasswordHashingService;
 
 import javax.enterprise.context.SessionScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.transaction.Transactional;
@@ -20,6 +24,9 @@ public class AdministratorLoginBean implements Serializable {
 
     private String username;
     private String password;
+
+    @Inject
+    private AdminHeaderStatusBean adminHeaderStatusBean;
 
     @Inject
     private AdministratorService adminService;
@@ -48,14 +55,16 @@ public class AdministratorLoginBean implements Serializable {
 
         if (isLoggedIn()) {
 
-            return "index";
+            return "adminIndex";
         } else {
             Administrator administrator = adminService.login(username, password);
             if (administrator == null) {
-                adminLogin.setAdministrator(administrator);
-                return "login";
+                FacesContext.getCurrentInstance().addMessage("loginBtn", new FacesMessage(FacesMessage.SEVERITY_ERROR,"Klaida!",  "Vartotojas neegzistuoja arba blogi duomenys"));
+                return "admin";
             } else {
-                return "index";
+                adminLogin.setAdministrator(administrator);
+                adminHeaderStatusBean.showLogoutAndUserProfile();
+                return "adminIndex";
             }
 
         }
@@ -70,10 +79,11 @@ public class AdministratorLoginBean implements Serializable {
     public String logout () {
         if (isLoggedIn()) {
             adminLogin.setAdministrator(null);
-            return "login";
+            adminHeaderStatusBean.showLoginAndRegistration();
+            return "admin";
 
         } else {
-            return "index";
+            return "adminIndex";
         }
     }
 }

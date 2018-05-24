@@ -30,7 +30,7 @@ public class UserLoginBean implements Serializable {
 
 
     @Inject
-    HeaderStatusBean headerStatusBean;
+    private HeaderStatusBean headerStatusBean;
 
     @Inject
     private UserService userService;
@@ -71,7 +71,7 @@ public class UserLoginBean implements Serializable {
 
 
     private Boolean isLoggedIn() {
-        return login.getUser() != null;
+        return login.getUser().getEmail() != null;
     }
 
     public String getEmail() {

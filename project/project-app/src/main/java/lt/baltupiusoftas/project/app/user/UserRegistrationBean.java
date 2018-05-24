@@ -1,19 +1,13 @@
 package lt.baltupiusoftas.project.app.user;
 
 import lt.baltupiusoftas.project.domain.User;
-import lt.baltupiusoftas.project.domain.UserAddress;
 import lt.baltupiusoftas.project.service.password.PasswordHashingService;
 import lt.baltupiusoftas.project.service.user.UserService;
-import lt.baltupiusoftas.project.service.user.address.UserAddressService;
 
-import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Model;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
-import javax.inject.Named;
-import javax.transaction.Transactional;
-import java.io.Serializable;
 
 @Model
 public class UserRegistrationBean{
@@ -42,7 +36,6 @@ public class UserRegistrationBean{
     private User user;
 
 
-@Transactional(Transactional.TxType.REQUIRED)
     public String register() {
         user = userService.register(email, password, firstname, lastname, phoneNumber);
 
