@@ -269,11 +269,11 @@ input
     font-weight: bold;
 }
 .users-list-form{
-    width: 100%;
+    width: 90%;
     height: 100%;
-    padding-left: 10%;
-    padding-top: 10%;
-    padding-right: 10%;
+    padding-left: 5%;
+    padding-top: 5%;
+    padding-right: 5%;
     left: 0;
     top: 0;
     font-size: 18px;
