@@ -4,6 +4,7 @@ import lt.baltupiusoftas.project.app.Login;
 import lt.baltupiusoftas.project.domain.User;
 import lt.baltupiusoftas.project.domain.UserAddress;
 import lt.baltupiusoftas.project.persistence.UserAddressDao;
+import lt.baltupiusoftas.project.persistence.impl.UserDaoImpl;
 import lt.baltupiusoftas.project.service.PasswordHashingService;
 import lt.baltupiusoftas.project.service.UserService;
 import lt.baltupiusoftas.project.service.UserAddressService;
@@ -52,6 +53,7 @@ public class UserUpdateBean {
     private UserService userService;
     @Inject
     private PasswordHashingService passwordHashing;
+    
 
     @Inject
     private UserAddressDao userAddressDao;
@@ -62,14 +64,19 @@ public class UserUpdateBean {
 
 
     @PostConstruct
-    //@Transactional(Transactional.TxType.REQUIRED)
+    @Transactional(Transactional.TxType.REQUIRED)
     public void init()
     {
         try {
             this.user = login.getUser();
             this.userId = user.getId();
+            //this.userAddress = user.getUserAddress();
             //TODO: pataisyti, kad imtu is servisu, o ne tiesiai is dao
-            this.userAddress = userAddressDao.find(user.getUserAddress());
+            if (user.getUserAddress() == null)
+            {
+                this.userAddress = userAddressService.createUserAddress(null, null, null, null, null, null, user.getId());
+            }
+            else this.userAddress = userAddressDao.find(user.getUserAddress());
         }
         catch (NullPointerException npe)
         {
@@ -99,21 +106,22 @@ public class UserUpdateBean {
 
     @Transactional(Transactional.TxType.REQUIRED)
     public String updateAddress () {
-        fillAddressFields();
-        this.userAddress = userAddressService.updateUserAddress(userAddress, country, city, street, house, flat, postcode);
-        if(userAddress == null)
-        {
-            FacesContext.getCurrentInstance().addMessage("addressUpdateBtn", new FacesMessage(FacesMessage.SEVERITY_ERROR,"Klaida!",  "Nepavyko išsaugoti adreso. Bandykite dar kartą."));
+
+            fillAddressFields();
+            this.userAddress = userAddressService.updateUserAddress(userAddress, country, city, street, house, flat, postcode);
+            if(userAddress == null)
+            {
+                FacesContext.getCurrentInstance().addMessage("addressUpdateBtn", new FacesMessage(FacesMessage.SEVERITY_ERROR,"Klaida!",  "Nepavyko išsaugoti adreso. Bandykite dar kartą."));
+                return "addressChange";
+            }
+            login.setUser(user);
             return "addressChange";
-        }
-        login.setUser(user);
-        return "addressChange";
     }
 
     @Transactional(Transactional.TxType.REQUIRED)
     public String createAddress () {
         this.userAddress = userAddressService.createUserAddress(country, city, street, house, flat, postcode, userId);
-        return "profile";
+        return "addressChange";
     }
 
     @Transactional(Transactional.TxType.REQUIRED)
