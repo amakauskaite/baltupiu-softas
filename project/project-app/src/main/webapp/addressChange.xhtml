@@ -25,17 +25,17 @@
                 </p:messages>
                 <h2>Redaguoti vartotojo adresą</h2>
                 <h:outputLabel value="Šalis" for="countryUpdate"/> <br/>
-                <p:inputText id="countryUpdate" pa:placeholder="#{userUpdateBean.userAddress.country}" value="#{userUpdateBean.userAddress.country}"/> <br/>
+                <p:inputText id="countryUpdate" pa:placeholder="#{userUpdateBean.userAddress.country}" value="#{userUpdateBean.userAddress.country}" required="true"/> <br/>
                 <h:outputLabel value="Miestas" for="cityUpdate"/> <br/>
-                <p:inputText id="cityUpdate" pa:placeholder="#{userUpdateBean.userAddress.city}" value="#{userUpdateBean.userAddress.city}"/><br/>
+                <p:inputText id="cityUpdate" pa:placeholder="#{userUpdateBean.userAddress.city}" value="#{userUpdateBean.userAddress.city}" required="true"/><br/>
                 <h:outputLabel for="streetUpdate" value="Gatvė"/> <br/>
-                <p:inputText id="streetUpdate" pa:placeholder="#{userUpdateBean.userAddress.street}" value="#{userUpdateBean.userAddress.street}"/><br/>
+                <p:inputText id="streetUpdate" pa:placeholder="#{userUpdateBean.userAddress.street}" value="#{userUpdateBean.userAddress.street}" required="true"/><br/>
                 <h:outputLabel value="Namo nr." for="houseUpdate"/><br/>
-                <p:inputText id="houseUpdate" pa:placeholder="#{userUpdateBean.userAddress.house}" value="#{userUpdateBean.userAddress.house}"/> <br/>
+                <p:inputText id="houseUpdate" pa:placeholder="#{userUpdateBean.userAddress.house}" value="#{userUpdateBean.userAddress.house}" required="true"/> <br/>
                 <h:outputLabel value="Buto nr." for="flatUpdate"/><br/>
-                <p:inputText id="flatUpdate" pa:placeholder="#{userUpdateBean.userAddress.flat}" value="#{userUpdateBean.userAddress.flat}"/> <br/>
+                <p:inputText id="flatUpdate" pa:placeholder="#{userUpdateBean.userAddress.flat}" value="#{userUpdateBean.userAddress.flat}" required="true"/> <br/>
                 <h:outputLabel value="Pašto kodas" for="postcodeUpdate"/> <br/>
-                <p:inputText id="postcodeUpdate" pa:placeholder="#{userUpdateBean.userAddress.postcode}" value="#{userUpdateBean.userAddress.postcode}"/> <br/>
+                <p:inputText id="postcodeUpdate" pa:placeholder="#{userUpdateBean.userAddress.postcode}" value="#{userUpdateBean.userAddress.postcode}" required="true"/> <br/>
                 <h:commandButton id="addressUpdateBtn" styleClass="form-buttons" value="Išsaugoti" action="#{userUpdateBean.updateAddress()}"/>
                 <input id="resetBtn" type="reset" />
             </h:form>

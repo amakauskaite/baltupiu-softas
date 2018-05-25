@@ -25,10 +25,10 @@
                 </p:messages>
 
                 <h2>Redaguoti informaciją apie vartotoją</h2>
-                <p:inputText id="firstnameUpdate" styleClass="nameInput" pa:placeholder="#{userUpdateBean.user.firstname}" value="#{userUpdateBean.firstname}"/>
-                <p:inputText id="lastnameUpdate"  styleClass="nameInput" pa:placeholder="#{userUpdateBean.user.lastname}" value="#{userUpdateBean.lastname}"/><br/>
-                <p:inputMask id="phonenumberUpdate" pa:placeholder="#{userUpdateBean.user.phonenumber}" value="#{userUpdateBean.phoneNumber}" mask="+(999) 99999999"/><br/>
-                <p:inputText id="emailUpdate" pa:placeholder="#{userUpdateBean.user.email}" pa:type="email" value="#{userUpdateBean.email}"/> <br/>
+                <p:inputText id="firstnameUpdate" styleClass="nameInput" pa:placeholder="#{userUpdateBean.user.firstname}" value="#{userUpdateBean.user.firstname}"/>
+                <p:inputText id="lastnameUpdate"  styleClass="nameInput" pa:placeholder="#{userUpdateBean.user.lastname}" value="#{userUpdateBean.user.lastname}"/><br/>
+                <p:inputMask id="phonenumberUpdate" pa:placeholder="#{userUpdateBean.user.phonenumber}" value="#{userUpdateBean.user.phonenumber}" mask="+(999) 99999999"/><br/>
+                <p:inputText id="emailUpdate" pa:placeholder="#{userUpdateBean.user.email}" pa:type="email" value="#{userUpdateBean.user.email}"/> <br/>
                 <h:commandButton id="userUpdateBtn" styleClass="form-buttons" value="Išsaugoti" action="#{userUpdateBean.updateUserInfo()}"/>
                 <input id="resetBtn" type="reset" />
             </h:form>

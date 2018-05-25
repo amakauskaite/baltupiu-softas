@@ -4,14 +4,11 @@ import lt.baltupiusoftas.project.app.Login;
 import lt.baltupiusoftas.project.domain.User;
 import lt.baltupiusoftas.project.domain.UserAddress;
 import lt.baltupiusoftas.project.persistence.UserAddressDao;
-import lt.baltupiusoftas.project.persistence.impl.UserDaoImpl;
 import lt.baltupiusoftas.project.service.PasswordHashingService;
 import lt.baltupiusoftas.project.service.UserService;
 import lt.baltupiusoftas.project.service.UserAddressService;
 
 import javax.annotation.PostConstruct;
-import javax.ejb.SessionContext;
-import javax.el.ELException;
 import javax.enterprise.inject.Model;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
@@ -57,8 +54,6 @@ public class UserUpdateBean {
     private PasswordHashingService passwordHashing;
 
     @Inject
-    private UserDaoImpl userDao;
-    @Inject
     private UserAddressDao userAddressDao;
 
     @Inject
@@ -70,9 +65,10 @@ public class UserUpdateBean {
     //@Transactional(Transactional.TxType.REQUIRED)
     public void init()
     {
-        /*this.user = userDao.findByEmail(login.getUser().getEmail());*/
         try {
-            this.user = userDao.findByEmail(login.getUser().getEmail());
+            this.user = login.getUser();
+            this.userId = user.getId();
+            //TODO: pataisyti, kad imtu is servisu, o ne tiesiai is dao
             this.userAddress = userAddressDao.find(user.getUserAddress());
         }
         catch (NullPointerException npe)
@@ -82,7 +78,7 @@ public class UserUpdateBean {
             }
             catch (IOException ioe)
             {
-                System.out.println("Failed to forward to another page in "+this.getClass().getName());
+                System.out.println("Failed to redirect to another page in "+this.getClass().getName());
             }
 
         }
@@ -97,18 +93,20 @@ public class UserUpdateBean {
                 FacesContext.getCurrentInstance().addMessage("passUpdateBtn", new FacesMessage(FacesMessage.SEVERITY_ERROR,"Klaida!",  "Nepavyko pakeisti slaptažodžio."));
                 return "passwordChange";
             }
+            login.setUser(user);
         return "passwordChange";
     }
 
     @Transactional(Transactional.TxType.REQUIRED)
     public String updateAddress () {
-        setEmptyUserAddress();
+        fillAddressFields();
         this.userAddress = userAddressService.updateUserAddress(userAddress, country, city, street, house, flat, postcode);
         if(userAddress == null)
         {
             FacesContext.getCurrentInstance().addMessage("addressUpdateBtn", new FacesMessage(FacesMessage.SEVERITY_ERROR,"Klaida!",  "Nepavyko išsaugoti adreso. Bandykite dar kartą."));
             return "addressChange";
         }
+        login.setUser(user);
         return "addressChange";
     }
 
@@ -120,32 +118,33 @@ public class UserUpdateBean {
 
     @Transactional(Transactional.TxType.REQUIRED)
     public String updateUserInfo () {
-        setUserInfo();
+        fillUserInfo();
         this.user = userService.updateUserInfo(userId, firstname, lastname, email, phoneNumber);
         if (user == null) {
             FacesContext.getCurrentInstance().addMessage("userUpdateBtn", new FacesMessage(FacesMessage.SEVERITY_ERROR,"Klaida!",  "Nepavyko išsaugoti naujos informacijos. Bandykite dar kartą."));
             return "profile";
         }
+        login.setUser(user);
         return "profile";
 
     }
 
-    private void setUserInfo()
+    private void fillUserInfo()
     {
-        if(firstname.isEmpty()) this.firstname = user.getFirstname();
-        if(lastname.isEmpty()) this.lastname = user.getLastname();
-        if(email.isEmpty()) this.email = user.getEmail();
-        if(phoneNumber.isEmpty()) this.phoneNumber = user.getPhonenumber();
+        firstname = user.getFirstname();
+        lastname = user.getLastname();
+        email = user.getEmail();
+        phoneNumber = user.getPhonenumber();
     }
 
-    private void setEmptyUserAddress()
+    private void fillAddressFields()
     {
-        if(country.isEmpty()) country = userAddress.getCountry();
-        if(city.isEmpty()) city = userAddress.getCity();
-        if(street.isEmpty()) street = userAddress.getStreet();
-        if(house.isEmpty()) house = userAddress.getHouse();
-        if(flat.isEmpty()) flat = userAddress.getFlat();
-        if(postcode.isEmpty()) postcode = userAddress.getPostcode();
+        country = userAddress.getCountry();
+        city = userAddress.getCity();
+        street = userAddress.getStreet();
+        house = userAddress.getHouse();
+        flat = userAddress.getFlat();
+        postcode = userAddress.getPostcode();
     }
 
 
