@@ -15,7 +15,8 @@ public class UserAddressServiceImpl implements UserAddressService {
     @Inject
     private UserDao userDao;
     @Override
-    public UserAddress updateUserAddress(UserAddress userAddress, String country, String city, String street, String house,  String flat, String postcode) {
+    public UserAddress updateUserAddress(Long userAddressId, String country, String city, String street, String house,  String flat, String postcode) {
+        UserAddress userAddress = userAddressDao.find(userAddressId);
         userAddress = setValues(userAddress, country, city, street, house, flat, postcode);
         return userAddressDao.update(userAddress);
     }

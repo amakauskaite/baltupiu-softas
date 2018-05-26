@@ -22,7 +22,6 @@ public class UserUpdateBean {
 
 
     //USER
-    private Long userId;
     private User user;
 
     //USER ADDRESS
@@ -69,14 +68,10 @@ public class UserUpdateBean {
     {
         try {
             this.user = login.getUser();
-            this.userId = user.getId();
-            //this.userAddress = user.getUserAddress();
-            //TODO: pataisyti, kad imtu is servisu, o ne tiesiai is dao
-            if (user.getUserAddress() == null)
-            {
-                this.userAddress = userAddressService.createUserAddress(null, null, null, null, null, null, user.getId());
+            this.userAddress = userService.findUserAddress(login.getUser().getId());
+            if (userAddress != null) {
+                fillAddressFields();
             }
-            else this.userAddress = userAddressDao.find(user.getUserAddress());
         }
         catch (NullPointerException npe)
         {
@@ -95,7 +90,7 @@ public class UserUpdateBean {
     @Transactional(Transactional.TxType.REQUIRED)
     public String updatePassword () {
         oldPassword = user.getPassword();
-            this.user =  userService.updatePassword(userId, oldPassword, newPassword);
+            this.user =  userService.updatePassword(login.getUser().getId(), oldPassword, newPassword);
             if (user == null) {
                 FacesContext.getCurrentInstance().addMessage("passUpdateBtn", new FacesMessage(FacesMessage.SEVERITY_ERROR,"Klaida!",  "Nepavyko pakeisti slaptažodžio."));
                 return "passwordChange";
@@ -107,27 +102,27 @@ public class UserUpdateBean {
     @Transactional(Transactional.TxType.REQUIRED)
     public String updateAddress () {
 
-            fillAddressFields();
-            this.userAddress = userAddressService.updateUserAddress(userAddress, country, city, street, house, flat, postcode);
-            if(userAddress == null)
-            {
-                FacesContext.getCurrentInstance().addMessage("addressUpdateBtn", new FacesMessage(FacesMessage.SEVERITY_ERROR,"Klaida!",  "Nepavyko išsaugoti adreso. Bandykite dar kartą."));
+            if (userAddress != null) {
+
+                this.userAddress = userAddressService.updateUserAddress(userAddress.getId(), country, city, street, house, flat, postcode);
+                if(userAddress == null)
+                {
+                    FacesContext.getCurrentInstance().addMessage("addressUpdateBtn", new FacesMessage(FacesMessage.SEVERITY_ERROR,"Klaida!",  "Nepavyko išsaugoti adreso. Bandykite dar kartą."));
+                    return "addressChange";
+                }
+                login.setUser(user);
+                return "addressChange";
+
+            } else {
+                this.userAddress = userAddressService.createUserAddress(country, city, street, house, flat, postcode, login.getUser().getId());
                 return "addressChange";
             }
-            login.setUser(user);
-            return "addressChange";
-    }
-
-    @Transactional(Transactional.TxType.REQUIRED)
-    public String createAddress () {
-        this.userAddress = userAddressService.createUserAddress(country, city, street, house, flat, postcode, userId);
-        return "addressChange";
     }
 
     @Transactional(Transactional.TxType.REQUIRED)
     public String updateUserInfo () {
         fillUserInfo();
-        this.user = userService.updateUserInfo(userId, firstname, lastname, email, phoneNumber);
+        this.user = userService.updateUserInfo(login.getUser().getId(), firstname, lastname, email, phoneNumber);
         if (user == null) {
             FacesContext.getCurrentInstance().addMessage("userUpdateBtn", new FacesMessage(FacesMessage.SEVERITY_ERROR,"Klaida!",  "Nepavyko išsaugoti naujos informacijos. Bandykite dar kartą."));
             return "profile";
@@ -217,14 +212,6 @@ public class UserUpdateBean {
 
     public void setPostcode(String postcode) {
         this.postcode = postcode;
-    }
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
     }
 
     public String getNewPassword() {

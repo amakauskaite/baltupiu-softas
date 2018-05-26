@@ -1,6 +1,7 @@
 package lt.baltupiusoftas.project.service.impl;
 
 import lt.baltupiusoftas.project.domain.User;
+import lt.baltupiusoftas.project.domain.UserAddress;
 import lt.baltupiusoftas.project.persistence.UserDao;
 import lt.baltupiusoftas.project.service.UserService;
 
@@ -65,6 +66,12 @@ public class UserServiceImpl implements UserService {
             return userDao.update(user);
         }
         return null;
+    }
+
+    @Override
+    public UserAddress findUserAddress(Long userId) {
+        User user = userDao.find(userId);
+        return user.getUserAddress();
     }
 
 
