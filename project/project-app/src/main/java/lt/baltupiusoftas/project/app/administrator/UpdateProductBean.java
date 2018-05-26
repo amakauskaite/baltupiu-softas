@@ -1,6 +1,5 @@
 package lt.baltupiusoftas.project.app.administrator;
 
-import lt.baltupiusoftas.project.domain.Category;
 import lt.baltupiusoftas.project.domain.Product;
 import lt.baltupiusoftas.project.service.CategoryService;
 import lt.baltupiusoftas.project.service.ProductService;
@@ -28,37 +27,28 @@ public class UpdateProductBean {
     @Transactional(Transactional.TxType.REQUIRED)
     @PostConstruct
     public void setUp() {
+        product = null;
         FacesContext fc = FacesContext.getCurrentInstance();
         Map<String,String> params =
                 fc.getExternalContext().getRequestParameterMap();
         String param = params.get("updateId");
-        Long id =  Long.parseLong(param);
-        product = productService.productById(id);
+        if(param!=null){
+            Long id =  Long.parseLong(param);
+            product = productService.productById(id);
+        }
         createProduct = product == null;
         updatedProduct = new Product();
         if(createProduct) product = new Product();
     }
 
+    @Transactional(Transactional.TxType.REQUIRED)
     public void updateProduct(){
         if(updatedProduct.getName()!=null) product.setName(updatedProduct.getName());
         if(updatedProduct.getPhoto()!=null) product.setPhoto(updatedProduct.getPhoto());
         if(updatedProduct.getPrice()!=null) product.setPrice(updatedProduct.getPrice());
         if(updatedProduct.getSKU()!=null) product.setSKU(updatedProduct.getSKU());
         if(updatedProduct.getSummary()!=null) product.setSummary(updatedProduct.getSummary());
-        if(updatedProduct.getCategory()!=null) product.setCategory(updatedProduct.getCategory());
-        else if(categoryName!=null) product.setCategory(addNewCategory());
-        update();
-    }
-
-    @Transactional(Transactional.TxType.REQUIRED)
-    private Category addNewCategory() {
-        Category cat = new Category();
-        cat.setName(categoryName);
-        return categoryService.add(cat);
-    }
-
-    @Transactional(Transactional.TxType.REQUIRED)
-    private void update(){
+        if(categoryName!=null) product.setCategory(categoryService.addCategory(categoryName));
         productService.update(product);
     }
 

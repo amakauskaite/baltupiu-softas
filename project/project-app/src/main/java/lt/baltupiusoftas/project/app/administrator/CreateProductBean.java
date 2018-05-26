@@ -19,7 +19,6 @@ public class CreateProductBean {
     @Inject
     private CategoryService categoryService;
     private Product product;
-    private Category category;
     private String categoryName;
 
     @PostConstruct
@@ -29,23 +28,8 @@ public class CreateProductBean {
 
     @Transactional(Transactional.TxType.REQUIRED)
     public void addProduct(){
-        product.setCategory(addCategory());
+        product.setCategory(categoryService.addCategory(categoryName));
         productService.add(product);
-    }
-
-
-    private Category addCategory(){
-        if(category==null&&categoryName!=null)
-        {
-            Category cat = new Category();
-            cat.setName(categoryName);
-            return categoryService.add(cat);
-        }
-        else if(category!=null&&categoryName==null)
-        {
-            return category;
-        }
-        else return null;
     }
 
     public String getCategoryName() {
@@ -54,14 +38,6 @@ public class CreateProductBean {
 
     public void setCategoryName(String categoryName) {
         this.categoryName = categoryName;
-    }
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
     }
 
     public Product getProduct(){

@@ -9,10 +9,16 @@
 
     <ui:define name="title"> Parduotuve </ui:define>
 
+    <ui:define name="header">
+        <ui:include src="adminHeader.xhtml"/>
+    </ui:define>
+
+    <ui:define name="left-sidebar"/>
+
     <ui:define name="content">
         <section class="main">
 
-            <h:form id="create-product" rendered="#{updateProductBean.createProduct}">
+            <h:form class="admin-form" id="create-product" rendered="#{updateProductBean.createProduct}">
                 <h2>Pridėti prekę</h2>
 
                 <h:outputText value="Pavadinimas"/><br/>
@@ -25,12 +31,12 @@
                 <h:inputText value="#{createProductBean.product.SKU}" required="true"/><br/>
 
                 <h:outputText value="Kaina, eur"/><br/>
-                <h:inputText value="#{createProductBean.product.price}" pa:type="number" required="true"/><br/>
+                <h:inputText value="#{createProductBean.product.price}" pa:type="number" pa:step="0.01" required="true"/><br/>
 
                 <h:outputText value="Kategorija"/><br/>
-                <h:inputText value="#{createProductBean.categoryName}" pa:placeholder="Nauja kategorija"/><br/>
-                <h:selectOneMenu value="#{createProductBean.category}" pa:placeholder="Pasirinkti iš esamų">
-                    <f:selectItems value="#{categoryBean.categories}" var="cat" itemValue="cat.name"/>
+                <h:selectOneMenu value="#{createProductBean.categoryName}" editable="true">
+                    <f:selectItem itemLabel="Įrašyti naują/ pasirinkti" itemValue="" noSelectionOption="true" />
+                    <f:selectItems value="#{categoryBean.categories}" var="cat" itemValue="#{cat.name}"/>
                 </h:selectOneMenu><br/>
 
                 <h:outputText value="Aprašymas"/><br/>
@@ -39,7 +45,7 @@
                 <h:commandButton value="Pridėti" actionListener="#{createProductBean.addProduct()}"/>
             </h:form>
 
-            <h:form id="update_product" rendered="#{!updateProductBean.createProduct}">
+            <h:form class="admin-form" id="update_product" rendered="#{!updateProductBean.createProduct}">
                 <h2>Atnaujinti prekę</h2>
                 <img src="#{updateProductBean.product.photo}"/>
                 <table>
@@ -66,22 +72,22 @@
                     <tr>
                         <td><h:outputText value="Kaina, eur"/></td>
                         <td><h:outputText value="#{updateProductBean.product.price}"/> </td>
-                        <td><h:inputText value="#{updateProductBean.updatedProduct.price}" pa:type="number" required="true"/></td>
+                        <td><h:inputText value="#{updateProductBean.updatedProduct.price}" pa:step="0.01" pa:type="number" required="true"/></td>
                     </tr>
                     <tr>
                         <td><h:outputText value="Kategorija"/></td>
-                        <td><h:outputText value="#{updateProductBean.product.category}"/> </td>
+                        <td><h:outputText value="#{updateProductBean.product.category.name}"/> </td>
                         <td>
-                            <h:inputText value="#{updateProductBean.categoryName}" pa:placeholder="Nauja kategorija"/><br/>
-                            <h:selectOneMenu value="#{updateProductBean.updatedProduct.category}" pa:placeholder="Pasirinkti iš esamų">
-                                <f:selectItems value="#{categoryBean.categories}" var="cat" itemValue="cat.name"/>
+                            <h:selectOneMenu value="#{updateProductBean.categoryName}" editable="true">
+                                <f:selectItem itemLabel="Įrašyti naują/ pasirinkti" itemValue="" noSelectionOption="true" />
+                                <f:selectItems value="#{categoryBean.categories}" var="cat" itemValue="#{cat.name}"/>
                             </h:selectOneMenu>
                         </td>
                     </tr>
                     <tr>
                         <td><h:outputText value="Aprašymas"/></td>
-                        <td><h:outputText value="#{updateProductBean.updatedProduct.summary}"/></td>
-                        <td><h:inputText value="#{updateProductBean.product.summary}"/></td>
+                        <td><h:outputText value="#{updateProductBean.product.summary}"/></td>
+                        <td><h:inputText value="#{updateProductBean.updatedProduct.summary}"/></td>
                     </tr>
                 </table>
                 <h:commandButton value="Pakeisti" actionListener="#{updateProductBean.updateProduct()}"/>

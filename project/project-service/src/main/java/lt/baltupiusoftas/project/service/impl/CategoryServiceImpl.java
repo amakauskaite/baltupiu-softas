@@ -20,4 +20,19 @@ public class CategoryServiceImpl implements CategoryService {
     public Category add(Category category) {
         return categoryDao.create(category);
     }
+
+    @Override
+    public Category findByName(String name) {
+        return categoryDao.findByName(name);
+    }
+    public Category addCategory(String name) {
+        Category category = findByName(name);
+        if(category==null)
+        {
+            category = new Category();
+            category.setName(name);
+            return add(category);
+        }
+        return category;
+    }
 }
