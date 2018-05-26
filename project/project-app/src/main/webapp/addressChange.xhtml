@@ -20,22 +20,22 @@
     <ui:define name="content">
         <section class="main">
             <h:form id="user-address-update-form">
-                <p:messages id="messages" showDetail="true" closable="true">
+                <p:messages id="messages" showDetail="false" closable="true">
                     <p:autoUpdate />
                 </p:messages>
                 <h2>Redaguoti vartotojo adresą</h2>
                 <h:outputLabel value="Šalis" for="countryUpdate"/> <br/>
-                <p:inputText id="countryUpdate"  value="#{userUpdateBean.country}" required="true"/> <br/>
+                <p:inputText id="countryUpdate"  value="#{userUpdateBean.country}" required="true" requiredMessage="Įveskite šalį"/> <br/>
                 <h:outputLabel value="Miestas" for="cityUpdate"/> <br/>
-                <p:inputText id="cityUpdate"  value="#{userUpdateBean.city}" required="true"/><br/>
+                <p:inputText id="cityUpdate"  value="#{userUpdateBean.city}" required="true" requiredMessage="Įveskite miestą"/><br/>
                 <h:outputLabel for="streetUpdate" value="Gatvė"/> <br/>
-                <p:inputText id="streetUpdate"  value="#{userUpdateBean.street}" required="true"/><br/>
+                <p:inputText id="streetUpdate"  value="#{userUpdateBean.street}" required="true" requiredMessage="Įveskite gatvę"/><br/>
                 <h:outputLabel value="Namo nr." for="houseUpdate"/><br/>
-                <p:inputText id="houseUpdate"  value="#{userUpdateBean.house}" required="true"/> <br/>
+                <p:inputText id="houseUpdate"  value="#{userUpdateBean.house}" required="true" requiredMessage="Įveskite namo numerį"/> <br/>
                 <h:outputLabel value="Buto nr." for="flatUpdate"/><br/>
-                <p:inputText id="flatUpdate" value="#{userUpdateBean.flat}" required="true"/> <br/>
+                <p:inputText id="flatUpdate" value="#{userUpdateBean.flat}" required="true" requiredMessage="Įveskite buto numerį"/> <br/>
                 <h:outputLabel value="Pašto kodas" for="postcodeUpdate"/> <br/>
-                <p:inputText id="postcodeUpdate" value="#{userUpdateBean.postcode}" required="true"/> <br/>
+                <p:inputText id="postcodeUpdate" value="#{userUpdateBean.postcode}" required="true" requiredMessage="Įveskite pašto kodą"/> <br/>
                 <h:commandButton id="addressUpdateBtn" styleClass="form-buttons" value="Išsaugoti" action="#{userUpdateBean.updateAddress()}"/>
                 <input id="resetBtn" type="reset" />
             </h:form>
