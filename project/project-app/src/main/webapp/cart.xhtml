@@ -11,30 +11,24 @@
     <!-- Define custom header here -->
     <!-- -->
 
-    <ui:define name="left-sidebar"/>
-
     <!-- Content starts here -->
     <ui:define name="content">
-        <p:panel>
-            <p:dataTable id="cartItemTable" value="#{manageCartBean.cartItems}" var="items">
-                <p:column headerText="Id_test">
-                    <h:outputText value="#{items.product.id}"/>
-                </p:column>
-                <p:column headerText="Name">
-                    <h:outputText value="#{items.product.name}"/>
-                </p:column>
-                <p:column headerText="Price">
-                    <h:outputText value="#{items.product.price}"/>
-                </p:column>
-                <p:column headerText="Summary">
-                    <h:outputText value="#{items.product.summary}"/>
-                </p:column>
-            </p:dataTable>
-        </p:panel>
+        <h2 id="PastumtiHeadinga2">Prekių krepšelis</h2>
+        <table>
+            <tr>
+                <th>Prekė</th>
+                <th>Kiekis</th>
+                <th>Kaina</th>
+            </tr>
+            <tr>
+                <td>Obuolys, Naksima, 0,1kg</td>
+                <td><input type="text" name="kiekis" value="1"/></td>
+                <td>0,23Eur</td>
+            </tr>
+        </table>
 
-
-            <p id="Pastumtipastraipa">Iš viso: 0,23Eur</p>
-            <button type="button">Pirkti</button>
+        <p id="Pastumtipastraipa">Iš viso: 0,23Eur</p>
+        <button type="button">Pirkti</button>
     </ui:define>
     <!-- Content ends here -->
 

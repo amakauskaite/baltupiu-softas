@@ -12,30 +12,19 @@
     <!-- -->
 
     <!-- Content starts here -->
+    <!-- todo  reikia cia atvaizduoti history, jei nemokesi, klausk, padesiu, turi buti mygtukas prideti sena krepseli arba preke vel i krepseli-->
     <ui:define name="content">
-        <section class="main">
-        <h2>Pirkimo istorija</h2>
-        <p:dataTable>
+        <h2 id="PastumtiHeadinga2">Pirkimo istorija</h2>
+        <p:dataTable var="purchase" value="#{purchaseHistoryBean.l}">
             <p:column headerText="Prekė">
-                <h:outputText value="#{purchaseHistoryBean.product}}" />
-            </p:column>
-
-            <p:column headerText="Kiekis">
-                <h:outputText value="#{purchaseHistoryBean.count}" />
+                <h:outputText value="#{purchase.items.product.product.name}}" />
             </p:column>
 
             <p:column headerText="Kaina">
-                <h:outputText value="#{purchaseHistoryBean.price}" />
+                <h:outputText value="#{purchase.items.product.product.price}" />
             </p:column>
 
-            <p:column headerText="Būsena">
-                <h:outputText value="#{purchaseHistoryBean.state}" />
-            </p:column>
-            <p:column headerText="Pirkimo data">
-                <h:outputText value="#{purchaseHistoryBean.date}" />
-            </p:column>
         </p:dataTable>
-        </section>
     </ui:define>
     <!-- Content ends here -->
 

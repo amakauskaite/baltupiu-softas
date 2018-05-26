@@ -1,16 +1,23 @@
 package lt.baltupiusoftas.project.persistence.impl;
 
 import lt.baltupiusoftas.project.domain.Cart;
+import lt.baltupiusoftas.project.domain.User;
 import lt.baltupiusoftas.project.persistence.CartDao;
 
+import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
+import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
+import java.util.List;
 
 /**
  * Cart DAO
  *
  * @author Audrius Tvarijonas
  */
-public class CartDaoImpl extends GenericDaoImpl<Cart> implements CartDao {
+
+public class CartDaoImpl extends GenericDaoImpl<Cart> implements CartDao{
 
     @Override
     public Cart findActiveCart(Long userId) {
@@ -24,5 +31,21 @@ public class CartDaoImpl extends GenericDaoImpl<Cart> implements CartDao {
         query.setMaxResults(1);
 
         return query.getSingleResult();
+    }
+
+
+    //todo tas pats del pavadinimo
+    //todo reikia rasti visus, ne tik completed
+    @Override
+    public List<Cart> findAllCartsForPurchaseHistory(User user){
+        String findAllCartsForPurchaseHistory = "select cart" +
+                "from Cart cart" +
+                "where cart.user = :user and orderStatusType = 'COMPLETED'";
+
+
+        TypedQuery<Cart> query = entityManager.createQuery(findAllCartsForPurchaseHistory, Cart.class);
+        query.setParameter("user", user);
+
+        return query.getResultList();
     }
 }

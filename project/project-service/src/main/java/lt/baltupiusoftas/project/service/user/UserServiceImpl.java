@@ -1,5 +1,6 @@
 package lt.baltupiusoftas.project.service.user;
 
+import lt.baltupiusoftas.project.domain.User;
 import lt.baltupiusoftas.project.domain.Cart;
 import lt.baltupiusoftas.project.domain.User;
 import lt.baltupiusoftas.project.persistence.CartDao;
@@ -38,6 +39,7 @@ public class UserServiceImpl implements UserService {
             user.setLastname(lastname);
             user.setBlocked(false);
             user.setPhonenumber(phoneNumber);
+
             userDao.create(user);
 
             Cart cart = new Cart();

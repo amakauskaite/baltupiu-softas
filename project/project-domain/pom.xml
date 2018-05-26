@@ -11,6 +11,13 @@
 
     <artifactId>project-domain</artifactId>
     <packaging>jar</packaging>
+<<<<<<< HEAD
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.16</version>
+=======
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
@@ -18,6 +25,7 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
             <version>5.2.14.Final</version>
+>>>>>>> master
         </dependency>
     </dependencies>
 </project>

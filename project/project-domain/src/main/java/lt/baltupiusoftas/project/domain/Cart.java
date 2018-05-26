@@ -1,14 +1,14 @@
 package lt.baltupiusoftas.project.domain;
 
 import lt.baltupiusoftas.project.domain.types.OrderStatusType;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
+import lt.baltupiusoftas.project.domain.types.OrderStatusType;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import java.util.List;
 
 /**

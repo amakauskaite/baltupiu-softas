@@ -2,7 +2,6 @@ package lt.baltupiusoftas.project.domain;
 
 import javax.persistence.*;
 import java.io.Serializable;
-
 /**
  * Category
  *

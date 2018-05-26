@@ -1,10 +1,6 @@
 package lt.baltupiusoftas.project.app;
 
-
-
 import javax.enterprise.inject.Model;
-import javax.inject.Inject;
-import javax.transaction.Transactional;
 
 /**
  * The ultimate bean
@@ -14,5 +10,4 @@ import javax.transaction.Transactional;
 @Model
 public class UltimateBean {
 
-   
 }
