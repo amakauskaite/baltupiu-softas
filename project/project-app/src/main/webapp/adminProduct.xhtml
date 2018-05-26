@@ -14,6 +14,7 @@
 
             <h:form id="create-product" rendered="#{updateProductBean.createProduct}">
                 <h2>Pridėti prekę</h2>
+
                 <h:outputText value="Pavadinimas"/><br/>
                 <h:inputText value="#{createProductBean.product.name}" required="true"/><br/>
 
@@ -40,7 +41,50 @@
 
             <h:form id="update_product" rendered="#{!updateProductBean.createProduct}">
                 <h2>Atnaujinti prekę</h2>
-                <img src="#{productBean.product.photo}"/>
+                <img src="#{updateProductBean.product.photo}"/>
+                <table>
+                    <tr>
+                        <td> </td>
+                        <td><h:outputText value="Sena reikšmė"/></td>
+                        <td><h:outputText value="Nauja reikšmė"/></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputText value="Pavadinimas"/></td>
+                        <td><h:outputText value="#{updateProductBean.product.name}"/> </td>
+                        <td><h:inputText value="#{updateProductBean.updatedProduct.name}" required="true"/></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputText value="Nuotraukos url/nuoroda"/></td>
+                        <td><h:outputText value="#{updateProductBean.product.photo}"/> </td>
+                        <td><h:inputText value="#{updateProductBean.updatedProduct.photo}" required="true"/></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputText value="SKU"/></td>
+                        <td><h:outputText value="#{updateProductBean.product.SKU}"/> </td>
+                        <td><h:inputText value="#{updateProductBean.updatedProduct.SKU}" required="true"/></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputText value="Kaina, eur"/></td>
+                        <td><h:outputText value="#{updateProductBean.product.price}"/> </td>
+                        <td><h:inputText value="#{updateProductBean.updatedProduct.price}" pa:type="number" required="true"/></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputText value="Kategorija"/></td>
+                        <td><h:outputText value="#{updateProductBean.product.category}"/> </td>
+                        <td>
+                            <h:inputText value="#{updateProductBean.categoryName}" pa:placeholder="Nauja kategorija"/><br/>
+                            <h:selectOneMenu value="#{updateProductBean.updatedProduct.category}" pa:placeholder="Pasirinkti iš esamų">
+                                <f:selectItems value="#{categoryBean.categories}" var="cat" itemValue="cat.name"/>
+                            </h:selectOneMenu>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><h:outputText value="Aprašymas"/></td>
+                        <td><h:outputText value="#{updateProductBean.updatedProduct.summary}"/></td>
+                        <td><h:inputText value="#{updateProductBean.product.summary}"/></td>
+                    </tr>
+                </table>
+                <h:commandButton value="Pakeisti" actionListener="#{updateProductBean.updateProduct()}"/>
             </h:form>
 
         </section>

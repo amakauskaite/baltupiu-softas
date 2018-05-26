@@ -26,7 +26,7 @@
 
             <h2>Prisijungimas</h2>
 
-            <p:inputText id="emailField" pa:placeholder="El. paštas" pa:type="email" value="#{userLoginBean.email}" required="true" requiredMessage="Įveskite el. paštą"/> <br/>
+            <p:inputText id="emailField" pa:placeholder="El. paštas" pa:type="email" value="#{userLoginBean.email}" C="true" requiredMessage="Įveskite el. paštą"/> <br/>
             <p:password id="passwordField" pa:placeholder="Slaptažodis" value="#{userLoginBean.password}" required="true" requiredMessage="Įveskite slaptažodį"/> <br/>
             <h:commandButton id="loginBtn" styleClass="login-btn" value="Prisijungti" action="#{userLoginBean.login()}" update="messages"/>
         </h:form>

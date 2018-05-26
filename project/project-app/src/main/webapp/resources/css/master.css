@@ -258,3 +258,14 @@ input
 .products-button{
     margin: 5px;
 }
+.admin-product-list-form{
+    padding-left: 5%;
+    padding-top: 5%;
+    padding-right: 5%;
+    top: 0;
+    font-size: 18px;
+    position: absolute;
+    width: 90%;
+    left: 0;
+    font-family: inherit !important;
+}
