@@ -1,0 +1,48 @@
+<ui:composition template="masterTemplate.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:pa="http://xmlns.jcp.org/jsf/passthrough">
+
+
+    <ui:define name="title"> Parduotuve </ui:define>
+
+    <ui:define name="content">
+        <section class="main">
+
+            <h:form id="create-product" rendered="#{updateProductBean.createProduct}">
+                <h2>Pridėti prekę</h2>
+                <h:outputText value="Pavadinimas"/><br/>
+                <h:inputText value="#{createProductBean.product.name}" required="true"/><br/>
+
+                <h:outputText value="Nuotraukos url/nuoroda"/><br/>
+                <h:inputText value="#{createProductBean.product.photo}" required="true"/><br/>
+
+                <h:outputText value="SKU"/><br/>
+                <h:inputText value="#{createProductBean.product.SKU}" required="true"/><br/>
+
+                <h:outputText value="Kaina, eur"/><br/>
+                <h:inputText value="#{createProductBean.product.price}" pa:type="number" required="true"/><br/>
+
+                <h:outputText value="Kategorija"/><br/>
+                <h:inputText value="#{createProductBean.categoryName}" pa:placeholder="Nauja kategorija"/><br/>
+                <h:selectOneMenu value="#{createProductBean.category}" pa:placeholder="Pasirinkti iš esamų">
+                    <f:selectItems value="#{categoryBean.categories}" var="cat" itemValue="cat.name"/>
+                </h:selectOneMenu><br/>
+
+                <h:outputText value="Aprašymas"/><br/>
+                <h:inputText value="#{createProductBean.product.summary}"/><br/>
+
+                <h:commandButton value="Pridėti" actionListener="#{createProductBean.addProduct()}"/>
+            </h:form>
+
+            <h:form id="update_product" rendered="#{!updateProductBean.createProduct}">
+                <h2>Atnaujinti prekę</h2>
+                <img src="#{productBean.product.photo}"/>
+            </h:form>
+
+        </section>
+    </ui:define>
+</ui:composition>
