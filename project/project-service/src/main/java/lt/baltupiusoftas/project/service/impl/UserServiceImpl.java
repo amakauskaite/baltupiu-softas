@@ -71,7 +71,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public User updateUserInfo(Long userId, String firstname, String lastname, String email, String phoneNumber) {
         User user = userDao.find(userId);
-        if (user != null) {
+        User user1 = userDao.findByEmail(email);
+        if ((user1 == null || user1.getId().equals(userId)) && user != null) {
             user.setFirstname(firstname);
             user.setLastname(lastname);
             user.setEmail(email);

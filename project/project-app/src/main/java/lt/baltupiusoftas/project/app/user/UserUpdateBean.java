@@ -132,7 +132,7 @@ public class UserUpdateBean {
     @Transactional(Transactional.TxType.REQUIRED)
     public String updateUserInfo () {
         fillUserInfo();
-        this.user = userService.updateUserInfo(login.getUser().getId(), firstname, lastname, email, phoneNumber);
+        User user = userService.updateUserInfo(login.getUser().getId(), firstname, lastname, email, phoneNumber);
         if (user == null) {
             FacesContext.getCurrentInstance().addMessage("userUpdateBtn", new FacesMessage(FacesMessage.SEVERITY_ERROR,"Klaida!",  "Nepavyko išsaugoti naujos informacijos. Bandykite dar kartą."));
             return "profile";
