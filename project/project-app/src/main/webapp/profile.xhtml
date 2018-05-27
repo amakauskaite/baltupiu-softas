@@ -20,15 +20,15 @@
     <ui:define name="content">
         <section class="main">
             <h:form id="user-info-update-form">
-                <p:messages id="messages" showDetail="true" closable="true">
+                <p:messages id="messages" showDetail="true" showSummary="false" closable="true">
                     <p:autoUpdate />
                 </p:messages>
 
                 <h2>Redaguoti informaciją apie vartotoją</h2>
-                <p:inputText id="firstnameUpdate" styleClass="nameInput" value="#{userUpdateBean.user.firstname}"/>
-                <p:inputText id="lastnameUpdate"  styleClass="nameInput"  value="#{userUpdateBean.user.lastname}"/><br/>
-                <p:inputMask id="phonenumberUpdate" pa:placeholder="#{userUpdateBean.user.phonenumber}" value="#{userUpdateBean.user.phonenumber}" mask="+(999) 99999999"/><br/>
-                <p:inputText id="emailUpdate"  pa:type="email" value="#{userUpdateBean.user.email}"/> <br/>
+                <p:inputText id="firstnameUpdate" styleClass="nameInput" value="#{userUpdateBean.user.firstname}" required="true" requiredMessage="Įveskite savo vardą"/>
+                <p:inputText id="lastnameUpdate"  styleClass="nameInput"  value="#{userUpdateBean.user.lastname}" required="true" requiredMessage="Įveskite savo pavardę"/><br/>
+                <p:inputMask id="phonenumberUpdate" pa:placeholder="#{userUpdateBean.user.phonenumber}" value="#{userUpdateBean.user.phonenumber}" mask="+(999) 99999999" required="true" requiredMessage="Įveskite telefono numerį"/><br/>
+                <p:inputText id="emailUpdate"  pa:type="email" value="#{userUpdateBean.user.email}" required="true" requiredMessage="Įveskite elektroninį paštą"/> <br/>
                 <h:commandButton id="userUpdateBtn" styleClass="form-buttons" value="Išsaugoti" action="#{userUpdateBean.updateUserInfo()}"/>
                 <input id="resetBtn" type="reset" />
             </h:form>

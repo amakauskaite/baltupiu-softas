@@ -90,13 +90,21 @@ public class UserUpdateBean {
     @Transactional(Transactional.TxType.REQUIRED)
     public String updatePassword () {
         oldPassword = user.getPassword();
-            this.user =  userService.updatePassword(login.getUser().getId(), oldPassword, newPassword);
+        if (oldPassword.equals(newPassword))
+        {
+            FacesContext.getCurrentInstance().addMessage("passUpdateBtn", new FacesMessage(FacesMessage.SEVERITY_ERROR,"Klaida!",  "Blogas slaptažodis"));
+            return "passwordChange";
+        }
+        else {
+            this.user = userService.updatePassword(login.getUser().getId(), oldPassword, newPassword);
             if (user == null) {
-                FacesContext.getCurrentInstance().addMessage("passUpdateBtn", new FacesMessage(FacesMessage.SEVERITY_ERROR,"Klaida!",  "Nepavyko pakeisti slaptažodžio."));
+                FacesContext.getCurrentInstance().addMessage("passUpdateBtn", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Klaida!", "Nepavyko pakeisti slaptažodžio."));
                 return "passwordChange";
             }
             login.setUser(user);
-        return "passwordChange";
+            FacesContext.getCurrentInstance().addMessage("passUpdateBtn", new FacesMessage(FacesMessage.SEVERITY_INFO,"Informacija",  "Pakeitimai išsaugoti"));
+            return "passwordChange";
+        }
     }
 
     @Transactional(Transactional.TxType.REQUIRED)
@@ -111,10 +119,12 @@ public class UserUpdateBean {
                     return "addressChange";
                 }
                 login.setUser(user);
+                FacesContext.getCurrentInstance().addMessage("passUpdateBtn", new FacesMessage(FacesMessage.SEVERITY_INFO,"Informacija",  "Pakeitimai išsaugoti"));
                 return "addressChange";
 
             } else {
                 this.userAddress = userAddressService.createUserAddress(country, city, street, house, flat, postcode, login.getUser().getId());
+                FacesContext.getCurrentInstance().addMessage("passUpdateBtn", new FacesMessage(FacesMessage.SEVERITY_INFO,"Informacija",  "Pakeitimai išsaugoti"));
                 return "addressChange";
             }
     }
@@ -128,6 +138,7 @@ public class UserUpdateBean {
             return "profile";
         }
         login.setUser(user);
+        FacesContext.getCurrentInstance().addMessage("passUpdateBtn", new FacesMessage(FacesMessage.SEVERITY_INFO,"Informacija",  "Pakeitimai išsaugoti"));
         return "profile";
 
     }
