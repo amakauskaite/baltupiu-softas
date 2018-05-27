@@ -2,7 +2,7 @@ package lt.baltupiusoftas.project.app.admin;
 
 import lt.baltupiusoftas.project.app.AdministratorLogin;
 import lt.baltupiusoftas.project.domain.User;
-import lt.baltupiusoftas.project.service.user.UserService;
+import lt.baltupiusoftas.project.service.UserService;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;

@@ -1,7 +1,7 @@
 package lt.baltupiusoftas.project.app;
 
 import lt.baltupiusoftas.project.domain.User;
-import lt.baltupiusoftas.project.service.user.UserService;
+import lt.baltupiusoftas.project.service.UserService;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -20,6 +20,18 @@ import java.io.Serializable;
 public class Login implements Serializable {
 
     private User user;
+
+    @PostConstruct
+    private void init() {
+        UserService userService = CDI.current().select(UserService.class).get();
+        user = userService.initTemporaryUser();
+    }
+
+    @PreDestroy
+    private void terminate() {
+        UserService userService = CDI.current().select(UserService.class).get();
+        userService.deleteUser(user.getId());
+    }
 
     public User getUser() {
         return user;

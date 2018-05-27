@@ -16,15 +16,9 @@
                             columns="4" rows="20" paginator="true" id="products"  currentPageReportTemplate="Iš viso: {totalRecords}" rowsPerPageTemplate="12,20,40"
                             paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
                     <p:panel class = "product-in-list" header="#{product.name}">
-                        <img class = "pic-in-list" src = "#{product.photo}"/><br/>
-                        <!--<h:panelGrid class = "products-list" columns="2">-->
+                        <img class = "pic-in-list" src = "#{product.photo}"/> <br/>
                         <h4>Kaina, eur: #{product.price}</h4>
                         <h4>Kategorija: <h:outputLink value="index.xhtml?id=#{product.category.id}">#{product.category.name}</h:outputLink></h4>
-                        <!--<b><h:outputText value="Kaina, eur: "/></b>-->
-                            <!--<h:outputText value="#{product.price}" /><br/>-->
-                        <!--<b><h:outputText value="Kategorija: "/></b>-->
-                            <!--<h:outputText value="#{product.category.name}"/>-->
-                        <!--</h:panelGrid>-->
                         <h:button class="products-button" value="Plačiau" outcome="productDetails">
                             <f:param name="id" value="#{product.id}" />
                         </h:button>

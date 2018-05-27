@@ -2,10 +2,9 @@ package lt.baltupiusoftas.project.app.administrator;
 
 import lt.baltupiusoftas.project.app.AdminHeaderStatusBean;
 import lt.baltupiusoftas.project.app.AdministratorLogin;
-import lt.baltupiusoftas.project.app.HeaderStatusBean;
 import lt.baltupiusoftas.project.domain.Administrator;
 import lt.baltupiusoftas.project.service.AdministratorService;
-import lt.baltupiusoftas.project.service.password.PasswordHashingService;
+import lt.baltupiusoftas.project.service.PasswordHashingService;
 
 import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
