@@ -9,6 +9,7 @@ import lt.baltupiusoftas.project.service.UserService;
 
 import javax.inject.Inject;
 import javax.transaction.Transactional;
+import java.util.List;
 
 public class UserServiceImpl implements UserService {
 
@@ -103,4 +104,21 @@ public class UserServiceImpl implements UserService {
         cartDao.create(cart);
         return user;
     }
+
+    @Override
+    public List<User> getAllUsers() {
+        return userDao.findAll();
+    }
+
+    @Transactional(Transactional.TxType.REQUIRED)
+    @Override
+    public User changeBlockStatus(Long userId, boolean status) {
+        User user = userDao.find(userId);
+        if(user.getBlocked() == status)return user;
+        user.setBlocked(status);
+        user = userDao.update(user);
+        return user;
+    }
+
+
 }

@@ -1,0 +1,55 @@
+<ui:composition template="masterTemplate.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:pa="http://xmlns.jcp.org/jsf/passthrough">
+    <ui:define name="left-sidebar"/>
+    <ui:define name="header">
+        <ui:include src="adminHeader.xhtml"/>
+    </ui:define>
+    <ui:define name="title"> Parduotuvė </ui:define>
+
+    <ui:define name="content">
+        <section class="main-admin">
+            <h:form class="users-list-form">
+                <p:dataTable var="user" value="#{usersBean.users}">
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Vardas, Pavardė" />
+                        </f:facet>
+                        <h:outputText value="#{user.firstname} #{user.lastname}" />
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="El. pašto adresas" />
+                        </f:facet>
+                        <h:outputText value="#{user.email}" />
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="telefonas" />
+                        </f:facet>
+                        <h:outputText value="#{user.phonenumber}" />
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Statusas" />
+                        </f:facet>
+                        <h:outputText class="blocked-user" value="Užblokuotas" rendered="#{user.blocked.booleanValue()}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Pakeisti statusą" />
+                        </f:facet>
+                        <h:commandButton class="block-user" value="Užblokuoti" rendered="#{user.blocked.booleanValue() eq false}"
+                                         action="#{usersBean.blockOrUnblockUser(user)}"/>
+                        <h:commandButton class="unblocked-user" value="Atblokuoti" rendered="#{user.blocked.booleanValue()}"
+                                         action="#{usersBean.blockOrUnblockUser(user)}"/>
+                    </p:column>
+                </p:dataTable>
+            </h:form>
+        </section>
+    </ui:define>
+</ui:composition>

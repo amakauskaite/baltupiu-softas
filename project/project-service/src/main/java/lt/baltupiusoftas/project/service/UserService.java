@@ -4,6 +4,7 @@ import lt.baltupiusoftas.project.domain.User;
 import lt.baltupiusoftas.project.domain.UserAddress;
 
 import java.io.Serializable;
+import java.util.List;
 
 
 public interface UserService extends Serializable {
@@ -32,5 +33,8 @@ public interface UserService extends Serializable {
       * @return user instance
       */
      User initTemporaryUser();
+
+     List<User> getAllUsers();
+     User changeBlockStatus(Long userId, boolean status);
 
 }

@@ -135,7 +135,7 @@ form {
 
 .link-in-form
 {
-    height: 40px;
+    height: 18px;
 }
 
 input
@@ -258,13 +258,42 @@ input
 .products-button{
     margin: 5px;
 }
+
 /*ul {*/
     /*padding-left: 0;*/
     /*padding-top: 0;*/
 /*}*/
+
 /*Error*/
 .redirected_error
 {
     position: center;
 }
 
+
+.blocked-user{
+    color: red;
+    font-weight: bold;
+}
+.users-list-form{
+    width: 90%;
+    height: 100%;
+    padding-left: 5%;
+    padding-top: 5%;
+    padding-right: 5%;
+    left: 0;
+    top: 0;
+    font-size: 18px;
+    position: absolute;
+    font-family: inherit !important;
+}
+.block-user{
+    background-color: rgba(179, 56, 27, 0.84);
+}
+.unblocked-user{
+    background-color: #4c813b;
+}
+.main-admin{
+    margin-left: 0;
+    padding: 0;
+}
