@@ -96,7 +96,7 @@ public class UserUpdateBean {
             return "passwordChange";
         }
         else {
-            this.user = userService.updatePassword(login.getUser().getId(), oldPassword, newPassword);
+            User user = userService.updatePassword(login.getUser().getId(), oldPassword, newPassword);
             if (user == null) {
                 FacesContext.getCurrentInstance().addMessage("passUpdateBtn", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Klaida!", "Nepavyko pakeisti slaptažodžio."));
                 return "passwordChange";
@@ -112,13 +112,14 @@ public class UserUpdateBean {
 
             if (userAddress != null) {
 
-                this.userAddress = userAddressService.updateUserAddress(userAddress.getId(), country, city, street, house, flat, postcode);
+                UserAddress userAddress = userAddressService.updateUserAddress(this.userAddress.getId(), country, city, street, house, flat, postcode);
                 if(userAddress == null)
                 {
                     FacesContext.getCurrentInstance().addMessage("addressUpdateBtn", new FacesMessage(FacesMessage.SEVERITY_ERROR,"Klaida!",  "Nepavyko išsaugoti adreso. Bandykite dar kartą."));
                     return "addressChange";
+                } else {
+                    this.userAddress = userAddress;
                 }
-                login.setUser(user);
                 FacesContext.getCurrentInstance().addMessage("passUpdateBtn", new FacesMessage(FacesMessage.SEVERITY_INFO,"Informacija",  "Pakeitimai išsaugoti"));
                 return "addressChange";
 
