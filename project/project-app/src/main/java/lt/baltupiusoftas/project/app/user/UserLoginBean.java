@@ -46,9 +46,15 @@ public class UserLoginBean implements Serializable {
         User user = userService.login(email, password);
         // If user is registered and login successful
         if (user != null) {
-            login.setUser(user);
+            if (user.getBlocked())
+            {
+                FacesContext.getCurrentInstance().addMessage("loginBtn", new FacesMessage(FacesMessage.SEVERITY_ERROR,"Klaida!",  "Vartotojas užblokuotas. Jei manote, kad įvyko klaida, kreipkitės į sistemos administratorių."));
+            }
+            else {
+                login.setUser(user);
 
-            headerStatusBean.showLogoutAndUserProfile();
+                headerStatusBean.showLogoutAndUserProfile();
+            }
             return "index";
         }
         // If user is not registered and login failed

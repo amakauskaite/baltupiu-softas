@@ -21,18 +21,6 @@ public class Login implements Serializable {
 
     private User user;
 
-    @PostConstruct
-    private void init() {
-        UserService userService = CDI.current().select(UserService.class).get();
-        user = userService.initTemporaryUser();
-    }
-
-    @PreDestroy
-    private void terminate() {
-        UserService userService = CDI.current().select(UserService.class).get();
-        userService.deleteUser(user.getId());
-    }
-
     public User getUser() {
         return user;
     }

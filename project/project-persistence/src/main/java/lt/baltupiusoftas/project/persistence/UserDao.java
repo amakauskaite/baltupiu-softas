@@ -2,6 +2,8 @@ package lt.baltupiusoftas.project.persistence;
 
 import lt.baltupiusoftas.project.domain.User;
 
+import java.util.List;
+
 /**
  * User DAO
  *
@@ -16,4 +18,5 @@ public interface UserDao extends GenericDao<User> {
      * @return user
      */
     User findByEmail(String email);
+    List<User> findAll();
 }
