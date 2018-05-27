@@ -4,6 +4,7 @@ import lt.baltupiusoftas.project.app.user.UserLoginBean;
 import lt.baltupiusoftas.project.app.user.UserRegistrationBean;
 import lt.baltupiusoftas.project.app.user.UserUpdateBean;
 
+
 import javax.enterprise.inject.Model;
 import javax.inject.Inject;
 import javax.transaction.Transactional;

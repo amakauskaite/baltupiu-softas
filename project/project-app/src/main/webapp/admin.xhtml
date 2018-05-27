@@ -12,6 +12,10 @@
     <!-- Define custom header here -->
     <!-- -->
 
+    <ui:define name="header">
+        <ui:include src="adminHeader.xhtml"/>
+    </ui:define>
+
 
     <ui:define name="left-sidebar"/>
 
@@ -26,9 +30,9 @@
 
             <h2>Administratoriaus prisijungimas</h2>
 
-            <p:inputText id="usernameField" pa:placeholder="Prisijungimo vardas" value="#{userLoginBean.email}" required="true" requiredMessage="Įveskite prisijungimo vardą"/> <br/>
-            <p:password id="passwordField" pa:placeholder="Slaptažodis" value="#{userLoginBean.password}" required="true" requiredMessage="Įveskite slaptažodį"/> <br/>
-            <h:commandButton id="loginBtn" styleClass="login-btn" value="Prisijungti" action="#{userLoginBean.login()}" update="messages"/>
+            <p:inputText id="usernameField" pa:placeholder="Prisijungimo vardas" value="#{administratorLoginBean.username}" required="true" requiredMessage="Įveskite prisijungimo vardą"/> <br/>
+            <p:password id="passwordField" pa:placeholder="Slaptažodis" value="#{administratorLoginBean.password}" required="true" requiredMessage="Įveskite slaptažodį" validatorMessage="Slaptažodžiai turi sutapti"/> <br/>
+            <h:commandButton id="loginBtn" styleClass="login-btn" value="Prisijungti" action="#{administratorLoginBean.login()}" update="messages"/>
         </h:form>
         </section>
     </ui:define>

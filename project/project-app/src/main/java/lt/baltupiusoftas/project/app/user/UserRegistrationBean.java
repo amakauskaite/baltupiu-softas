@@ -8,7 +8,6 @@ import javax.enterprise.inject.Model;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
-import javax.transaction.Transactional;
 
 @Model
 public class UserRegistrationBean{
@@ -18,6 +17,7 @@ public class UserRegistrationBean{
 
     @Inject
     private PasswordHashingService passwordHashingService;
+
 
     @Inject
     private UserLoginBean userLoginBean;
@@ -36,7 +36,6 @@ public class UserRegistrationBean{
     private User user;
 
 
-@Transactional(Transactional.TxType.REQUIRED)
     public String register() {
         user = userService.register(email, password, firstname, lastname, phoneNumber);
 
@@ -162,7 +161,6 @@ public class UserRegistrationBean{
     }
 
     public void setPassword(String password) {
-
         this.password = passwordHashingService.hashPassword(password);
         userLoginBean.setPassword(password);
     }
