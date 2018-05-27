@@ -28,7 +28,7 @@ public class ProductBean {
         Map<String,String> params =
                 fc.getExternalContext().getRequestParameterMap();
         String param = params.get("id");
-        if(params!=null) {
+        if(param!=null) {
             Long id = Long.parseLong(param);
             product = productService.productById(id);
         }

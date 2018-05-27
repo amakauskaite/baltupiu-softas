@@ -1,5 +1,6 @@
 package lt.baltupiusoftas.project.app.administrator;
 
+import lt.baltupiusoftas.project.app.AdministratorLogin;
 import lt.baltupiusoftas.project.domain.Product;
 import lt.baltupiusoftas.project.service.CategoryService;
 import lt.baltupiusoftas.project.service.ProductService;
@@ -9,6 +10,7 @@ import javax.enterprise.inject.Model;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
+import java.io.IOException;
 import java.util.Map;
 
 @Model
@@ -17,12 +19,26 @@ public class UpdateProductBean {
     private ProductService productService;
     @Inject
     private CategoryService categoryService;
+    @Inject
+    private AdministratorLogin administratorLogin;
     private Long productId;
     private Product updatedProduct;
     private String categoryName;
 
+
+    @Transactional(Transactional.TxType.REQUIRED)
     @PostConstruct
-    public void setUp() {
+    public void setup(){
+        if(administratorLogin.getAdministrator() == null)
+        {
+            try {
+                FacesContext.getCurrentInstance().getExternalContext().redirect("error.xhtml");
+            }
+            catch (IOException ioe)
+            {
+                System.out.println("Failed to redirect to another page in "+this.getClass().getName());
+            }
+        }
         Map<String,String> params = FacesContext.getCurrentInstance()
                 .getExternalContext()
                 .getRequestParameterMap();
@@ -45,6 +61,8 @@ public class UpdateProductBean {
             productService.update(product);
         }
     }
+
+
 
     public String getCategoryName() {
         return categoryName;

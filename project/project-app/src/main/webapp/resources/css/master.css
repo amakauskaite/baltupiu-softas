@@ -265,9 +265,21 @@ input
     position: absolute;
     width: 90%;
     left: 0;
-    font-family: inherit !important;
+    /*font-family: inherit !important;*/
 }
 .admin-form{
     top: 25px;
     padding-bottom: 15%;
+}
+.old-value{
+
+}
+.delete-this-item{
+
+}
+.summary-input{
+
+}
+.admin-pic{
+    width: 20px;
 }
