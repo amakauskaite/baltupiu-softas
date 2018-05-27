@@ -21,7 +21,7 @@
     <!-- Content starts here -->
     <ui:define name="content">
         <section class="main">
-            <!--<form class="admin-product-list-form">-->
+            <h:form class="admin-product-list-form">
                 <p:dataTable  class="admin-product-list-form" rendered="#{adminProductList.adminLoged}" var="product" value="#{productsBean.products}" >
                     <p:column>
                         <f:facet name="header">
@@ -67,24 +67,13 @@
                         <h:button value="Keisti" outcome="adminProduct">
                             <f:param name="id" value="#{product.id}"/>
                         </h:button>
-                        <!--<h:commandButton value="Trinti" onclick="PF('delete').show()">-->
-                            <!--<f:param name="id" value="#{product.id}"/>-->
-                        <!--</h:commandButton>-->
-                        <p:commandButton value="Trinti" oncomplete="PF('delete').show()" update=":deletePanel">
-                            <f:param name="id" value="#{product.id}"/>
-                        </p:commandButton>
+                        <h:commandButton value="Trinti" actionListener="#{deleteProductBean.deleteProduct()}" action="#{deleteProductBean.redraw()}">
+                            <f:param name="delId" value="#{product.id}"/>
+                        </h:commandButton>
                     </p:column>
                 </p:dataTable>
-            <!--</form>-->
-            <p:dialog widgetVar="delete">
-                <p:outputPanel id="deletePanel">
-                    <f:facet name="header"/>
-                    <h:outputText value="Ar tikrai norite ištrinti: "/>
-                    <h:outputText class="delete-this-item" value="#{productBean.product.SKU}"/>
-                    <h:commandButton value="Trinti"/>
-                    <h:commandButton value="Atšaukti" onclick="PF('delete').hide()"/>
-                </p:outputPanel>
-            </p:dialog>
+            </h:form>
+
         </section>
     </ui:define>
 </ui:composition>
