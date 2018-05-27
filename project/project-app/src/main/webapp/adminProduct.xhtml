@@ -18,7 +18,7 @@
     <ui:define name="content">
         <section class="main">
 
-            <h:form class="admin-form" id="create-product" rendered="#{updateProductBean.createProduct}">
+            <h:form class="admin-form" id="create-product" rendered="#{productBean.product eq null}">
                 <h2>Pridėti prekę</h2>
 
                 <h:outputText value="Pavadinimas"/><br/>
@@ -44,36 +44,39 @@
                 <h:commandButton value="Pridėti" actionListener="#{createProductBean.addProduct()}" action="adminIndex"/>
             </h:form>
 
-            <h:form class="admin-form" id="update_product" rendered="#{!updateProductBean.createProduct}">
+            <h:form class="admin-form" id="update_product" rendered="#{productBean.product != null}">
                 <h2>Atnaujinti prekę</h2>
 
                 <h:outputText value="Pavadinimas: "/>
-                <h:outputText class="old-value" value="#{updateProductBean.product.name}"/>
+                <h:outputText class="old-value" value="#{productBean.product.name}"/>
                 <h:inputText value="#{updateProductBean.updatedProduct.name}"/><br/>
 
                 <h:outputText value="Nuotraukos url/nuoroda: "/>
-                <img class="pic-in-details" src="#{updateProductBean.product.photo}"/>
+                <img class="pic-in-details" src="#{productBean.product.photo}"/>
                 <h:inputText value="#{updateProductBean.updatedProduct.photo}"/><br/>
 
                 <h:outputText value="SKU: "/>
-                <h:outputText class="old-value" value="#{updateProductBean.product.SKU}"/>
+                <h:outputText class="old-value" value="#{productBean.product.SKU}"/>
                 <h:inputText value="#{updateProductBean.updatedProduct.SKU}"/><br/>
 
                 <h:outputText value="Kaina, eur: "/>
-                <h:outputText class="old-value" value="#{updateProductBean.product.price}"/>
+                <h:outputText class="old-value" value="#{productBean.product.price}"/>
                 <h:inputText value="#{updateProductBean.updatedProduct.price}" pa:step="0.01" pa:type="number"/><br/>
 
                 <h:outputText value="Kategorija: "/>
-                <h:outputText class="old-value" value="#{updateProductBean.product.category.name}"/>
+                <h:outputText class="old-value" value="#{productBean.product.category.name}"/>
                 <p:selectOneMenu value="#{updateProductBean.categoryName}" editable="true">
                     <f:selectItems value="#{categoryBean.categories}" var="category" itemLabel="#{category.name}" itemValue="#{category.name}"/>
                 </p:selectOneMenu><br/>
 
                 <h:outputText value="Aprašymas: "/>
-                <h:outputText class="old-value" value="#{updateProductBean.product.summary}"/>
+                <h:outputText class="old-value" value="#{productBean.product.summary}"/>
                 <h:inputText class="summary-input" value="#{updateProductBean.updatedProduct.summary}" pa:type="textarea" maxlength="255"/><br/>
 
-                <h:commandButton value="Pakeisti" actionListener="#{updateProductBean.updateProduct()}" action="adminIndex"/>
+
+                <h:commandButton value="Pakeisti" actionListener="#{updateProductBean.updateProduct()}" action="adminIndex">
+                    <f:param name="updatedId" value="#{productBean.product.id}"/>
+                </h:commandButton>
             </h:form>
 
         </section>

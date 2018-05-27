@@ -17,50 +17,35 @@ public class UpdateProductBean {
     private ProductService productService;
     @Inject
     private CategoryService categoryService;
-    private Product product;
+    private Long productId;
     private Product updatedProduct;
-    private boolean createProduct;
     private String categoryName;
 
-    @Transactional(Transactional.TxType.REQUIRED)
     @PostConstruct
     public void setUp() {
-        product = null;
-        FacesContext fc = FacesContext.getCurrentInstance();
-        Map<String,String> params =
-                fc.getExternalContext().getRequestParameterMap();
-        String param = params.get("updateId");
-        if(param!=null){
-            Long id =  Long.parseLong(param);
-            product = productService.productById(id);
-        }
-        createProduct = product == null;
+        Map<String,String> params = FacesContext.getCurrentInstance()
+                .getExternalContext()
+                .getRequestParameterMap();
+        String param = params.get("updatedId");
+        if(param!=null) productId =  Long.parseLong(param);
         updatedProduct = new Product();
-        if(createProduct) product = new Product();
     }
 
     @Transactional(Transactional.TxType.REQUIRED)
     public void updateProduct(){
-        //Product product = productService.productById(productId);
-        if(!updatedProduct.getName().isEmpty()) product.setName(updatedProduct.getName());
-        if(!updatedProduct.getPhoto().isEmpty()) product.setPhoto(updatedProduct.getPhoto());
-        if(updatedProduct.getPrice()!=null) product.setPrice(updatedProduct.getPrice());
-        if(!updatedProduct.getSKU().isEmpty()) product.setSKU(updatedProduct.getSKU());
-        if(!updatedProduct.getSummary().isEmpty()) product.setSummary(updatedProduct.getSummary());
-        if(!categoryName.isEmpty()) product.setCategory(categoryService.addCategory(categoryName));
-        if(!createProduct) productService.update(product);
+        if(productId!=null)
+        {
+            Product product = productService.productById(productId);
+            if (!updatedProduct.getName().isEmpty()) product.setName(updatedProduct.getName());
+            if (!updatedProduct.getPhoto().isEmpty()) product.setPhoto(updatedProduct.getPhoto());
+            if (updatedProduct.getPrice() != null) product.setPrice(updatedProduct.getPrice());
+            if (!updatedProduct.getSKU().isEmpty()) product.setSKU(updatedProduct.getSKU());
+            if (!updatedProduct.getSummary().isEmpty()) product.setSummary(updatedProduct.getSummary());
+            if (!categoryName.isEmpty()) product.setCategory(categoryService.addCategory(categoryName));
+            productService.update(product);
+        }
     }
 
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
-    public boolean isCreateProduct() {
-        return createProduct;
-    }
     public String getCategoryName() {
         return categoryName;
     }
