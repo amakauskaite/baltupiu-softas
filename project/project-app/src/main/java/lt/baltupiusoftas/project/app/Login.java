@@ -1,7 +1,7 @@
 package lt.baltupiusoftas.project.app;
 
 import lt.baltupiusoftas.project.domain.User;
-import lt.baltupiusoftas.project.service.user.UserService;
+import lt.baltupiusoftas.project.service.UserService;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
