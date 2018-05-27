@@ -34,63 +34,46 @@
                 <h:inputText value="#{createProductBean.product.price}" pa:type="number" pa:step="0.01" required="true"/><br/>
 
                 <h:outputText value="Kategorija"/><br/>
-                <h:selectOneMenu value="#{createProductBean.categoryName}" editable="true">
-                    <f:selectItem itemLabel="Įrašyti naują/ pasirinkti" itemValue="" noSelectionOption="true" />
-                    <f:selectItems value="#{categoryBean.categories}" var="cat" itemValue="#{cat.name}"/>
-                </h:selectOneMenu><br/>
+                <p:selectOneMenu value="#{createProductBean.categoryName}" editable="true">
+                    <f:selectItems value="#{categoryBean.categories}"  var="category" itemValue="#{category.name}"/>
+                </p:selectOneMenu><br/>
 
                 <h:outputText value="Aprašymas"/><br/>
-                <h:inputText value="#{createProductBean.product.summary}"/><br/>
+                <h:inputText class="summary-input" value="#{createProductBean.product.summary}" maxlength="255"/><br/>
 
-                <h:commandButton value="Pridėti" actionListener="#{createProductBean.addProduct()}"/>
+                <h:commandButton value="Pridėti" actionListener="#{createProductBean.addProduct()}" action="adminIndex"/>
             </h:form>
 
             <h:form class="admin-form" id="update_product" rendered="#{!updateProductBean.createProduct}">
                 <h2>Atnaujinti prekę</h2>
-                <img src="#{updateProductBean.product.photo}"/>
-                <table>
-                    <tr>
-                        <td> </td>
-                        <td><h:outputText value="Sena reikšmė"/></td>
-                        <td><h:outputText value="Nauja reikšmė"/></td>
-                    </tr>
-                    <tr>
-                        <td><h:outputText value="Pavadinimas"/></td>
-                        <td><h:outputText value="#{updateProductBean.product.name}"/> </td>
-                        <td><h:inputText value="#{updateProductBean.updatedProduct.name}" required="true"/></td>
-                    </tr>
-                    <tr>
-                        <td><h:outputText value="Nuotraukos url/nuoroda"/></td>
-                        <td><h:outputText value="#{updateProductBean.product.photo}"/> </td>
-                        <td><h:inputText value="#{updateProductBean.updatedProduct.photo}" required="true"/></td>
-                    </tr>
-                    <tr>
-                        <td><h:outputText value="SKU"/></td>
-                        <td><h:outputText value="#{updateProductBean.product.SKU}"/> </td>
-                        <td><h:inputText value="#{updateProductBean.updatedProduct.SKU}" required="true"/></td>
-                    </tr>
-                    <tr>
-                        <td><h:outputText value="Kaina, eur"/></td>
-                        <td><h:outputText value="#{updateProductBean.product.price}"/> </td>
-                        <td><h:inputText value="#{updateProductBean.updatedProduct.price}" pa:step="0.01" pa:type="number" required="true"/></td>
-                    </tr>
-                    <tr>
-                        <td><h:outputText value="Kategorija"/></td>
-                        <td><h:outputText value="#{updateProductBean.product.category.name}"/> </td>
-                        <td>
-                            <h:selectOneMenu value="#{updateProductBean.categoryName}" editable="true">
-                                <f:selectItem itemLabel="Įrašyti naują/ pasirinkti" itemValue="" noSelectionOption="true" />
-                                <f:selectItems value="#{categoryBean.categories}" var="cat" itemValue="#{cat.name}"/>
-                            </h:selectOneMenu>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><h:outputText value="Aprašymas"/></td>
-                        <td><h:outputText value="#{updateProductBean.product.summary}"/></td>
-                        <td><h:inputText value="#{updateProductBean.updatedProduct.summary}"/></td>
-                    </tr>
-                </table>
-                <h:commandButton value="Pakeisti" actionListener="#{updateProductBean.updateProduct()}"/>
+
+                <h:outputText value="Pavadinimas: "/>
+                <h:outputText class="old-value" value="#{updateProductBean.product.name}"/>
+                <h:inputText value="#{updateProductBean.updatedProduct.name}"/><br/>
+
+                <h:outputText value="Nuotraukos url/nuoroda: "/>
+                <img class="pic-in-details" src="#{updateProductBean.product.photo}"/>
+                <h:inputText value="#{updateProductBean.updatedProduct.photo}"/><br/>
+
+                <h:outputText value="SKU: "/>
+                <h:outputText class="old-value" value="#{updateProductBean.product.SKU}"/>
+                <h:inputText value="#{updateProductBean.updatedProduct.SKU}"/><br/>
+
+                <h:outputText value="Kaina, eur: "/>
+                <h:outputText class="old-value" value="#{updateProductBean.product.price}"/>
+                <h:inputText value="#{updateProductBean.updatedProduct.price}" pa:step="0.01" pa:type="number"/><br/>
+
+                <h:outputText value="Kategorija: "/>
+                <h:outputText class="old-value" value="#{updateProductBean.product.category.name}"/>
+                <p:selectOneMenu value="#{updateProductBean.categoryName}" editable="true">
+                    <f:selectItems value="#{categoryBean.categories}" var="category" itemLabel="#{category.name}" itemValue="#{category.name}"/>
+                </p:selectOneMenu><br/>
+
+                <h:outputText value="Aprašymas: "/>
+                <h:outputText class="old-value" value="#{updateProductBean.product.summary}"/>
+                <h:inputText class="summary-input" value="#{updateProductBean.updatedProduct.summary}" pa:type="textarea" maxlength="255"/><br/>
+
+                <h:commandButton value="Pakeisti" actionListener="#{updateProductBean.updateProduct()}" action="adminIndex"/>
             </h:form>
 
         </section>
