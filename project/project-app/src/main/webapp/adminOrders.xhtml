@@ -11,15 +11,16 @@
     <!-- Define custom header here -->
     <!-- -->
 
-    <ui:define name="left-sidebar">
-        <ui:include src="userSidebar.xhtml" />
+    <ui:define name="header">
+        <ui:include src="adminHeader.xhtml"/>
     </ui:define>
+
 
     <!-- Content starts here -->
     <ui:define name="content">
         <section class="main">
             <h2>Pirkimų istorija</h2>
-            <p:dataTable var = "cart" value="#{userCartHistoryBean.carts}">
+            <p:dataTable var = "cart" value="#{administratorCartBean.carts}">
                 <p:column headerText="Prekė">
                     <!--
                                     <h:outputText value="#{purchaseHistoryBean.product}}" />

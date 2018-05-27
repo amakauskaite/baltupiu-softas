@@ -16,4 +16,7 @@ public interface CartService {
      * @return active cart
      */
     Cart findActiveCart(Long userId);
+    Cart addOldCart(Long cartId);
+    Cart updateCartStatus (Long cartId);
+    Boolean isStatusUpdatable (Long cartId);
 }
