@@ -1,8 +1,8 @@
 package lt.baltupiusoftas.project.app.user;
 
 import lt.baltupiusoftas.project.domain.User;
-import lt.baltupiusoftas.project.service.password.PasswordHashingService;
-import lt.baltupiusoftas.project.service.user.UserService;
+import lt.baltupiusoftas.project.service.PasswordHashingService;
+import lt.baltupiusoftas.project.service.UserService;
 
 import javax.enterprise.inject.Model;
 import javax.faces.application.FacesMessage;

@@ -239,12 +239,13 @@ input
 .pic-in-details{
     position: center;
     height: 200px;
+    width: 200px;
 }
 .products-list{
     font: inherit !important;
 }
 .product-details{
-    width: 100%;
+    width: auto;
 }
 .product-submit-to-cart{
     margin: 10px;

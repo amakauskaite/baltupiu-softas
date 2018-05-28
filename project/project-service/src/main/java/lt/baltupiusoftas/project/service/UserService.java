@@ -1,4 +1,4 @@
-package lt.baltupiusoftas.project.service.user;
+package lt.baltupiusoftas.project.service;
 
 import lt.baltupiusoftas.project.domain.User;
 

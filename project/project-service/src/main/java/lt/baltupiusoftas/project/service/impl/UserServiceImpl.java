@@ -1,9 +1,10 @@
-package lt.baltupiusoftas.project.service;
+package lt.baltupiusoftas.project.service.impl;
 
 import lt.baltupiusoftas.project.domain.Cart;
 import lt.baltupiusoftas.project.domain.User;
 import lt.baltupiusoftas.project.persistence.CartDao;
 import lt.baltupiusoftas.project.persistence.UserDao;
+import lt.baltupiusoftas.project.service.UserService;
 
 import javax.inject.Inject;
 import javax.transaction.Transactional;
