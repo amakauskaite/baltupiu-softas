@@ -1,4 +1,4 @@
-package lt.baltupiusoftas.project.service.password;
+package lt.baltupiusoftas.project.service;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
