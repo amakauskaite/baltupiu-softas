@@ -45,7 +45,6 @@ public class CreateProductBean {
     }
 
 
-
     @Transactional(Transactional.TxType.REQUIRED)
     public void addProduct(){
         product.setCategory(categoryService.addCategory(categoryName));

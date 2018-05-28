@@ -6,7 +6,7 @@
                 xmlns:pa="http://xmlns.jcp.org/jsf/passthrough"
                 xmlns:p="http://primefaces.org/ui">
 
-    <ui:define name="title"> Application </ui:define>
+    <ui:define name="title">Parduotuvė</ui:define>
 
     <!-- -->
     <!-- Define custom header here -->
@@ -18,7 +18,7 @@
     <ui:define name="content">
         <section class="main">
         <h:form id="registration-form">
-            <p:messages id="messages" showDetail="true" closable="true">
+            <p:messages id="messages" showDetail="true" showSummary="false" closable="true">
                 <p:autoUpdate />
             </p:messages>
 
@@ -27,7 +27,7 @@
             <p:inputText id="lastname"  styleClass="nameInput" pa:placeholder="Pavardė" value="#{userRegistrationBean.lastname}" required="true" requiredMessage="Įveskite pavardę"/><br/>
             <p:inputMask id="phonenumber"  pa:placeholder="Mobiliojo telefono numeris" value="#{userRegistrationBean.phoneNumber}" required="true" requiredMessage="Įveskite telefono numerį" mask="+(999) 99999999"/><br/>
             <p:inputText id="email" pa:placeholder="El. paštas" pa:type="email" value="#{userRegistrationBean.email}" required="true" requiredMessage="Įveskite el. paštą"/> <br/>
-            <p:password id="password1Field" pa:placeholder="Slaptažodis" value="#{userRegistrationBean.password}" match="password2Field" required="true" requiredMessage="Įveskite slaptažodį"/> <br/>
+            <p:password id="password1Field" pa:placeholder="Slaptažodis" value="#{userRegistrationBean.password}" match="password2Field" required="true" requiredMessage="Įveskite slaptažodį" validatorMessage="Slaptažodžiai nesutampa"/> <br/>
             <p:password id="password2Field" pa:placeholder="Pakartokite slaptažodį" value="#{userRegistrationBean.password}" required="true" requiredMessage="Pakartokite slaptažodį"/> <br/>
             <h:commandButton id="registrationBtn" styleClass="form-buttons" value="Sukurti paskyrą" action="#{userRegistrationBean.register()}"/>
             <input id="resetBtn" type="reset" value = "Nustatyti iš naujo"/>

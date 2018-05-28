@@ -29,4 +29,11 @@ public class UserDaoImpl extends GenericDaoImpl<User> implements UserDao {
             return null;
         }
     }
+
+    @Override
+    public List<User> findAll() {
+        String findAll = "select u from User u";
+        TypedQuery<User> query = entityManager.createQuery(findAll, User.class);
+        return query.getResultList();
+    }
 }

@@ -5,34 +5,48 @@
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:p="http://primefaces.org/ui">
 
-    <ui:define name="title"> Application </ui:define>
+    <ui:define name="title">Parduotuvė</ui:define>
 
     <!-- -->
     <!-- Define custom header here -->
     <!-- -->
 
+    <ui:define name="left-sidebar">
+        <ui:include src="userSidebar.xhtml" />
+    </ui:define>
+
     <!-- Content starts here -->
     <ui:define name="content">
         <section class="main">
-        <h2>Pirkimo istorija</h2>
+        <h2>Pirkimų istorija</h2>
         <p:dataTable>
             <p:column headerText="Prekė">
+<!--
                 <h:outputText value="#{purchaseHistoryBean.product}}" />
+-->
             </p:column>
 
             <p:column headerText="Kiekis">
+<!--
                 <h:outputText value="#{purchaseHistoryBean.count}" />
+-->
             </p:column>
 
             <p:column headerText="Kaina">
+<!--
                 <h:outputText value="#{purchaseHistoryBean.price}" />
+-->
             </p:column>
 
             <p:column headerText="Būsena">
+<!--
                 <h:outputText value="#{purchaseHistoryBean.state}" />
+-->
             </p:column>
             <p:column headerText="Pirkimo data">
+<!--
                 <h:outputText value="#{purchaseHistoryBean.date}" />
+-->
             </p:column>
         </p:dataTable>
         </section>
