@@ -112,10 +112,10 @@ tr:nth-child(even) {
 
 form {
     padding-left: 50px;
-    top: 20%;
+    top: 8%;
     font-size: 18px;
     position: absolute;
-    width: 50%;
+    width: 60%;
     left: 25%;
 
 
@@ -135,7 +135,7 @@ form {
 
 .link-in-form
 {
-    height: 40px;
+    height: 18px;
 }
 
 input
@@ -154,13 +154,13 @@ input
 
 .form-buttons, #resetBtn, .login-btn
 {
-    width: 40%;
+    width: 41%;
     border-radius: 4px;
 }
 
 .login-btn
 {
-    width: 80%;
+    width: 81.5%;
 }
 
 /* Sidebar (re-used from w3schools)*/
@@ -274,4 +274,43 @@ input
 .admin-pic{
     width: 30px;
     position: center;
+}
+
+/*ul {*/
+    /*padding-left: 0;*/
+    /*padding-top: 0;*/
+/*}*/
+
+/*Error*/
+.redirected_error
+{
+    position: center;
+}
+
+
+.blocked-user{
+    color: red;
+    font-weight: bold;
+}
+.users-list-form{
+    width: 90%;
+    height: 100%;
+    padding-left: 5%;
+    padding-top: 5%;
+    padding-right: 5%;
+    left: 0;
+    top: 0;
+    font-size: 18px;
+    position: absolute;
+    font-family: inherit !important;
+}
+.block-user{
+    background-color: rgba(179, 56, 27, 0.84);
+}
+.unblocked-user{
+    background-color: #4c813b;
+}
+.main-admin{
+    margin-left: 0;
+    padding: 0;
 }

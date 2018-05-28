@@ -1,12 +1,15 @@
-package lt.baltupiusoftas.project.service.user;
+package lt.baltupiusoftas.project.service.impl;
 
 import lt.baltupiusoftas.project.domain.Cart;
 import lt.baltupiusoftas.project.domain.User;
+import lt.baltupiusoftas.project.domain.UserAddress;
 import lt.baltupiusoftas.project.persistence.CartDao;
 import lt.baltupiusoftas.project.persistence.UserDao;
+import lt.baltupiusoftas.project.service.UserService;
 
 import javax.inject.Inject;
 import javax.transaction.Transactional;
+import java.util.List;
 
 public class UserServiceImpl implements UserService {
 
@@ -51,13 +54,38 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User updatePassword(User user, String oldPassword, String newPassword) {
-        if (user.getPassword().equals(oldPassword)) {
-            user.setPassword(newPassword);
-            return userDao.update(user);
+    public User updatePassword(Long userId, String oldPassword, String newPassword) {
+        User user = userDao.find(userId);
+        if (user != null) {
+
+            if (user.getPassword().equals(oldPassword)) {
+                user.setPassword(newPassword);
+                return userDao.update(user);
+
+            }
 
         }
-        return user;
+        return null;
+    }
+
+    @Override
+    public User updateUserInfo(Long userId, String firstname, String lastname, String email, String phoneNumber) {
+        User user = userDao.find(userId);
+        User user1 = userDao.findByEmail(email);
+        if ((user1 == null || user1.getId().equals(userId)) && user != null) {
+            user.setFirstname(firstname);
+            user.setLastname(lastname);
+            user.setEmail(email);
+            user.setPhonenumber(phoneNumber);
+            return userDao.update(user);
+        }
+        return null;
+    }
+
+    @Override
+    public UserAddress findUserAddress(Long userId) {
+        User user = userDao.find(userId);
+        return user.getUserAddress();
     }
 
     @Override
@@ -77,4 +105,21 @@ public class UserServiceImpl implements UserService {
         cartDao.create(cart);
         return user;
     }
+
+    @Override
+    public List<User> getAllUsers() {
+        return userDao.findAll();
+    }
+
+    @Transactional(Transactional.TxType.REQUIRED)
+    @Override
+    public User changeBlockStatus(Long userId, boolean status) {
+        User user = userDao.find(userId);
+        if(user.getBlocked() == status)return user;
+        user.setBlocked(status);
+        user = userDao.update(user);
+        return user;
+    }
+
+
 }

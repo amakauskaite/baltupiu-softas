@@ -1,13 +1,14 @@
 package lt.baltupiusoftas.project.app.user;
 
 import lt.baltupiusoftas.project.domain.User;
-import lt.baltupiusoftas.project.service.password.PasswordHashingService;
-import lt.baltupiusoftas.project.service.user.UserService;
+import lt.baltupiusoftas.project.service.PasswordHashingService;
+import lt.baltupiusoftas.project.service.UserService;
 
 import javax.enterprise.inject.Model;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 
 @Model
 public class UserRegistrationBean{
@@ -36,6 +37,7 @@ public class UserRegistrationBean{
     private User user;
 
 
+    @Transactional(Transactional.TxType.REQUIRES_NEW)
     public String register() {
         user = userService.register(email, password, firstname, lastname, phoneNumber);
 

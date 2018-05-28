@@ -16,6 +16,7 @@
         <ui:include src="adminHeader.xhtml"/>
     </ui:define>
 
+
     <ui:define name="left-sidebar"/>
 
     <!-- Content starts here -->
@@ -23,14 +24,14 @@
         <section class="main">
         <h:form id="admin-login-form">
 
-            <p:messages id="messages" showDetail="true" closable="true">
+            <p:messages id="messages" showDetail="true" showSummary="false" closable="true">
                 <p:autoUpdate />
             </p:messages>
 
             <h2>Administratoriaus prisijungimas</h2>
 
             <p:inputText id="usernameField" pa:placeholder="Prisijungimo vardas" value="#{administratorLoginBean.username}" required="true" requiredMessage="Įveskite prisijungimo vardą"/> <br/>
-            <p:password id="passwordField" pa:placeholder="Slaptažodis" value="#{administratorLoginBean.password}" required="true" requiredMessage="Įveskite slaptažodį"/> <br/>
+            <p:password id="passwordField" pa:placeholder="Slaptažodis" value="#{administratorLoginBean.password}" required="true" requiredMessage="Įveskite slaptažodį" validatorMessage="Slaptažodžiai turi sutapti"/> <br/>
             <h:commandButton id="loginBtn" styleClass="login-btn" value="Prisijungti" action="#{administratorLoginBean.login()}" update="messages"/>
         </h:form>
         </section>
