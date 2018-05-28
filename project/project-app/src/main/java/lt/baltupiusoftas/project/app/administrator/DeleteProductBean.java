@@ -4,6 +4,7 @@ import lt.baltupiusoftas.project.domain.Product;
 import lt.baltupiusoftas.project.service.ProductService;
 
 import javax.enterprise.inject.Model;
+import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
@@ -23,10 +24,9 @@ public class DeleteProductBean {
         if(param!=null) {
             Long productId = Long.parseLong(param);
             productService.deleteProduct(productId);
-            if(productService.productById(productId)==null);//todo good msg
-            else; //todo bad msg
+            //todo show message
         }
-        FacesContext.getCurrentInstance().getPartialViewContext().getRenderIds().add("form:dataTable");
+        FacesContext.getCurrentInstance().getPartialViewContext().getRenderIds().add(":form:dataTable");
         return "adminIndex";
     }
 }

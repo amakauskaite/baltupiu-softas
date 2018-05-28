@@ -39,7 +39,7 @@
                 </p:selectOneMenu><br/>
 
                 <h:outputText value="Aprašymas"/><br/>
-                <h:inputText class="summary-input" value="#{createProductBean.product.summary}" maxlength="255"/><br/>
+                <h:inputText pa:rows="5" pa:cols="60" class="summary-input" value="#{createProductBean.product.summary}" maxlength="255"/><br/>
 
                 <h:commandButton value="Pridėti" actionListener="#{createProductBean.addProduct()}" action="adminIndex"/>
             </h:form>
@@ -49,25 +49,25 @@
 
                 <img class="pic-in-details" src="#{productBean.product.photo}"/>
 
-                <h:outputText value="Pavadinimas: "/>
+                <h:outputLabel value="Pavadinimas: "/><br/>
                 <h:inputText value="#{updateProductBean.updatedProduct.name}"/><br/>
 
-                <h:outputText value="Nuotraukos url/nuoroda: "/>
+                <h:outputText value="Nuotraukos url/nuoroda: "/><br/>
                 <h:inputText value="#{updateProductBean.updatedProduct.photo}"/><br/>
 
-                <h:outputText value="SKU: "/>
+                <h:outputText value="SKU: "/><br/>
                 <h:inputText value="#{updateProductBean.updatedProduct.SKU}"/><br/>
 
-                <h:outputText value="Kaina, eur: "/>
+                <h:outputText value="Kaina, eur: "/><br/>
                 <h:inputText value="#{updateProductBean.updatedProduct.price}" pa:step="0.01" pa:type="number"/><br/>
 
-                <h:outputText value="Kategorija: "/>
+                <h:outputText value="Kategorija: "/><br/>
                 <p:selectOneMenu value="#{updateProductBean.categoryName}" editable="true">
                     <f:selectItems value="#{categoryBean.categories}" var="category" itemLabel="#{category.name}" itemValue="#{category.name}"/>
                 </p:selectOneMenu><br/>
 
-                <h:outputText value="Aprašymas: "/>
-                <h:inputText class="summary-input" pa:rows="5" pa:cols="60" value="#{updateProductBean.updatedProduct.summary}" pa:type="textarea" maxlength="255"/><br/>
+                <h:outputText value="Aprašymas: "/><br/>
+                <h:inputText class="summary-input" pa:rows="5" pa:cols="60" value="#{updateProductBean.updatedProduct.summary}" maxlength="255"/><br/>
 
 
                 <h:commandButton value="Pakeisti" actionListener="#{updateProductBean.updateProduct()}" action="adminIndex">

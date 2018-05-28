@@ -59,9 +59,12 @@ public class UpdateProductBean {
         if(param!=null) {
             productId =  Long.parseLong(param);
             updatedProduct = productService.productById(productId);
+            categoryName = updatedProduct.getCategory().getName();
         }
-        else create = true;
-        updatedProduct = new Product();
+        else {
+            create = true;
+            updatedProduct = new Product();
+        }
     }
 
     @Transactional(Transactional.TxType.REQUIRED)
@@ -87,9 +90,9 @@ public class UpdateProductBean {
 //            if (!updatedProduct.getSKU().isEmpty()) product.setSKU(updatedProduct.getSKU());
 //            if (!updatedProduct.getSummary().isEmpty()) product.setSummary(updatedProduct.getSummary());
 //            if (!categoryName.isEmpty()) product.setCategory(categoryService.addCategory(categoryName));
-            if(productService.update(product)!=null);//todo show msg kad gerai
+            productService.update(product);
         }
-        else ;//todo show msg kad blogai
+        //todo show msg
     }
 
 

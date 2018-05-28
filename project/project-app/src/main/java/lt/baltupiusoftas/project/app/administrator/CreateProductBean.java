@@ -47,8 +47,7 @@ public class CreateProductBean {
     @Transactional(Transactional.TxType.REQUIRED)
     public void addProduct(){
         product.setCategory(categoryService.addCategory(categoryName));
-        if(productService.add(product)!=null);//todo gera msg
-        else ; //todo bloga msg
+        productService.add(product);//todo show msg
     }
 
     public String getCategoryName() {
