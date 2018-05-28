@@ -1,13 +1,19 @@
 package lt.baltupiusoftas.project.app.cart_history;
 
+import lt.baltupiusoftas.project.app.AdministratorLogin;
+import lt.baltupiusoftas.project.app.administrator.AdministratorLoginBean;
 import lt.baltupiusoftas.project.domain.Cart;
+import lt.baltupiusoftas.project.domain.CartItem;
 import lt.baltupiusoftas.project.service.CartHistoryService;
 import lt.baltupiusoftas.project.service.CartService;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
+import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.List;
 
 @Model
@@ -21,9 +27,22 @@ public class AdministratorCartBean {
     @Inject
     private CartService cartService;
 
+    @Inject
+    AdministratorLogin administratorLogin;
+
     @PostConstruct
     @Transactional
     public void init () {
+        if(administratorLogin.getAdministrator() == null)
+        {
+            try {
+                FacesContext.getCurrentInstance().getExternalContext().redirect("error.xhtml");
+            }
+            catch (IOException ioe)
+            {
+                System.out.println("Failed to redirect to another page in "+this.getClass().getName());
+            }
+        }
         carts = cartHistoryService.findAllCarts();
     }
 
@@ -44,5 +63,9 @@ public class AdministratorCartBean {
 
     public void setCarts(List<Cart> carts) {
         this.carts = carts;
+    }
+
+    public BigDecimal countCartSum(List <CartItem> items) {
+        return cartService.countCartSum(items);
     }
 }

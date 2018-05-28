@@ -1,6 +1,10 @@
 package lt.baltupiusoftas.project.service;
 
 import lt.baltupiusoftas.project.domain.Cart;
+import lt.baltupiusoftas.project.domain.CartItem;
+
+import java.math.BigDecimal;
+import java.util.List;
 
 import java.math.BigDecimal;
 
@@ -24,4 +28,5 @@ public interface CartService {
     Cart addOldCart(Long cartId);
     Cart updateCartStatus (Long cartId);
     Boolean isStatusUpdatable (Long cartId);
+    BigDecimal countCartSum (List <CartItem> items);
 }

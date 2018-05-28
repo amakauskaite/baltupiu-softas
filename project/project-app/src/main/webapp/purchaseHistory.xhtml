@@ -19,34 +19,43 @@
     <ui:define name="content">
         <section class="main">
             <h2>Pirkimų istorija</h2>
-            <p:dataTable var = "cart" value="#{userCartHistoryBean.carts}">
-                <p:column headerText="Prekė">
-                    <!--
-                                    <h:outputText value="#{purchaseHistoryBean.product}}" />
-                    -->
+            <p:dataTable var = "cart" value="#{userCartHistoryBean.carts}" id ="userCartHistory">
+                <p:column headerText="Krepšelis" width="30%">
+                    <p:dataTable var ="item" value="#{cart.items}">
+                        <p:column headerText="Prekė">
+                            <h:outputText value="#{item.product.name}" />
+                        </p:column>
+
+                        <p:column headerText="Kiekis">
+                            <!--
+                                            <h:outputText value="#{purchaseHistoryBean.count}" />
+                            -->
+                        </p:column>
+
+                        <p:column headerText="Kaina">
+                            <h:outputText value="#{item.price}" />
+                        </p:column>
+                    </p:dataTable>
                 </p:column>
 
-                <p:column headerText="Kiekis">
-                    <!--
-                                    <h:outputText value="#{purchaseHistoryBean.count}" />
-                    -->
-                </p:column>
 
-                <p:column headerText="Kaina">
-                    <!--
-                                    <h:outputText value="#{purchaseHistoryBean.price}" />
-                    -->
-                </p:column>
 
                 <p:column headerText="Būsena">
-                    <!--
-                                    <h:outputText value="#{purchaseHistoryBean.state}" />
-                    -->
+                    <h:outputText value="#{cart.orderStatus.toString()}" />
+                </p:column>
+
+                <p:column headerText="Bendra kaina">
+                    <h:outputText value="#{userCartHistoryBean.countCartSum(cart.items)}" />
                 </p:column>
                 <p:column headerText="Pirkimo data">
                     <!--
                                     <h:outputText value="#{purchaseHistoryBean.date}" />
                     -->
+                </p:column>
+                <p:column headerText="Pridėti krepšelį dar kartą">
+                    <h:commandButton value="Pridėti"
+                                     action="#{userCartHistoryBean.addCartAgain(cart.id)}"
+                                     update ="userCartHistory"/>
                 </p:column>
             </p:dataTable>
         </section>
@@ -55,6 +64,13 @@
 
     <!-- -->
     <!-- Define custom footer here -->
+
+    <ui:define name="footer">
+
+        <footer class="index-footer">
+            <p>2018 Baltupių Softas</p>
+        </footer>
+    </ui:define>
     <!-- -->
 
 </ui:composition>

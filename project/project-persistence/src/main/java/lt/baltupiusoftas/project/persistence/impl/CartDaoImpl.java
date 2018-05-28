@@ -36,9 +36,9 @@ public class CartDaoImpl extends GenericDaoImpl<Cart> implements CartDao {
 
     @Override
     public List<Cart> findUserHistory(Long userId){
-        String findUserHistory = "select cart" +
-                "from Cart cart" +
-                "where cart.user.id = :userId";
+        String findUserHistory = "select c " +
+                "from Cart c " +
+                "where c.user.id = :userId AND c.items.size > 0 ";
 
 
         TypedQuery<Cart> query = entityManager.createQuery(findUserHistory, Cart.class);
@@ -50,8 +50,8 @@ public class CartDaoImpl extends GenericDaoImpl<Cart> implements CartDao {
 
     @Override
     public List<Cart> findAllCarts() {
-        String findCarts= "select cart" +
-                "from Cart cart";
+        String findCarts= "select c " +
+                "from Cart c where c.items.size > 0 " ;
 
 
         TypedQuery<Cart> query = entityManager.createQuery(findCarts, Cart.class);

@@ -21,7 +21,7 @@ public class CartServiceImpl implements CartService {
     @Inject
     private ProductDao productDao;
 
-    @Transactional
+
     @Override
     public Cart findActiveCart(Long userId) {
         return cartDao.findActiveCart(userId);
@@ -42,7 +42,7 @@ public class CartServiceImpl implements CartService {
     public Cart addOldCart(Long cartId) {
         Cart cart = cartDao.find(cartId);
         Cart activeCart = cartDao.findActiveCart(cart.getUser().getId());
-        List<CartItem> oldItems = cart.getItems();
+        List <CartItem> oldItems = cart.getItems();
         List<CartItem> activeItems = activeCart.getItems();
         for (CartItem i : oldItems) {
             Long productId = i.getProduct().getId();
@@ -70,5 +70,15 @@ public class CartServiceImpl implements CartService {
     public Boolean isStatusUpdatable(Long cartId) {
         Cart cart = cartDao.find(cartId);
         return cart.getOrderStatus() == OrderStatusType.INCOMPLETE;
+    }
+
+    @Override
+    public BigDecimal countCartSum(List<CartItem> items) {
+        BigDecimal sum = BigDecimal.ZERO;
+        for (CartItem i: items) {
+            sum = sum.add(i.getPrice());
+        }
+
+        return sum;
     }
 }
