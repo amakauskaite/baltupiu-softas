@@ -5,6 +5,7 @@ import lt.baltupiusoftas.project.persistence.ProductDao;
 import lt.baltupiusoftas.project.service.ProductService;
 
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 import java.util.List;
 
 public class ProductServiceImpl implements ProductService {
@@ -36,8 +37,10 @@ public class ProductServiceImpl implements ProductService {
         return productDao.update(product);
     }
 
+    @Transactional(Transactional.TxType.REQUIRED)
     @Override
-    public void deleteProduct(Product product) {
+    public void deleteProduct(Long productId) {
+        Product product = productDao.find(productId);
         productDao.delete(product.getId());
     }
 }

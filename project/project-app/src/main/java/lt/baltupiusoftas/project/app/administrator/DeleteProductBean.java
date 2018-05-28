@@ -14,20 +14,18 @@ public class DeleteProductBean {
     @Inject
     private ProductService productService;
 
-    @Transactional(Transactional.TxType.REQUIRED)
-    public void deleteProduct(){
+
+    public String deleteProduct(){
         Map<String,String> params = FacesContext.getCurrentInstance()
                 .getExternalContext()
                 .getRequestParameterMap();
         String param = params.get("delId");
         if(param!=null) {
             Long productId = Long.parseLong(param);
-            Product product = productService.productById(productId);
-            productService.deleteProduct(product);
+            productService.deleteProduct(productId);
+            if(productService.productById(productId)==null);//todo good msg
+            else; //todo bad msg
         }
-    }
-
-    public String redraw(){
         FacesContext.getCurrentInstance().getPartialViewContext().getRenderIds().add("form:dataTable");
         return "adminIndex";
     }

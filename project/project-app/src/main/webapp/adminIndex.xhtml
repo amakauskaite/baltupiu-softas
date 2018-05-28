@@ -21,15 +21,15 @@
     <!-- Content starts here -->
     <ui:define name="content">
         <section class="main">
-            <h:form class="admin-product-list-form">
-                <p:dataTable  class="admin-product-list-form" rendered="#{adminProductList.adminLoged}" var="product" value="#{productsBean.products}" >
+            <h:form class="admin-product-list-form" rendered="#{adminProductList.adminLoged}">
+                <p:dataTable  class="admin-product-list-form" var="product" value="#{productsBean.products}" >
                     <p:column>
                         <f:facet name="header">
                             <h:outputText value="Foto" />
                         </f:facet>
-                        <p:lightBox>
-                            <h:outputLink value="#{product.photo}">
-                                <h:graphicImage class="admin-pic" value="#{product.photo}"/>
+                        <p:lightBox rendered="#{product.photo != null}">
+                            <h:outputLink value="#{product.photo}" rendered="#{product.photo != null}">
+                                <h:graphicImage class="admin-pic" value="#{product.photo}" rendered="#{product.photo != null}"/>
                             </h:outputLink>
                         </p:lightBox>
                     </p:column>
@@ -66,8 +66,9 @@
                     <p:column>
                         <h:button value="Keisti" outcome="adminProduct">
                             <f:param name="id" value="#{product.id}"/>
+                            <f:param name="upId" value="#{product.id}"/>
                         </h:button>
-                        <h:commandButton value="Trinti" actionListener="#{deleteProductBean.deleteProduct()}" action="#{deleteProductBean.redraw()}">
+                        <h:commandButton value="Trinti" action="#{deleteProductBean.deleteProduct()}">
                             <f:param name="delId" value="#{product.id}"/>
                         </h:commandButton>
                     </p:column>
