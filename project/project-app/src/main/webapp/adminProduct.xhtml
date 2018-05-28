@@ -7,7 +7,7 @@
                 xmlns:pa="http://xmlns.jcp.org/jsf/passthrough">
 
 
-    <ui:define name="title"> Parduotuve </ui:define>
+    <ui:define name="title">Parduotuvė</ui:define>
 
     <ui:define name="header">
         <ui:include src="adminHeader.xhtml"/>
@@ -19,58 +19,69 @@
         <section class="main">
 
             <h:form class="admin-form" id="create-product" rendered="#{productBean.product eq null}">
+
+                <p:messages id="messages1" showDetail="true" showSummary="false" closable="true">
+                    <p:autoUpdate />
+                </p:messages>
+
                 <h2>Pridėti prekę</h2>
 
                 <h:outputText value="Pavadinimas"/><br/>
-                <h:inputText value="#{createProductBean.product.name}"/><br/>
+                <h:inputText value="#{createProductBean.product.name}" required="true" requiredMessage="Įveskite pavadinimą"/><br/>
 
-                <h:outputText value="Nuotraukos url/nuoroda"/><br/>
+                <h:outputText value="Nuotraukos url/nuoroda" required="true" requiredMessage="Pridėkite nuorodą"/><br/>
                 <h:inputText value="#{createProductBean.product.photo}"/><br/>
 
                 <h:outputText value="SKU"/><br/>
-                <h:inputText value="#{createProductBean.product.SKU}"/><br/>
+                <h:inputText value="#{createProductBean.product.SKU}" required="true" requiredMessage="Įveskite SKU"/><br/>
 
                 <h:outputText value="Kaina, eur"/><br/>
-                <h:inputText value="#{createProductBean.product.price}" pa:type="number" pa:step="0.01"/><br/>
+                <h:inputText value="#{createProductBean.product.price}" pa:type="number" pa:step="0.01" pa:min="0.01" required="true" requiredMessage="Įveskite kainą"/><br/>
 
                 <h:outputText value="Kategorija"/><br/>
-                <p:selectOneMenu value="#{createProductBean.categoryName}" editable="true">
+                <p:selectOneMenu value="#{createProductBean.categoryName}" editable="true" required="true" requiredMessage="Pasirinkite kategoriją">
                     <f:selectItems value="#{categoryBean.categories}"  var="category" itemLabel="#{category.name}" itemValue="#{category.name}"/>
                 </p:selectOneMenu><br/>
 
                 <h:outputText value="Aprašymas"/><br/>
-                <h:inputText pa:rows="5" pa:cols="60" class="summary-input" value="#{createProductBean.product.summary}" maxlength="255"/><br/>
+                <h:inputText pa:rows="5" pa:cols="60" class="summary-input" value="#{createProductBean.product.summary}" maxlength="255" required="true" requiredMessage="Pridėkite aprašymą"/><br/>
 
-                <h:commandButton value="Pridėti" actionListener="#{createProductBean.addProduct()}" action="adminIndex"/>
+                <h:commandButton id="addBtn" value="Pridėti" actionListener="#{createProductBean.addProduct()}" action="adminProduct"/>
+                <input type="reset" />
             </h:form>
 
             <h:form class="admin-form" id="update_product" rendered="#{productBean.product!=null}">
+
+                <p:messages id="messages2" showDetail="true" showSummary="false" closable="true">
+                    <p:autoUpdate />
+                </p:messages>
+
                 <h2>Atnaujinti prekę</h2>
 
-                <img class="pic-in-details" src="#{productBean.product.photo}"/>
+                <img class="pic-in-details" src="#{productBean.product.photo}" /> <br/>
 
                 <h:outputLabel value="Pavadinimas: "/><br/>
-                <h:inputText value="#{updateProductBean.updatedProduct.name}"/><br/>
+                <h:inputText value="#{updateProductBean.updatedProduct.name}" required="true" requiredMessage="Įveskite pavadinimą"/><br/>
 
                 <h:outputText value="Nuotraukos url/nuoroda: "/><br/>
-                <h:inputText value="#{updateProductBean.updatedProduct.photo}"/><br/>
+                <h:inputText value="#{updateProductBean.updatedProduct.photo}" required="true" requiredMessage="Pridėkite nuorodą"/><br/>
 
                 <h:outputText value="SKU: "/><br/>
-                <h:inputText value="#{updateProductBean.updatedProduct.SKU}"/><br/>
+                <h:inputText value="#{updateProductBean.updatedProduct.SKU}" required="true" requiredMessage="Įveskite SKU"/><br/>
 
                 <h:outputText value="Kaina, eur: "/><br/>
-                <h:inputText value="#{updateProductBean.updatedProduct.price}" pa:step="0.01" pa:type="number"/><br/>
+                <h:inputText value="#{updateProductBean.updatedProduct.price}" pa:step="0.01" pa:type="number" pa:min="0.01" required="true" requiredMessage="Įveskite kainą"/><br/>
 
                 <h:outputText value="Kategorija: "/><br/>
                 <p:selectOneMenu value="#{updateProductBean.categoryName}" editable="true">
-                    <f:selectItems value="#{categoryBean.categories}" var="category" itemLabel="#{category.name}" itemValue="#{category.name}"/>
+                    <f:selectItems value="#{categoryBean.categories}" var="category" itemLabel="#{category.name}" itemValue="#{category.name}" required="true" requiredMessage="Pasirinkite kategoriją"/>
                 </p:selectOneMenu><br/>
 
                 <h:outputText value="Aprašymas: "/><br/>
-                <h:inputText class="summary-input" pa:rows="5" pa:cols="60" value="#{updateProductBean.updatedProduct.summary}" maxlength="255"/><br/>
+                <h:inputText class="summary-input" pa:rows="5" pa:cols="60" value="#{updateProductBean.updatedProduct.summary}" maxlength="255" required="true" requiredMessage="Pridėkite aprašymą"/><br/>
 
 
-                <h:commandButton value="Pakeisti" actionListener="#{updateProductBean.updateProduct()}" action="adminIndex">
+                <h:commandButton id="updateBtn" value="Pakeisti" actionListener="#{updateProductBean.updateProduct()}" action="adminProduct">
                     <f:param name="updatedId" value="#{productBean.product.id}"/>
                 </h:commandButton>
             </h:form>

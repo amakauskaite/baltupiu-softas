@@ -7,6 +7,7 @@ import lt.baltupiusoftas.project.service.ProductService;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;
+import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
@@ -42,6 +43,7 @@ public class UpdateProductBean {
     @Transactional(Transactional.TxType.REQUIRED)
     @PostConstruct
     public void setup(){
+        // if admin is not logged in, redirect to error page
         if(administratorLogin.getAdministrator() == null)
         {
             try {
@@ -74,6 +76,10 @@ public class UpdateProductBean {
                 .getRequestParameterMap();
         String param = params.get("updatedId");
         if(param!=null) productId =  Long.parseLong(param);
+        else
+        {
+            FacesContext.getCurrentInstance().addMessage("updateBtn", new FacesMessage(FacesMessage.SEVERITY_ERROR,"Klaida!",  "Nepavyko rasti prekės."));
+        }
         if(productId!=null)
         {
             Product product = productService.productById(productId);
@@ -91,8 +97,10 @@ public class UpdateProductBean {
 //            if (!updatedProduct.getSummary().isEmpty()) product.setSummary(updatedProduct.getSummary());
 //            if (!categoryName.isEmpty()) product.setCategory(categoryService.addCategory(categoryName));
             productService.update(product);
+
+            FacesContext.getCurrentInstance().addMessage("updateBtn", new FacesMessage(FacesMessage.SEVERITY_INFO,"Sėkmė!",  "Prekės '"+product.getName()+"' informacija sėkmingai atnaujinta."));
+
         }
-        //todo show msg
     }
 
 

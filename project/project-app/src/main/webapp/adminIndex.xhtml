@@ -6,7 +6,7 @@
                 xmlns:p="http://primefaces.org/ui"
                 xmlns:pa="http://xmlns.jcp.org/jsf/passthrough">
 
-    <ui:define name="title">Administratoriaus prisijungimas</ui:define>
+    <ui:define name="title">Parduotuvė</ui:define>
 
     <!-- -->
     <!-- Define custom header here -->
@@ -23,6 +23,9 @@
         <section class="main">
             <h:form class="admin-product-list-form" rendered="#{adminProductList.adminLogged}">
                 <p:dataTable  class="admin-product-list-form" var="product" value="#{productsBean.products}" >
+                    <p:messages id="messages" showDetail="true" showSummary="false" closable="true">
+                        <p:autoUpdate />
+                    </p:messages>
                     <p:column>
                         <f:facet name="header">
                             <h:outputText value="Foto" />
@@ -64,11 +67,11 @@
                         <h:outputText value="#{product.summary}"/>
                     </p:column>
                     <p:column>
-                        <h:button value="Keisti" outcome="adminProduct">
+                        <h:button id="updateBtn" value="Keisti" outcome="adminProduct">
                             <f:param name="id" value="#{product.id}"/>
                             <f:param name="upId" value="#{product.id}"/>
                         </h:button>
-                        <h:commandButton value="Trinti" action="#{deleteProductBean.deleteProduct()}">
+                        <h:commandButton id="deleteBtn" value="Trinti" action="#{deleteProductBean.deleteProduct()}">
                             <f:param name="delId" value="#{product.id}"/>
                         </h:commandButton>
                     </p:column>
