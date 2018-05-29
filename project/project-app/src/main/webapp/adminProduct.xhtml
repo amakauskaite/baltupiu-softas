@@ -44,10 +44,10 @@
                 </p:selectOneMenu><br/>
 
                 <h:outputText value="Aprašymas"/><br/>
-                <h:inputText pa:rows="5" pa:cols="60" class="summary-input" value="#{createProductBean.product.summary}" maxlength="255" required="true" requiredMessage="Pridėkite aprašymą"/><br/>
+                <h:inputTextarea row="5" col="60" class="summary-input" value="#{createProductBean.product.summary}" maxlength="255" required="true" requiredMessage="Pridėkite aprašymą"/><br/>
 
                 <h:commandButton id="addBtn" value="Pridėti" actionListener="#{createProductBean.addProduct()}" action="adminProduct"/>
-                <input type="reset" />
+                <input id="adminReset" type="reset" />
             </h:form>
 
             <h:form class="admin-form" id="update_product" rendered="#{productBean.product!=null}">
@@ -78,7 +78,7 @@
                 </p:selectOneMenu><br/>
 
                 <h:outputText value="Aprašymas: "/><br/>
-                <h:inputText class="summary-input" pa:rows="5" pa:cols="60" value="#{updateProductBean.updatedProduct.summary}" maxlength="255" required="true" requiredMessage="Pridėkite aprašymą"/><br/>
+                <h:inputTextarea class="summary-input" row="5" col="60" value="#{updateProductBean.updatedProduct.summary}" maxlength="255" required="true" requiredMessage="Pridėkite aprašymą"/><br/>
 
 
                 <h:commandButton id="updateBtn" value="Pakeisti" actionListener="#{updateProductBean.updateProduct()}" action="adminProduct">

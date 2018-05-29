@@ -10,6 +10,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
+import javax.transaction.TransactionalException;
 import java.io.IOException;
 import java.util.Map;
 
@@ -47,8 +48,15 @@ public class DeleteProductBean {
         if(param!=null) {
             // if product found, delete it
             Long productId = Long.parseLong(param);
-            productService.deleteProduct(productId);
-            FacesContext.getCurrentInstance().addMessage("deleteBtn", new FacesMessage(FacesMessage.SEVERITY_INFO,"Sėkmė",  "Prekė sėkmingai pašalinta"));
+            try {
+                productService.deleteProduct(productId);
+                FacesContext.getCurrentInstance().addMessage("deleteBtn", new FacesMessage(FacesMessage.SEVERITY_INFO, "Sėkmė", "Prekė sėkmingai pašalinta"));
+            }
+            catch (TransactionalException ts)
+            {
+                FacesContext.getCurrentInstance().addMessage("deleteBtn", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Klaida", "Prekės nepavyko pašalinti"));
+
+            }
         }
         else
         {
