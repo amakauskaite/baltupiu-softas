@@ -41,8 +41,21 @@ public class UserCartHistoryBean {
     @Transactional(Transactional.TxType.REQUIRED)
     @PostConstruct
     public void init () {
-        //todo @ausrine padet tikrinima
+
+        try {
             carts = cartHistoryService.findUserHistory(login.getUser().getId());
+                    }
+        catch (NullPointerException npe)
+        {
+            try {
+                FacesContext.getCurrentInstance().getExternalContext().redirect("error.xhtml");
+            }
+            catch (IOException ioe)
+            {
+                System.out.println("Failed to redirect to another page in "+this.getClass().getName());
+            }
+
+        }
 
 
     }

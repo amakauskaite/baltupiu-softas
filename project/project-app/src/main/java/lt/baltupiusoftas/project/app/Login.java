@@ -20,7 +20,6 @@ import java.io.Serializable;
 public class Login implements Serializable {
 
     private User user;
-
     @PostConstruct
     private void init() {
         UserService userService = CDI.current().select(UserService.class).get();
