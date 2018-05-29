@@ -97,7 +97,8 @@ public class Product {
     }
 
     public String getPhoto() {
-        return photo;
+        if (photo!=null)return photo;
+        else return "https://blog.stylingandroid.com/wp-content/themes/lontano-pro/images/no-image-slide.png";
     }
 
     public void setPhoto(String photo) {

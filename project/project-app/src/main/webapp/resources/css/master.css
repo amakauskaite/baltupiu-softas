@@ -135,7 +135,7 @@ form {
 
 .link-in-form
 {
-    height: 18px;
+    height: 40px; /*18*/
 }
 
 input
