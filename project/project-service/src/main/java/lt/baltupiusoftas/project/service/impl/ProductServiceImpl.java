@@ -38,10 +38,10 @@ public class ProductServiceImpl implements ProductService {
         return productDao.update(product);
     }
 
-    @Transactional(Transactional.TxType.REQUIRED)
     @Override
     public void deleteProduct(Long productId) {
         Product product = productDao.find(productId);
-        productDao.delete(product.getId());
+        product.setActive(false);
+        productDao.update(product);
     }
 }

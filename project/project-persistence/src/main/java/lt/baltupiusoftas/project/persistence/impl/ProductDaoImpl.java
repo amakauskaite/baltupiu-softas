@@ -31,7 +31,7 @@ public class ProductDaoImpl extends GenericDaoImpl<Product> implements ProductDa
 
     @Override
     public List<Product> findAllProducts() {
-        String allProducts = "select p from Product p ";
+        String allProducts = "select p from Product p where p.active = true";
         return entityManager.createQuery(allProducts, Product.class).getResultList();
     }
 
