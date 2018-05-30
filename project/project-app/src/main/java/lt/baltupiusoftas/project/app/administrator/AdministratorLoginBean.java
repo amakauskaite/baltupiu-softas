@@ -19,7 +19,6 @@ import java.io.Serializable;
 
 @Named
 @RequestScoped
-@LoggedInvocation
 public class AdministratorLoginBean{
 
     @Inject
@@ -57,6 +56,7 @@ public class AdministratorLoginBean{
     }
 
     @Transactional(Transactional.TxType.REQUIRED)
+    @LoggedInvocation
     public String login () {
 
         if (isLoggedIn()) {
@@ -84,6 +84,7 @@ public class AdministratorLoginBean{
     }
 
 
+    @LoggedInvocation
     public String logout () {
         if (isLoggedIn()) {
             loggerService.setUserAndIsAdmin(null, false);

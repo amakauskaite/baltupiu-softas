@@ -14,7 +14,6 @@ import javax.transaction.Transactional;
 import java.util.Map;
 
 @Model
-@LoggedInvocation
 public class ProductBean {
 
     @Inject

@@ -12,7 +12,6 @@ import javax.inject.Inject;
 import javax.transaction.Transactional;
 
 @Model
-@LoggedInvocation
 public class UserRegistrationBean{
 
     @Inject
@@ -40,6 +39,7 @@ public class UserRegistrationBean{
 
 
     @Transactional(Transactional.TxType.REQUIRES_NEW)
+    @LoggedInvocation
     public String register() {
         user = userService.register(email, password, firstname, lastname, phoneNumber);
 

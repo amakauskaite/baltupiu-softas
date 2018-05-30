@@ -14,7 +14,6 @@ import java.util.List;
 import java.util.Map;
 
 @Model
-@LoggedInvocation
 public class ProductsBean {
     private List<Product> products;
 

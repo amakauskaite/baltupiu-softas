@@ -12,7 +12,6 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Model
-@LoggedInvocation
 public class CategoryBean {
 
     @Inject

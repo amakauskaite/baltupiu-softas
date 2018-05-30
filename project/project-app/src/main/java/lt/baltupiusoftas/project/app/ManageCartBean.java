@@ -4,6 +4,7 @@ import lt.baltupiusoftas.project.domain.Cart;
 import lt.baltupiusoftas.project.domain.CartItem;
 import lt.baltupiusoftas.project.domain.Product;
 import lt.baltupiusoftas.project.service.CartService;
+import lt.baltupiusoftas.project.service.intersector.LoggedInvocation;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;
@@ -40,6 +41,7 @@ public class ManageCartBean {
     }
 
     @Transactional(Transactional.TxType.REQUIRED)
+    @LoggedInvocation
     public void addProductToCart(Product product) {
         cart.getItems().add(new CartItem(product, BigDecimal.ONE));
         cartService.updateCart(cart);

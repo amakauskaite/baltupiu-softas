@@ -19,7 +19,6 @@ import java.io.Serializable;
 
 @Named
 @RequestScoped
-@LoggedInvocation
 public class UserLoginBean implements Serializable {
 
 
@@ -44,6 +43,7 @@ public class UserLoginBean implements Serializable {
     private PasswordHashingService passwordHashing;
 
     @Transactional(Transactional.TxType.REQUIRED)
+    @LoggedInvocation
     public String login() {
         // Ignore if logged in already
         if (isLoggedIn()) {
@@ -72,6 +72,7 @@ public class UserLoginBean implements Serializable {
         }
     }
 
+    @LoggedInvocation
     public String logout() {
         if (isLoggedIn()) {
             login.setUser(null);

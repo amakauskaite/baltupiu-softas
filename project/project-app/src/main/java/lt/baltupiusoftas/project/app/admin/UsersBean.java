@@ -3,6 +3,7 @@ package lt.baltupiusoftas.project.app.admin;
 import lt.baltupiusoftas.project.app.AdministratorLogin;
 import lt.baltupiusoftas.project.domain.User;
 import lt.baltupiusoftas.project.service.UserService;
+import lt.baltupiusoftas.project.service.intersector.LoggedInvocation;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;
@@ -42,6 +43,7 @@ public class UsersBean {
         return users;
     }
 
+    @LoggedInvocation
     public String blockOrUnblockUser(User user){
         User newUser = userService.changeBlockStatus(user.getId(), !user.getBlocked());
         users.set(users.indexOf(user), newUser);

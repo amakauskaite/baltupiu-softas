@@ -7,7 +7,7 @@ import java.util.Date;
 @Table(name="LOGGER")
 public class Logger {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     //username if admin and email if user
