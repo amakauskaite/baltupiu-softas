@@ -39,6 +39,9 @@ public class Product {
     @Column(name = "LAST_UPDATED")
     private Date lastUpdated;
 
+    @Column(name = "ACTIVE", columnDefinition = "boolean default true")
+    private Boolean active;
+
     public Product() {
     }
 
@@ -110,5 +113,13 @@ public class Product {
 
     public void setLastUpdated(Date lastUpdated) {
         this.lastUpdated = lastUpdated;
+    }
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
     }
 }
