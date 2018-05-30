@@ -36,4 +36,11 @@ public class UserDaoImpl extends GenericDaoImpl<User> implements UserDao {
         TypedQuery<User> query = entityManager.createQuery(findAll, User.class);
         return query.getResultList();
     }
+
+    @Override
+    public List<User> findNotEmpty() {
+        String findAll = "select u from User u where u.email is not null";
+        TypedQuery<User> query = entityManager.createQuery(findAll, User.class);
+        return query.getResultList();
+    }
 }

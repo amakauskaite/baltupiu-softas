@@ -14,6 +14,11 @@ public class ProductServiceImpl implements ProductService {
 
     @Transactional
     @Override
+    public Product add(Product product) {
+        return productDao.create(product);
+    }
+
+    @Override
     public Product productById(Long productId) {
         return productDao.find(productId);
     }
@@ -26,5 +31,17 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<Product> findByCategory(Long categoryId) {
         return productDao.findByCategory(categoryId);
+    }
+
+    @Override
+    public Product update(Product product) {
+        return productDao.update(product);
+    }
+
+    @Override
+    public void deleteProduct(Long productId) {
+        Product product = productDao.find(productId);
+        product.setActive(false);
+        productDao.update(product);
     }
 }

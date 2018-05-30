@@ -49,6 +49,7 @@ public class UserLoginBean implements Serializable {
             if (user.getBlocked())
             {
                 FacesContext.getCurrentInstance().addMessage("loginBtn", new FacesMessage(FacesMessage.SEVERITY_ERROR,"Klaida!",  "Vartotojas užblokuotas. Jei manote, kad įvyko klaida, kreipkitės į sistemos administratorių."));
+                logout();
             }
             else {
                 login.setUser(user);
@@ -77,7 +78,7 @@ public class UserLoginBean implements Serializable {
 
 
     private Boolean isLoggedIn() {
-        return login.getUser().getEmail() != null;
+        return login.getUser() != null;
     }
 
     public String getEmail() {

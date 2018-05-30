@@ -18,6 +18,7 @@ public class CategoryBean {
     private CategoryService categoryService;
 
     private List<Category> categories;
+    private Category category;
 
     @PostConstruct
     public void findAllCategories () {
@@ -31,5 +32,13 @@ public class CategoryBean {
 
     public void setCategories(List<Category> categories) {
         this.categories = categories;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }
