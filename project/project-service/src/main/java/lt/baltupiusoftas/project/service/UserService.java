@@ -36,4 +36,6 @@ public interface UserService extends Serializable {
      * @return user instance
      */
     User initTemporaryUser();
+
+    List<User> getUserList();
 }

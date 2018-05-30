@@ -315,3 +315,7 @@ input
     margin-left: 0;
     padding: 0;
 }
+.summary-input{
+    height: 100px;
+    width: 75%;
+}

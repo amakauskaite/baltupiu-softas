@@ -107,6 +107,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public List<User> getUserList() {
+        return userDao.findNotEmpty();
+    }
+
+    @Override
     public List<User> getAllUsers() {
         return userDao.findAll();
     }

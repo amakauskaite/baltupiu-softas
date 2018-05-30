@@ -29,7 +29,7 @@
                 <h:outputText value="Pavadinimas"/><br/>
                 <h:inputText value="#{createProductBean.product.name}" required="true" requiredMessage="Įveskite pavadinimą"/><br/>
 
-                <h:outputText value="Nuotraukos url/nuoroda" required="true" requiredMessage="Pridėkite nuorodą"/><br/>
+                <h:outputText value="Nuotraukos url/nuoroda" /><br/>
                 <h:inputText value="#{createProductBean.product.photo}"/><br/>
 
                 <h:outputText value="SKU"/><br/>
@@ -44,10 +44,9 @@
                 </p:selectOneMenu><br/>
 
                 <h:outputText value="Aprašymas"/><br/>
-                <h:inputTextarea row="5" col="60" class="summary-input" value="#{createProductBean.product.summary}" maxlength="255" required="true" requiredMessage="Pridėkite aprašymą"/><br/>
+                <h:inputTextarea row="5" col="60" class="summary-input" value="#{createProductBean.product.summary}"/><br/>
 
                 <h:commandButton id="addBtn" value="Pridėti" actionListener="#{createProductBean.addProduct()}" action="adminProduct"/>
-                <input id="adminReset" type="reset" />
             </h:form>
 
             <h:form class="admin-form" id="update_product" rendered="#{productBean.product!=null}">

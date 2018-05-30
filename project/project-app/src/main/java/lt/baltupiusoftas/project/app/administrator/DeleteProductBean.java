@@ -40,7 +40,7 @@ public class DeleteProductBean {
 
 
     @Transactional(Transactional.TxType.REQUIRES_NEW)
-    public String deleteProduct(){
+    public void deleteProduct(){
         Map<String,String> params = FacesContext.getCurrentInstance()
                 .getExternalContext()
                 .getRequestParameterMap();
@@ -63,7 +63,6 @@ public class DeleteProductBean {
             // else - show error message
             FacesContext.getCurrentInstance().addMessage("deleteBtn", new FacesMessage(FacesMessage.SEVERITY_ERROR,"Klaida!",  "Prekės nepavyko pašalinti."));
         }
-        FacesContext.getCurrentInstance().getPartialViewContext().getRenderIds().add(":form:dataTable");
-        return "adminIndex";
+        FacesContext.getCurrentInstance().getPartialViewContext().getRenderIds().add("product-list");
     }
 }

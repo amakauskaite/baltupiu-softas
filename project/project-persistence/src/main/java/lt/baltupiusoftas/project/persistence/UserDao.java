@@ -19,4 +19,6 @@ public interface UserDao extends GenericDao<User> {
      */
     User findByEmail(String email);
     List<User> findAll();
+
+    List<User> findNotEmpty();
 }

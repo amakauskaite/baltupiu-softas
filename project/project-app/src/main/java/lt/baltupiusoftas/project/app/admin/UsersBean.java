@@ -35,7 +35,7 @@ public class UsersBean {
                 System.out.println("Failed to redirect to another page in "+this.getClass().getName());
             }
         }
-        users = userService.getAllUsers();
+        users = userService.getUserList();
     }
 
     public List<User> getUsers() {
