@@ -7,6 +7,7 @@ package lt.baltupiusoftas.project.domain.types;
  */
 public enum OrderStatusType {
     INCOMPLETE ("Nepabaigtas"),
+    ORDERED ("Užsakytas"),
     COMPLETED ("Pabaigtas");
 
     private final String name;

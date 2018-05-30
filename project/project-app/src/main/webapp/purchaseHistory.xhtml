@@ -19,6 +19,7 @@
     <ui:define name="content">
         <section class="main">
             <h2>Pirkimų istorija</h2>
+            <h:form styleClass="history">
             <p:dataTable var = "cart" value="#{userCartHistoryBean.carts}" id ="userCartHistory">
                 <p:column headerText="Krepšelis" width="30%">
                     <p:dataTable var ="item" value="#{cart.items}">
@@ -27,9 +28,7 @@
                         </p:column>
 
                         <p:column headerText="Kiekis">
-                            <!--
-                                            <h:outputText value="#{purchaseHistoryBean.count}" />
-                            -->
+                            <h:outputText value="#{item.count}" />
                         </p:column>
 
                         <p:column headerText="Kaina">
@@ -44,13 +43,14 @@
                     <h:outputText value="#{cart.orderStatus.toString()}" />
                 </p:column>
 
+
+
                 <p:column headerText="Bendra kaina">
-                    <h:outputText value="#{userCartHistoryBean.countCartSum(cart.items)}" />
+                    <h:outputText value="#{userCartHistoryBean.countCartPrice(cart)}" />
                 </p:column>
                 <p:column headerText="Pirkimo data">
-                    <!--
-                                    <h:outputText value="#{purchaseHistoryBean.date}" />
-                    -->
+                    <h:outputText value="#{cart.lastUpdated}" />
+
                 </p:column>
                 <p:column headerText="Pridėti krepšelį dar kartą">
                     <h:commandButton value="Pridėti"
@@ -58,6 +58,7 @@
                                      update ="userCartHistory"/>
                 </p:column>
             </p:dataTable>
+            </h:form>
         </section>
     </ui:define>
     <!-- Content ends here -->

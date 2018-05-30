@@ -21,6 +21,7 @@
     <ui:define name="content">
         <section class="main-admin">
             <h2>Pirkimų istorija</h2>
+            <h:form styleClass="history" >
             <p:dataTable var = "cart" value="#{administratorCartBean.carts}" id ="adminCartHistory">
                 <p:column headerText="Vartotojas">
                     <h:outputText value="#{cart.user.email}" />
@@ -32,9 +33,7 @@
                         </p:column>
 
                         <p:column headerText="Kiekis">
-                            <!--
-                                            <h:outputText value="#{purchaseHistoryBean.count}" />
-                            -->
+                            <h:outputText value="#{item.count}" />
                         </p:column>
 
                         <p:column headerText="Kaina">
@@ -42,28 +41,26 @@
                         </p:column>
                     </p:dataTable>
                 </p:column>
-
-
-
                 <p:column headerText="Būsena">
-                      <h:outputText value="#{cart.orderStatus.toString()}" />
+                    <h:outputText value="#{cart.orderStatus.toString()}" />
                 </p:column>
 
                 <p:column headerText="Bendra kaina">
-                    <h:outputText value="#{administratorCartBean.countCartSum(cart.items)}" />
+                    <h:outputText value="#{administratorCartBean.countCartPrice(cart)}" />
                 </p:column>
                 <p:column headerText="Pirkimo data">
-                    <!--
-                                    <h:outputText value="#{purchaseHistoryBean.date}" />
-                    -->
+                    <h:outputText value="#{cart.lastUpdated}" />
+
                 </p:column>
                 <p:column headerText="Pakeisti statusą">
                     <h:commandButton value="Keisti statusą"
-                              action="#{administratorCartBean.updateCartStatus(cart.id)}"
-                              rendered="#{administratorCartBean.isStatusUpdatable(cart.id)}"
-                              update ="adminCartHistory"/>
+                                     action="#{administratorCartBean.updateCartStatus(cart.id)}"
+                                     rendered="#{administratorCartBean.isStatusUpdatable(cart.id)}"
+                                     update ="adminCartHistory"/>
                 </p:column>
             </p:dataTable>
+
+            </h:form>
         </section>
     </ui:define>
     <!-- Content ends here -->
@@ -73,9 +70,9 @@
 
     <ui:define name="footer">
 
-    <footer class="index-footer">
-        <p>2018 Baltupių Softas</p>
-    </footer>
+        <footer class="index-footer">
+            <p>2018 Baltupių Softas</p>
+        </footer>
     </ui:define>
     <!-- -->
 

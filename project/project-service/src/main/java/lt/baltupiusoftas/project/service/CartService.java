@@ -28,5 +28,4 @@ public interface CartService {
     Cart addOldCart(Long cartId);
     Cart updateCartStatus (Long cartId);
     Boolean isStatusUpdatable (Long cartId);
-    BigDecimal countCartSum (List <CartItem> items);
 }
