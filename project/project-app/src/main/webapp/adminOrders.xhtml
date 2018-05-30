@@ -11,16 +11,21 @@
     <!-- Define custom header here -->
     <!-- -->
 
-    <ui:define name="left-sidebar">
-        <ui:include src="userSidebar.xhtml" />
+    <ui:define name="header">
+        <ui:include src="adminHeader.xhtml"/>
     </ui:define>
+    <ui:define name="left-sidebar" />
+
 
     <!-- Content starts here -->
     <ui:define name="content">
-        <section class="main">
+        <section class="main-admin">
             <h2>Pirkimų istorija</h2>
-            <h:form styleClass="history">
-            <p:dataTable var = "cart" value="#{userCartHistoryBean.carts}" id ="userCartHistory">
+            <h:form styleClass="history" >
+            <p:dataTable var = "cart" value="#{administratorCartBean.carts}" id ="adminCartHistory">
+                <p:column headerText="Vartotojas">
+                    <h:outputText value="#{cart.user.email}" />
+                </p:column>
                 <p:column headerText="Krepšelis" width="30%">
                     <p:dataTable var ="item" value="#{cart.items}">
                         <p:column headerText="Prekė">
@@ -36,27 +41,28 @@
                         </p:column>
                     </p:dataTable>
                 </p:column>
-
-
-
                 <p:column headerText="Būsena">
                     <h:outputText value="#{cart.orderStatus.toString()}" />
                 </p:column>
+
                 <p:column headerText="Bendra kaina">
-                    <h:outputText value="#{userCartHistoryBean.countCartPrice(cart)}" />
+                    <h:outputText value="#{administratorCartBean.countCartPrice(cart)}" />
                 </p:column>
                 <p:column headerText="Pirkimo data">
                     <h:outputText value="#{cart.lastUpdated}" />
+
                 </p:column>
-                <p:column headerText="Pridėti krepšelį dar kartą">
-                    <h:commandButton value="Pridėti"
-                                     action="#{userCartHistoryBean.addCartAgain(cart.id)}"
-                                     update ="userCartHistory"/>
+                <p:column headerText="Pakeisti statusą">
+                    <h:commandButton value="Keisti statusą"
+                                     action="#{administratorCartBean.updateCartStatus(cart.id)}"
+                                     rendered="#{administratorCartBean.isStatusUpdatable(cart.id)}"
+                                     update ="adminCartHistory"/>
                 </p:column>
             </p:dataTable>
             </h:form>
         </section>
     </ui:define>
+
     <!-- Content ends here -->
 
     <!-- -->

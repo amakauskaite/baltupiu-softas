@@ -22,4 +22,10 @@ public interface CartService {
     BigDecimal cartPrice(Cart cart);
 
     Cart updateCart(Cart cart);
+
+    Cart addOldCart(Long cartId);
+
+    Cart updateCartStatus(Long cartId);
+
+    Boolean isStatusUpdatable(Long cartId);
 }
