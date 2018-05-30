@@ -47,7 +47,7 @@ public class CartServiceImpl implements CartService {
         for (CartItem i : oldItems) {
             Long productId = i.getProduct().getId();
             Product product = productDao.find(productId);
-            if (product != null) {
+            if (product.getActive()) {
                 CartItem item = new CartItem();
                 item.setPrice(product.getPrice());
                 item.setProduct(product);
