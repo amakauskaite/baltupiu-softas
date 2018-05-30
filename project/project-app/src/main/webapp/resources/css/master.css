@@ -112,10 +112,10 @@ tr:nth-child(even) {
 
 form {
     padding-left: 50px;
-    top: 8%;
+    top: 20%;
     font-size: 18px;
     position: absolute;
-    width: 60%;
+    width: 50%;
     left: 25%;
 
 
@@ -135,7 +135,7 @@ form {
 
 .link-in-form
 {
-    height: 40px; /*18*/
+    height: 40px;
 }
 
 input
@@ -154,13 +154,13 @@ input
 
 .form-buttons, #resetBtn, .login-btn
 {
-    width: 41%;
+    width: 40%;
     border-radius: 4px;
 }
 
 .login-btn
 {
-    width: 81.5%;
+    width: 80%;
 }
 
 /* Sidebar (re-used from w3schools)*/
@@ -205,12 +205,19 @@ input
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
+@media screen and (max-height: 500px) {
     .sideNav {padding-top: 15px;}
     .sideNav a {font-size: 18px;}
-
+    table, thead, tbody, th, td, tr{display:block;}
+    td.product-details{
+        display: block;!important;
+        border: none!important;
+        position: relative;
+    }
+    .registration-media{margin-left: -80px; padding-left: 20px!important; width: 100%}
 }
-
+.login-media{width: 80%;}
+.intx-media {width: 80%;}
 /*product list*/
 /*to rewrite form tag for all products*/
 .main-products{
@@ -244,8 +251,9 @@ input
     font: inherit !important;
 }
 .product-details{
-    width: 100%;
+    width: auto;
 }
+
 .product-submit-to-cart{
     margin: 10px;
     padding-left: 0;
@@ -257,49 +265,4 @@ input
 }
 .products-button{
     margin: 5px;
-}
-
-/*ul {*/
-    /*padding-left: 0;*/
-    /*padding-top: 0;*/
-/*}*/
-
-/*Error*/
-.redirected_error
-{
-    position: center;
-}
-
-
-.blocked-user{
-    color: red;
-    font-weight: bold;
-}
-.users-list-form{
-    width: 90%;
-    height: 100%;
-    padding-left: 5%;
-    padding-top: 5%;
-    padding-right: 5%;
-    left: 0;
-    top: 0;
-    font-size: 18px;
-    position: absolute;
-    font-family: inherit !important;
-}
-.block-user{
-    background-color: rgba(179, 56, 27, 0.84);
-}
-.unblocked-user{
-    background-color: #4c813b;
-}
-.main-admin{
-    margin-left: 0;
-    padding: 10px;
-}
-
-.center-button{
-    width: 40%;
-    margin-left: 60%;
-    margin-right: 10%;
 }
