@@ -12,12 +12,19 @@
         <section class="main">
             <p:growl id="growl" showDetail="true" showSummary="false" sticky="false" life="4000"/>
             <h2>#{productBean.product.name}</h2>
-            <img class="pic-in-details" src="#{productBean.product.photo}"/>
             <h:panelGrid class="product-details product-list" columns="2">
-                <h:outputText value="Kaina:"/>
-                <h:outputText value="#{productBean.product.price} Eur"/>
-                <h:outputText value="Kategorija:"/>
-                <h:outputText value="#{productBean.product.category.name}"/>
+                <p:column>
+                    <p:row><img class="pic-in-details" src="#{productBean.product.photo}"/></p:row>
+                </p:column>
+                <p:column>
+                    <p:row>
+                        <h:outputText  value="Kaina: "/>
+                        <h:outputText value="#{productBean.product.price} Eur"/>
+                        <h:outputText value="&lt;br/&gt;" escape="false" />
+                        <h:outputText value="Kategorija: "/>
+                        <h:outputText value="#{productBean.product.category.name}"/>
+                    </p:row>
+                </p:column>
             </h:panelGrid>
             <h4>Prekės aprašymas</h4>
             <h:panelGrid columns="1">

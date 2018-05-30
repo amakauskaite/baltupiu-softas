@@ -1,0 +1,84 @@
+<ui:composition template="masterTemplate.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:pa="http://xmlns.jcp.org/jsf/passthrough">
+
+    <ui:define name="title">Parduotuvė</ui:define>
+
+    <!-- -->
+    <!-- Define custom header here -->
+    <!-- -->
+
+    <ui:define name="header">
+        <ui:include src="adminHeader.xhtml"/>
+    </ui:define>
+
+    <ui:define name="left-sidebar"/>
+
+    <!-- Content starts here -->
+    <ui:define name="content">
+        <section class="main">
+
+            <h:form  class="admin-product-list-form" rendered="#{adminProductList.adminLogged}">
+                <p:growl id="messages" showDetail="true" showSummary="false" closable="true" life="5000">
+                    <p:autoUpdate />
+                </p:growl>
+                <p:dataTable id="product-list" class="admin-product-list-form" var="product" value="#{productsBean.products}" >
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Foto" />
+                        </f:facet>
+                        <p:lightBox rendered="#{not empty product.photo}">
+                            <h:outputLink value="#{product.photo}">
+                                <h:graphicImage class="admin-pic" value="#{product.photo}"/>
+                            </h:outputLink>
+                        </p:lightBox>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="SKU"/>
+                        </f:facet>
+                        <h:outputText value="#{product.SKU}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Pavadinimas" />
+                        </f:facet>
+                        <h:outputText value="#{product.name}" />
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Kaina"/>
+                        </f:facet>
+                        <h:outputText value="#{product.price}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Kategorija"/>
+                        </f:facet>
+                        <h:outputText value="#{product.category.name}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Aprašymas"/>
+                        </f:facet>
+                        <h:outputText value="#{product.summary}"/>
+                    </p:column>
+                    <p:column>
+                        <h:button id="updateBtn" value="Keisti" outcome="adminProduct">
+                            <f:param name="id" value="#{product.id}"/>
+                            <f:param name="upId" value="#{product.id}"/>
+                        </h:button>
+                        <h:commandButton id="deleteBtn" value="Trinti" action="#{deleteProductBean.deleteProduct()}">
+                            <f:param name="delId" value="#{product.id}"/>
+                        </h:commandButton>
+                    </p:column>
+                </p:dataTable>
+            </h:form>
+
+        </section>
+    </ui:define>
+</ui:composition>

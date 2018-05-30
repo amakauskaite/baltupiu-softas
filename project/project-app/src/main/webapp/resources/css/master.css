@@ -239,12 +239,13 @@ input
 .pic-in-details{
     position: center;
     height: 200px;
+    width: 200px;
 }
 .products-list{
     font: inherit !important;
 }
 .product-details{
-    width: 100%;
+    width: auto;
 }
 .product-submit-to-cart{
     margin: 10px;
@@ -257,6 +258,23 @@ input
 }
 .products-button{
     margin: 5px;
+}
+.admin-product-list-form{
+    padding: 5% 5% 15%;
+    top: 0;
+    font-size: 18px;
+    position: absolute;
+    width: 90%;
+    left: 0;
+    /*font-family: inherit !important;*/
+}
+.admin-form{
+    top: 25px;
+    padding-bottom: 15%;
+}
+.admin-pic{
+    width: 30px;
+    position: center;
 }
 
 /*ul {*/
@@ -302,4 +320,8 @@ input
     width: 40%;
     margin-left: 60%;
     margin-right: 10%;
+}
+.summary-input{
+    height: 100px;
+    width: 75%;
 }

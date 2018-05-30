@@ -1,6 +1,5 @@
 package lt.baltupiusoftas.project.app;
 
-
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import java.io.Serializable;
