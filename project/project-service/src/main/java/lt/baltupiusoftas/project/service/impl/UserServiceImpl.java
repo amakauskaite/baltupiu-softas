@@ -44,6 +44,10 @@ public class UserServiceImpl implements UserService {
             user.setPhonenumber(phoneNumber);
             userDao.create(user);
 
+            Cart cart = new Cart();
+            cart.setUser(user);
+            cart.setLastUpdated(LocalDateTime.now());
+            cartDao.create(cart);
             return user;
         }
         return null;
