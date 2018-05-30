@@ -3,7 +3,9 @@ package lt.baltupiusoftas.project.app.user;
 
 import lt.baltupiusoftas.project.app.HeaderStatusBean;
 import lt.baltupiusoftas.project.app.Login;
+import lt.baltupiusoftas.project.domain.Cart;
 import lt.baltupiusoftas.project.domain.User;
+import lt.baltupiusoftas.project.service.CartService;
 import lt.baltupiusoftas.project.service.PasswordHashingService;
 import lt.baltupiusoftas.project.service.UserService;
 
@@ -23,6 +25,9 @@ public class UserLoginBean implements Serializable {
      */
     @Inject
     private Login login;
+
+    @Inject
+    private CartService cartService;
 
     private String email;
 
@@ -52,6 +57,11 @@ public class UserLoginBean implements Serializable {
                 logout();
             }
             else {
+                Cart cart = cartService.findActiveCart(login.getUser().getId());
+                if (!cart.getItems().isEmpty()) {
+                    cart.setUser(user);
+                    cartService.updateCart(cart);
+                }
                 login.setUser(user);
 
                 headerStatusBean.showLogoutAndUserProfile();
@@ -67,7 +77,7 @@ public class UserLoginBean implements Serializable {
 
     public String logout() {
         if (isLoggedIn()) {
-            login.setUser(null);
+            login.setUser(userService.initTemporaryUser());
 
             headerStatusBean.showLoginAndRegistration();
             return "login";//success_logout_user

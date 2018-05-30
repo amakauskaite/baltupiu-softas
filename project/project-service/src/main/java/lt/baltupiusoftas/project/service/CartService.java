@@ -1,6 +1,7 @@
 package lt.baltupiusoftas.project.service;
 
 import lt.baltupiusoftas.project.domain.Cart;
+import lt.baltupiusoftas.project.domain.data.Payment;
 
 import java.math.BigDecimal;
 
@@ -28,4 +29,6 @@ public interface CartService {
     Cart updateCartStatus(Long cartId);
 
     Boolean isStatusUpdatable(Long cartId);
+
+    Boolean pay(Cart cart, Payment payment);
 }
