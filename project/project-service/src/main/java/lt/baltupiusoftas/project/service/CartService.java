@@ -1,10 +1,6 @@
 package lt.baltupiusoftas.project.service;
 
 import lt.baltupiusoftas.project.domain.Cart;
-import lt.baltupiusoftas.project.domain.CartItem;
-
-import java.math.BigDecimal;
-import java.util.List;
 
 import java.math.BigDecimal;
 
@@ -22,10 +18,14 @@ public interface CartService {
      * @return active cart
      */
     Cart findActiveCart(Long userId);
+
     BigDecimal cartPrice(Cart cart);
 
     Cart updateCart(Cart cart);
+
     Cart addOldCart(Long cartId);
-    Cart updateCartStatus (Long cartId);
-    Boolean isStatusUpdatable (Long cartId);
+
+    Cart updateCartStatus(Long cartId);
+
+    Boolean isStatusUpdatable(Long cartId);
 }

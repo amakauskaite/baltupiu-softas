@@ -19,7 +19,10 @@
     <ui:define name="content">
         <section class="main">
             <h2>Pirkimų istorija</h2>
+<<<<<<< HEAD
             <h:form styleClass="history">
+=======
+>>>>>>> d7060f9035b64886e7fb548273e58b470318ab8b
             <p:dataTable var = "cart" value="#{userCartHistoryBean.carts}" id ="userCartHistory">
                 <p:column headerText="Krepšelis" width="30%">
                     <p:dataTable var ="item" value="#{cart.items}">
@@ -42,15 +45,11 @@
                 <p:column headerText="Būsena">
                     <h:outputText value="#{cart.orderStatus.toString()}" />
                 </p:column>
-
-
-
                 <p:column headerText="Bendra kaina">
                     <h:outputText value="#{userCartHistoryBean.countCartPrice(cart)}" />
                 </p:column>
                 <p:column headerText="Pirkimo data">
                     <h:outputText value="#{cart.lastUpdated}" />
-
                 </p:column>
                 <p:column headerText="Pridėti krepšelį dar kartą">
                     <h:commandButton value="Pridėti"
