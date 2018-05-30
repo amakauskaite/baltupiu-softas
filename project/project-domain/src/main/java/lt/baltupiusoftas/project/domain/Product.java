@@ -1,5 +1,7 @@
 package lt.baltupiusoftas.project.domain;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -31,10 +33,12 @@ public class Product implements Serializable {
     @Column(name = "PRICE")
     private BigDecimal price;
 
-    @Column(name = "SUMMARY", columnDefinition = "text")
+    @Column(name = "SUMMARY")
+    @Type(type="text")
     private String summary;
 
     @Column(name = "PHOTO")
+    @Type(type="text")
     private String photo;
 
     @Column(name = "LAST_UPDATED")
@@ -98,7 +102,8 @@ public class Product implements Serializable {
     }
 
     public String getPhoto() {
-        return photo;
+        if (photo!=null)return photo;
+        else return "https://blog.stylingandroid.com/wp-content/themes/lontano-pro/images/no-image-slide.png";
     }
 
     public void setPhoto(String photo) {

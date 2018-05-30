@@ -295,5 +295,11 @@ input
 }
 .main-admin{
     margin-left: 0;
-    padding: 0;
+    padding: 10px;
+}
+
+.center-button{
+    width: 40%;
+    margin-left: 60%;
+    margin-right: 10%;
 }

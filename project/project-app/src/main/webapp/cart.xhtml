@@ -11,13 +11,11 @@
     <!-- Define custom header here -->
     <!-- -->
 
-    <ui:define name="left-sidebar">
-        <ui:include src="masterSidebar.xhtml"/>
-    </ui:define>
+    <ui:define name="left-sidebar" />
 
     <!-- Content starts here -->
     <ui:define name="content">
-        <section class="main">
+        <section class="main-admin">
             <h2>Krepšelis</h2>
             <p:dataTable id="cartItemTable" value="#{manageCartBean.cartItems}" var="items">
                 <p:column headerText="Prekė">
@@ -36,7 +34,7 @@
                     </p:row>
                 </p:columnGroup>
             </p:dataTable>
-            <h:commandButton value = "Apmokėti" action="index"/>
+            <h:commandButton styleClass="form-buttons center-button" value = "Apmokėti" action="index"/>
         </section>
     </ui:define>
     <!-- Content ends here -->
