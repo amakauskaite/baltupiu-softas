@@ -1,0 +1,79 @@
+<ui:composition template="masterTemplate.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="title">Parduotuvė</ui:define>
+
+    <!-- -->
+    <!-- Define custom header here -->
+    <!-- -->
+
+    <ui:define name="header">
+        <ui:include src="adminHeader.xhtml"/>
+    </ui:define>
+    <ui:define name="left-sidebar" />
+
+
+    <!-- Content starts here -->
+    <ui:define name="content">
+        <section class="main-admin">
+            <h2>Pirkimų istorija</h2>
+            <h:form styleClass="history" >
+            <p:dataTable var = "cart" value="#{administratorCartBean.carts}" id ="adminCartHistory">
+                <p:column headerText="Vartotojas">
+                    <h:outputText value="#{cart.user.email}" />
+                </p:column>
+                <p:column headerText="Krepšelis" width="30%">
+                    <p:dataTable var ="item" value="#{cart.items}">
+                        <p:column headerText="Prekė">
+                            <h:outputText value="#{item.product.name}" />
+                        </p:column>
+
+                        <p:column headerText="Kiekis">
+                            <h:outputText value="#{item.count}" />
+                        </p:column>
+
+                        <p:column headerText="Kaina">
+                            <h:outputText value="#{item.price}" />
+                        </p:column>
+                    </p:dataTable>
+                </p:column>
+                <p:column headerText="Būsena">
+                    <h:outputText value="#{cart.orderStatus.toString()}" />
+                </p:column>
+
+                <p:column headerText="Bendra kaina">
+                    <h:outputText value="#{administratorCartBean.countCartPrice(cart)}" />
+                </p:column>
+                <p:column headerText="Pirkimo data">
+                    <h:outputText value="#{cart.lastUpdated}" />
+
+                </p:column>
+                <p:column headerText="Pakeisti statusą">
+                    <h:commandButton value="Keisti statusą"
+                                     action="#{administratorCartBean.updateCartStatus(cart.id)}"
+                                     rendered="#{administratorCartBean.isStatusUpdatable(cart.id)}"
+                                     update ="adminCartHistory"/>
+                </p:column>
+            </p:dataTable>
+            </h:form>
+        </section>
+    </ui:define>
+
+    <!-- Content ends here -->
+
+    <!-- -->
+    <!-- Define custom footer here -->
+
+    <ui:define name="footer">
+
+        <footer class="index-footer">
+            <p>2018 Baltupių Softas</p>
+        </footer>
+    </ui:define>
+    <!-- -->
+
+</ui:composition>

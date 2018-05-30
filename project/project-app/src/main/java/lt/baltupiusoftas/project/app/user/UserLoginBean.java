@@ -6,8 +6,8 @@ import lt.baltupiusoftas.project.app.Login;
 import lt.baltupiusoftas.project.domain.User;
 import lt.baltupiusoftas.project.service.LoggerService;
 import lt.baltupiusoftas.project.service.intersector.LoggedInvocation;
-import lt.baltupiusoftas.project.service.password.PasswordHashingService;
-import lt.baltupiusoftas.project.service.user.UserService;
+import lt.baltupiusoftas.project.service.PasswordHashingService;
+import lt.baltupiusoftas.project.service.UserService;
 
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
@@ -32,7 +32,7 @@ public class UserLoginBean implements Serializable {
 
 
     @Inject
-    HeaderStatusBean headerStatusBean;
+    private HeaderStatusBean headerStatusBean;
 
     @Inject
     private UserService userService;
@@ -52,10 +52,17 @@ public class UserLoginBean implements Serializable {
         User user = userService.login(email, password);
         // If user is registered and login successful
         if (user != null) {
-            login.setUser(user);
+            if (user.getBlocked())
+            {
+                FacesContext.getCurrentInstance().addMessage("loginBtn", new FacesMessage(FacesMessage.SEVERITY_ERROR,"Klaida!",  "Vartotojas užblokuotas. Jei manote, kad įvyko klaida, kreipkitės į sistemos administratorių."));
+                logout();
+            }
+            else {
+                login.setUser(user);
+                loggerService.setUserAndIsAdmin(email, false);
 
-            headerStatusBean.showLogoutAndUserProfile();
-            loggerService.setUserAndIsAdmin(email, false);
+                headerStatusBean.showLogoutAndUserProfile();
+            }
             return "index";
         }
         // If user is not registered and login failed
@@ -79,7 +86,7 @@ public class UserLoginBean implements Serializable {
 
 
     private Boolean isLoggedIn() {
-        return login.getUser() != null;
+        return login.getUser().getEmail() != null;
     }
 
     public String getEmail() {

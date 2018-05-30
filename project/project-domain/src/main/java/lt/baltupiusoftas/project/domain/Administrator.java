@@ -13,7 +13,7 @@ import java.io.Serializable;
 public class Administrator implements Serializable{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "USERNAME")
@@ -32,10 +32,6 @@ public class Administrator implements Serializable{
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getUsername() {

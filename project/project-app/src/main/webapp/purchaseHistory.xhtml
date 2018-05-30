@@ -5,42 +5,69 @@
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:p="http://primefaces.org/ui">
 
-    <ui:define name="title"> Application </ui:define>
+    <ui:define name="title">Parduotuvė</ui:define>
 
     <!-- -->
     <!-- Define custom header here -->
     <!-- -->
 
+    <ui:define name="left-sidebar">
+        <ui:include src="userSidebar.xhtml" />
+    </ui:define>
+
     <!-- Content starts here -->
     <ui:define name="content">
         <section class="main">
-        <h2>Pirkimo istorija</h2>
-        <p:dataTable>
-            <p:column headerText="Prekė">
-                <h:outputText value="#{purchaseHistoryBean.product}}" />
-            </p:column>
+            <h2>Pirkimų istorija</h2>
+            <h:form styleClass="history">
+            <p:dataTable var = "cart" value="#{userCartHistoryBean.carts}" id ="userCartHistory">
+                <p:column headerText="Krepšelis" width="30%">
+                    <p:dataTable var ="item" value="#{cart.items}">
+                        <p:column headerText="Prekė">
+                            <h:outputText value="#{item.product.name}" />
+                        </p:column>
 
-            <p:column headerText="Kiekis">
-                <h:outputText value="#{purchaseHistoryBean.count}" />
-            </p:column>
+                        <p:column headerText="Kiekis">
+                            <h:outputText value="#{item.count}" />
+                        </p:column>
 
-            <p:column headerText="Kaina">
-                <h:outputText value="#{purchaseHistoryBean.price}" />
-            </p:column>
+                        <p:column headerText="Kaina">
+                            <h:outputText value="#{item.price}" />
+                        </p:column>
+                    </p:dataTable>
+                </p:column>
 
-            <p:column headerText="Būsena">
-                <h:outputText value="#{purchaseHistoryBean.state}" />
-            </p:column>
-            <p:column headerText="Pirkimo data">
-                <h:outputText value="#{purchaseHistoryBean.date}" />
-            </p:column>
-        </p:dataTable>
+
+
+                <p:column headerText="Būsena">
+                    <h:outputText value="#{cart.orderStatus.toString()}" />
+                </p:column>
+                <p:column headerText="Bendra kaina">
+                    <h:outputText value="#{userCartHistoryBean.countCartPrice(cart)}" />
+                </p:column>
+                <p:column headerText="Pirkimo data">
+                    <h:outputText value="#{cart.lastUpdated}" />
+                </p:column>
+                <p:column headerText="Pridėti krepšelį dar kartą">
+                    <h:commandButton value="Pridėti"
+                                     action="#{userCartHistoryBean.addCartAgain(cart.id)}"
+                                     update ="userCartHistory"/>
+                </p:column>
+            </p:dataTable>
+            </h:form>
         </section>
     </ui:define>
     <!-- Content ends here -->
 
     <!-- -->
     <!-- Define custom footer here -->
+
+    <ui:define name="footer">
+
+        <footer class="index-footer">
+            <p>2018 Baltupių Softas</p>
+        </footer>
+    </ui:define>
     <!-- -->
 
 </ui:composition>

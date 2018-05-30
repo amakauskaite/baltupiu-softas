@@ -1,12 +1,10 @@
 package lt.baltupiusoftas.project.app.products;
 
-import com.sun.istack.internal.Nullable;
 import lt.baltupiusoftas.project.domain.Product;
 import lt.baltupiusoftas.project.service.ProductService;
 import lt.baltupiusoftas.project.service.intersector.LoggedInvocation;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Model;
 import javax.faces.context.FacesContext;

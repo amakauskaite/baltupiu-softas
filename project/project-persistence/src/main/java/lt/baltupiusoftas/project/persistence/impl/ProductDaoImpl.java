@@ -31,7 +31,7 @@ public class ProductDaoImpl extends GenericDaoImpl<Product> implements ProductDa
 
     @Override
     public List<Product> findAllProducts() {
-        String allProducts = "select p from Product p ";
+        String allProducts = "select p from Product p where p.active = true";
         return entityManager.createQuery(allProducts, Product.class).getResultList();
     }
 
@@ -44,7 +44,7 @@ public class ProductDaoImpl extends GenericDaoImpl<Product> implements ProductDa
     @Override
     public List<Product> findByCategory(Long categoryId) {
         Category category = categoryDao.find(categoryId);
-        String allProducts = "select p from Product p where p.category = :category ";
+        String allProducts = "select p from Product p where p.category = :category  AND p.active = true ";
         if (category != null) {
             return  entityManager.createQuery(allProducts, Product.class).setParameter("category", category).getResultList();
         }

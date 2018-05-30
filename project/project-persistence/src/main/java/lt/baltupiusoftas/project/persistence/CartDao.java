@@ -11,5 +11,7 @@ import java.util.List;
  */
 public interface CartDao extends GenericDao<Cart> {
 
-    List<Cart> findUserCarts(Long userId);
+    Cart findActiveCart(Long userId);
+    List<Cart> findUserHistory(Long userId);
+    List<Cart> findAllCarts();
 }

@@ -1,6 +1,9 @@
 package lt.baltupiusoftas.project.domain;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -11,10 +14,10 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "PRODUCT")
-public class Product {
+public class Product implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
@@ -31,13 +34,18 @@ public class Product {
     private BigDecimal price;
 
     @Column(name = "SUMMARY")
+    @Type(type="text")
     private String summary;
 
     @Column(name = "PHOTO")
+    @Type(type="text")
     private String photo;
 
     @Column(name = "LAST_UPDATED")
     private Date lastUpdated;
+
+    @Column(name = "ACTIVE", columnDefinition = "boolean default true")
+    private Boolean active;
 
     public Product() {
     }
@@ -54,10 +62,6 @@ public class Product {
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public Category getCategory() {
@@ -101,7 +105,8 @@ public class Product {
     }
 
     public String getPhoto() {
-        return photo;
+        if (photo!=null)return photo;
+        else return "https://blog.stylingandroid.com/wp-content/themes/lontano-pro/images/no-image-slide.png";
     }
 
     public void setPhoto(String photo) {
@@ -114,5 +119,13 @@ public class Product {
 
     public void setLastUpdated(Date lastUpdated) {
         this.lastUpdated = lastUpdated;
+    }
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
     }
 }
