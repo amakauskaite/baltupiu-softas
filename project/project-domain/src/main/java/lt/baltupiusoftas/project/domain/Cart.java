@@ -21,7 +21,7 @@ import java.util.List;
 public class Cart implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
@@ -36,6 +36,9 @@ public class Cart implements Serializable {
     @Enumerated(EnumType.STRING)
     @Column(name = "ORDER_STATUS")
     private OrderStatusType orderStatus = OrderStatusType.INCOMPLETE;
+
+    @Column(name = "LAST_UPDATED")
+    private LocalDateTime lastUpdated;
 
     public Cart() {
     }
@@ -70,5 +73,13 @@ public class Cart implements Serializable {
 
     public void setOrderStatus(OrderStatusType orderStatus) {
         this.orderStatus = orderStatus;
+    }
+
+    public LocalDateTime getLastUpdated() {
+        return lastUpdated;
+    }
+
+    public void setLastUpdated(LocalDateTime lastUpdated) {
+        this.lastUpdated = lastUpdated;
     }
 }

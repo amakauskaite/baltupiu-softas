@@ -6,10 +6,11 @@
                 xmlns:p="http://primefaces.org/ui">
 
 
-    <ui:define name="title"> Parduotuve </ui:define>
+    <ui:define name="title">Parduotuvė</ui:define>
 
     <ui:define name="content">
         <section class="main">
+            <p:growl id="growl" showDetail="true" showSummary="false" sticky="false" life="4000"/>
             <h2>#{productBean.product.name}</h2>
             <img class="pic-in-details" src="#{productBean.product.photo}"/>
             <h:panelGrid class="product-details product-list" columns="2">
@@ -18,12 +19,14 @@
                 <h:outputText value="Kategorija:"/>
                 <h:outputText value="#{productBean.product.category.name}"/>
             </h:panelGrid>
-            <h4>Aprašymas</h4>
+            <h4>Prekės aprašymas</h4>
             <h:panelGrid columns="1">
                 <p>#{productBean.product.summary}</p>
             </h:panelGrid>
             <h:form class="product-submit-to-cart">
-                <h:commandButton value = "į krepšelį"/>
+                <h:commandButton value="Į krepšelį" action="#{manageCartBean.addProductToCart(productBean.product)}">
+                <f:param name="id" value="#{productBean.product.id}" />
+                </h:commandButton>
             </h:form>
         </section>
     </ui:define>

@@ -9,6 +9,7 @@ import lt.baltupiusoftas.project.service.UserService;
 
 import javax.inject.Inject;
 import javax.transaction.Transactional;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
@@ -45,8 +46,8 @@ public class UserServiceImpl implements UserService {
 
             Cart cart = new Cart();
             cart.setUser(user);
+            cart.setLastUpdated(LocalDateTime.now());
             cartDao.create(cart);
-
             return user;
         }
         return null;
@@ -102,6 +103,7 @@ public class UserServiceImpl implements UserService {
 
         Cart cart = new Cart();
         cart.setUser(user);
+        cart.setLastUpdated(LocalDateTime.now());
         cartDao.create(cart);
         return user;
     }

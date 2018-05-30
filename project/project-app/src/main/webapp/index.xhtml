@@ -9,7 +9,7 @@
     <ui:define name="title"> Parduotuvė </ui:define>
 
     <ui:define name="content">
-
+        <p:growl id="growl" showDetail="true" showSummary="false" sticky="false" life="4000"/>
         <section class="main-products">
             <h:form class = "all-products">
                 <p:dataGrid class = "products-list" var="product" value="#{productsBean.products}" layout="grid"
@@ -22,7 +22,7 @@
                         <h:button class="products-button" value="Plačiau" outcome="productDetails">
                             <f:param name="id" value="#{product.id}" />
                         </h:button>
-                        <h:commandButton class="products-button" value = "į krepšelį"/>
+                        <h:commandButton id="addButton" class="products-button" value = "Į krepšelį" action="#{manageCartBean.addProductToCart(product)}"/>
                     </p:panel>
                 </p:dataGrid>
             </h:form>

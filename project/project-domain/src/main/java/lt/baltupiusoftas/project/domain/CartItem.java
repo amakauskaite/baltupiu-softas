@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 public class CartItem {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
@@ -26,11 +26,15 @@ public class CartItem {
     @Column(name = "PRICE")
     private BigDecimal price;
 
+    @Column(name = "COUNT")
+    private BigDecimal count;
+
     public CartItem() {
     }
 
-    public CartItem(Product product) {
+    public CartItem(Product product, BigDecimal count) {
         this.product = product;
+        this.count = count;
     }
 
     public Long getId() {
@@ -51,5 +55,13 @@ public class CartItem {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    public BigDecimal getCount() {
+        return count;
+    }
+
+    public void setCount(BigDecimal count) {
+        this.count = count;
     }
 }

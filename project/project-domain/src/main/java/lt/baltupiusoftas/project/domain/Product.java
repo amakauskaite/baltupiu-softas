@@ -1,6 +1,9 @@
 package lt.baltupiusoftas.project.domain;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -11,10 +14,10 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "PRODUCT")
-public class Product {
+public class Product implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
@@ -31,9 +34,11 @@ public class Product {
     private BigDecimal price;
 
     @Column(name = "SUMMARY")
+    @Type(type="text")
     private String summary;
 
     @Column(name = "PHOTO")
+    @Type(type="text")
     private String photo;
 
     @Column(name = "LAST_UPDATED")
