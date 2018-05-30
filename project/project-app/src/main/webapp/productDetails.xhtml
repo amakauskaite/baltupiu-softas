@@ -23,7 +23,7 @@
                 <p>#{productBean.product.summary}</p>
             </h:panelGrid>
             <h:form class="product-submit-to-cart">
-                <h:commandButton value = "į krepšelį"/>
+                <p:commandButton value="Į krepšelį" action="#{manageCartBean.addProductToCart(productBean.product)}"/>
             </h:form>
         </section>
     </ui:define>

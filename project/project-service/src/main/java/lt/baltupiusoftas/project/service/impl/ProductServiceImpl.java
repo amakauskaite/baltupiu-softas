@@ -5,12 +5,14 @@ import lt.baltupiusoftas.project.persistence.ProductDao;
 import lt.baltupiusoftas.project.service.ProductService;
 
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 import java.util.List;
 
 public class ProductServiceImpl implements ProductService {
     @Inject
     private ProductDao productDao;
 
+    @Transactional
     @Override
     public Product productById(Long productId) {
         return productDao.find(productId);

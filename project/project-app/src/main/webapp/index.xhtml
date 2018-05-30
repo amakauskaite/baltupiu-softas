@@ -22,7 +22,7 @@
                         <h:button class="products-button" value="Plačiau" outcome="productDetails">
                             <f:param name="id" value="#{product.id}" />
                         </h:button>
-                        <h:commandButton class="products-button" value = "į krepšelį"/>
+                        <h:commandButton class="products-button" value = "Į krepšelį" action="#{manageCartBean.addProductToCart(product)}"/>
                     </p:panel>
                 </p:dataGrid>
             </h:form>

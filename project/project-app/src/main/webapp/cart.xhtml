@@ -11,30 +11,33 @@
     <!-- Define custom header here -->
     <!-- -->
 
-    <ui:define name="left-sidebar"/>
+    <ui:define name="left-sidebar">
+        <ui:include src="masterSidebar.xhtml"/>
+    </ui:define>
 
     <!-- Content starts here -->
     <ui:define name="content">
-        <p:panel>
+        <section class="main">
+            <h2>Krepšelis</h2>
             <p:dataTable id="cartItemTable" value="#{manageCartBean.cartItems}" var="items">
-                <p:column headerText="Id_test">
-                    <h:outputText value="#{items.product.id}"/>
-                </p:column>
-                <p:column headerText="Name">
+                <p:column headerText="Prekė">
                     <h:outputText value="#{items.product.name}"/>
                 </p:column>
-                <p:column headerText="Price">
-                    <h:outputText value="#{items.product.price}"/>
+                <p:column headerText="Kiekis">
+                    <h:outputText value="#{items.count}"/>
                 </p:column>
-                <p:column headerText="Summary">
-                    <h:outputText value="#{items.product.summary}"/>
+                <p:column headerText="Kaina">
+                    <h:outputText value="#{items.product.price} Eur."/>
                 </p:column>
+                <p:columnGroup type="footer">
+                    <p:row>
+                        <p:column colspan="2" style="text-align:right" footerText="Iš viso:" />
+                        <p:column footerText="#{manageCartBean.calculateCartPrice()} Eur." />
+                    </p:row>
+                </p:columnGroup>
             </p:dataTable>
-        </p:panel>
-
-
-            <p id="Pastumtipastraipa">Iš viso: 0,23Eur</p>
-            <button type="button">Pirkti</button>
+            <h:commandButton value = "Apmokėti" action="index"/>
+        </section>
     </ui:define>
     <!-- Content ends here -->
 

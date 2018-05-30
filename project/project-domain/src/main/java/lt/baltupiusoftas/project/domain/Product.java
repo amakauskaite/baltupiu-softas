@@ -1,6 +1,7 @@
 package lt.baltupiusoftas.project.domain;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -11,10 +12,10 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "PRODUCT")
-public class Product {
+public class Product implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
@@ -30,7 +31,7 @@ public class Product {
     @Column(name = "PRICE")
     private BigDecimal price;
 
-    @Column(name = "SUMMARY")
+    @Column(name = "SUMMARY", columnDefinition = "text")
     private String summary;
 
     @Column(name = "PHOTO")
