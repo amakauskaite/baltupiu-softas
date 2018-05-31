@@ -3,15 +3,19 @@ package lt.baltupiusoftas.project.service.impl;
 import lt.baltupiusoftas.project.domain.Cart;
 import lt.baltupiusoftas.project.domain.CartItem;
 import lt.baltupiusoftas.project.domain.Product;
+import lt.baltupiusoftas.project.domain.data.Payment;
 import lt.baltupiusoftas.project.domain.types.OrderStatusType;
 import lt.baltupiusoftas.project.persistence.CartDao;
 import lt.baltupiusoftas.project.persistence.ProductDao;
 import lt.baltupiusoftas.project.service.CartService;
+import lt.baltupiusoftas.project.service.PaymentService;
 
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 public class CartServiceImpl implements CartService {
 
@@ -20,6 +24,10 @@ public class CartServiceImpl implements CartService {
 
     @Inject
     private ProductDao productDao;
+
+    @Inject
+    private PaymentService paymentService;
+
     @Transactional
     @Override
     public Cart findActiveCart(Long userId) {
@@ -46,13 +54,16 @@ public class CartServiceImpl implements CartService {
         List<CartItem> activeItems = activeCart.getItems();
         for (CartItem i : oldItems) {
             Long productId = i.getProduct().getId();
+            Optional<CartItem> productInCart = activeCart.getItems().stream().filter(j -> j.getProduct().getId().equals(productId)).findFirst();
             Product product = productDao.find(productId);
             if (product.getActive()) {
-                CartItem item = new CartItem();
-                item.setPrice(product.getPrice());
-                item.setProduct(product);
-                item.setCount(new BigDecimal(1));
-                activeItems.add(item);
+                if (productInCart.isPresent()) {
+                    CartItem item = productInCart.get();
+                    item.setCount(item.getCount().add(i.getCount()));
+                    activeItems.add(item);
+                } else {
+                    activeItems.add(new CartItem(product, i.getCount()));
+                }
             }
         }
         activeCart.setItems(activeItems);
@@ -70,5 +81,21 @@ public class CartServiceImpl implements CartService {
     public Boolean isStatusUpdatable(Long cartId) {
         Cart cart = cartDao.find(cartId);
         return cart.getOrderStatus() == OrderStatusType.ORDERED;
+    }
+
+    @Transactional
+    @Override
+    public Boolean pay(Cart cart, Payment payment) {
+        Boolean success = paymentService.pay(cart, payment);
+        if (success) {
+            for (CartItem cartItem : cart.getItems()) {
+                cartItem.setPrice(cartItem.getProduct().getPrice());
+            }
+            cart.setOrderStatus(OrderStatusType.ORDERED);
+            cart.setLastUpdated(LocalDateTime.now());
+            cartDao.update(cart);
+            return true;
+        }
+        return success;
     }
 }

@@ -1,5 +1,6 @@
-package lt.baltupiusoftas.project.app;
+package lt.baltupiusoftas.project.app.cart;
 
+import lt.baltupiusoftas.project.app.Login;
 import lt.baltupiusoftas.project.domain.Cart;
 import lt.baltupiusoftas.project.domain.CartItem;
 import lt.baltupiusoftas.project.domain.Product;
@@ -13,6 +14,7 @@ import javax.inject.Inject;
 import javax.transaction.Transactional;
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Bean for cart view
@@ -41,11 +43,22 @@ public class ManageCartBean {
 
     @Transactional(Transactional.TxType.REQUIRED)
     public void addProductToCart(Product product) {
-        cart.getItems().add(new CartItem(product, BigDecimal.ONE));
+        Optional<CartItem> productInCart = cart.getItems().stream().filter(i -> i.getProduct().getId().equals(product.getId())).findFirst();
+        if (productInCart.isPresent()) {
+            CartItem item = productInCart.get();
+            item.setCount(item.getCount().add(BigDecimal.ONE));
+        } else {
+            cart.getItems().add(new CartItem(product, BigDecimal.ONE));
+        }
         cartService.updateCart(cart);
         FacesContext context = FacesContext.getCurrentInstance();
         context.addMessage(null, new FacesMessage("Successful",  "Prekė "+product.getName()+" pridėta į krepšelį") );
+    }
 
+    public String removeItemFromCart(CartItem item) {
+        cart.getItems().remove(item);
+        cartService.updateCart(cart);
+        return "cart?faces-redirect=true";
     }
 
     public BigDecimal calculateCartPrice() {
