@@ -1,24 +1,20 @@
 package lt.baltupiusoftas.project.app.cart_history;
 
 import lt.baltupiusoftas.project.app.Login;
-import lt.baltupiusoftas.project.app.ManageCartBean;
+import lt.baltupiusoftas.project.app.cart.ManageCartBean;
 import lt.baltupiusoftas.project.domain.Cart;
-import lt.baltupiusoftas.project.domain.CartItem;
-import lt.baltupiusoftas.project.domain.User;
 import lt.baltupiusoftas.project.service.CartHistoryService;
 import lt.baltupiusoftas.project.service.CartService;
 import lt.baltupiusoftas.project.service.intersector.LoggedInvocation;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
-import javax.enterprise.inject.TransientReference;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.transaction.Transactional;
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 
 @Named

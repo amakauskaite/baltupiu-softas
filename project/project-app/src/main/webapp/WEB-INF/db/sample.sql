@@ -8,4 +8,4 @@ INSERT INTO CATEGORY values (2, 'Riedučiai');
 INSERT INTO CATEGORY values (3, 'Apsaugos');
 INSERT INTO CATEGORY values (4, 'Atarginės dalys');
 
-INSERT INTO PRODUCT values (1, 'SK75623', NULL, 'Choke Logo Series Pinky', 'http://terrasport.lt/10875-thickbox_default/riedlente-choke-logo-series-pinky.jpg', 49, 'Riedlentė Choke Logo Series Pinky, skirta pradedantiesiems ir pažengusiems riedlentininkams. Tinkama klasikiniam stiliui, važinėjimui mieste ir nesudėtingiems triukams. Riedlentė pagaminta iš aukštos kokybės medžiagų, tai lemia puikų jos kontroliavimą. Gamintojo nurodomas maksimalus apkrovos indeksas - 100kg.', 1);
+INSERT INTO PRODUCT values (1, 'SK75623', TRUE, NULL, 'Choke Logo Series Pinky', 'http://terrasport.lt/10875-thickbox_default/riedlente-choke-logo-series-pinky.jpg', 49, 'Riedlentė Choke Logo Series Pinky, skirta pradedantiesiems ir pažengusiems riedlentininkams. Tinkama klasikiniam stiliui, važinėjimui mieste ir nesudėtingiems triukams. Riedlentė pagaminta iš aukštos kokybės medžiagų, tai lemia puikų jos kontroliavimą. Gamintojo nurodomas maksimalus apkrovos indeksas - 100kg.', 1);

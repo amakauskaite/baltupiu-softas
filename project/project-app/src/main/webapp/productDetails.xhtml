@@ -11,28 +11,29 @@
     <ui:define name="content">
         <section class="main">
             <p:growl id="growl" showDetail="true" showSummary="false" sticky="false" life="4000"/>
-            <h2>#{productBean.product.name}</h2>
-            <h:panelGrid class="product-details product-list" columns="2">
+            <p:panelGrid class="product-details product-list" columns="2">
                 <p:column>
-                    <p:row><img class="pic-in-details" src="#{productBean.product.photo}"/></p:row>
+                    <img class="pic-in-details" src="#{productBean.product.photo}"/>
                 </p:column>
                 <p:column>
                     <p:row>
-                        <h:outputText  value="Kaina: "/>
-                        <h:outputText value="#{productBean.product.price} Eur"/>
-                        <h:outputText value="&lt;br/&gt;" escape="false" />
-                        <h:outputText value="Kategorija: "/>
-                        <h:outputText value="#{productBean.product.category.name}"/>
+                        <h2>#{productBean.product.name}</h2>
+                    </p:row>
+                    <p:row>
+                        <h3>Kaina: #{productBean.product.price} Eur</h3>
+                    </p:row>
+                    <p:row>
+                        <h3>Kategorija: #{productBean.product.category.name}</h3>
                     </p:row>
                 </p:column>
-            </h:panelGrid>
-            <h4>Prekės aprašymas</h4>
+            </p:panelGrid>
+            <h2>Prekės aprašymas</h2>
             <h:panelGrid columns="1">
                 <p>#{productBean.product.summary}</p>
             </h:panelGrid>
             <h:form class="product-submit-to-cart">
                 <h:commandButton value="Į krepšelį" action="#{manageCartBean.addProductToCart(productBean.product)}">
-                <f:param name="id" value="#{productBean.product.id}" />
+                    <f:param name="id" value="#{productBean.product.id}"/>
                 </h:commandButton>
             </h:form>
         </section>

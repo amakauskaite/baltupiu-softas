@@ -21,13 +21,13 @@
     <ui:define name="content">
         <section class="main-admin">
             <h2>Pirkimų istorija</h2>
-            <h:form styleClass="history" >
-            <p:dataTable var = "cart" value="#{administratorCartBean.carts}" id ="adminCartHistory">
+            <h:form styleClass="history">
+            <p:dataTable var = "cart" styleClass="history-table" value="#{administratorCartBean.carts}" id ="adminCartHistory" scrollable="true"  scrollWidth="100%">
                 <p:column headerText="Vartotojas">
                     <h:outputText value="#{cart.user.email}" />
                 </p:column>
                 <p:column headerText="Krepšelis" width="30%">
-                    <p:dataTable var ="item" value="#{cart.items}">
+                    <p:dataTable var ="item" value="#{cart.items}" scrollable="false">
                         <p:column headerText="Prekė">
                             <h:outputText value="#{item.product.name}" />
                         </p:column>
@@ -36,7 +36,7 @@
                             <h:outputText value="#{item.count}" />
                         </p:column>
 
-                        <p:column headerText="Kaina">
+                        <p:column headerText="Vieneto kaina">
                             <h:outputText value="#{item.price}" />
                         </p:column>
                     </p:dataTable>

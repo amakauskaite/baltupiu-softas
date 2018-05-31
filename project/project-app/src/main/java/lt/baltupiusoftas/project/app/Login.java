@@ -20,6 +20,7 @@ import java.io.Serializable;
 public class Login implements Serializable {
 
     private User user;
+
     @PostConstruct
     private void init() {
         UserService userService = CDI.current().select(UserService.class).get();
@@ -30,6 +31,10 @@ public class Login implements Serializable {
     private void terminate() {
         UserService userService = CDI.current().select(UserService.class).get();
         userService.deleteUser(user.getId());
+    }
+
+    public Boolean isLoggedIn() {
+        return user.getEmail() != null;
     }
 
     public User getUser() {

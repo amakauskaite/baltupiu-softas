@@ -11,31 +11,61 @@
     <!-- Define custom header here -->
     <!-- -->
 
-    <ui:define name="left-sidebar" />
+    <ui:define name="left-sidebar"/>
 
     <!-- Content starts here -->
     <ui:define name="content">
-        <section class="main-admin">
+        <h:form>
             <h2>Krepšelis</h2>
             <p:dataTable id="cartItemTable" value="#{manageCartBean.cartItems}" var="items">
                 <p:column headerText="Prekė">
+                    <p:commandButton value="Išimti" action="#{manageCartBean.removeItemFromCart(items)}"/>
                     <h:outputText value="#{items.product.name}"/>
                 </p:column>
                 <p:column headerText="Kiekis">
                     <h:outputText value="#{items.count}"/>
                 </p:column>
-                <p:column headerText="Kaina">
+                <p:column headerText="Vieneto kaina">
                     <h:outputText value="#{items.product.price} Eur."/>
                 </p:column>
                 <p:columnGroup type="footer">
                     <p:row>
-                        <p:column colspan="2" style="text-align:right" footerText="Iš viso:" />
-                        <p:column footerText="#{manageCartBean.calculateCartPrice()} Eur." />
+                        <p:column colspan="2" style="text-align:right" footerText="Iš viso:"/>
+                        <p:column footerText="#{manageCartBean.calculateCartPrice()} Eur."/>
                     </p:row>
                 </p:columnGroup>
             </p:dataTable>
-            <h:commandButton styleClass="form-buttons center-button" value = "Apmokėti" action="index"/>
-        </section>
+            <p:commandButton value="Apmokėti" onclick="PF('pay').show();" disabled="#{!login.isLoggedIn() or manageCartBean.cartItems.size() == 0}"/>
+
+            <p:dialog header="Apmokėti" widgetVar="pay" resizable="false">
+                <p:messages id="messages" showDetail="true" showSummary="false" closable="true"/>
+                <h:panelGrid columns="2" cellpadding="5">
+
+                    <h:outputLabel for="amount" value="Mokėjimo suma:"/>
+                    <p:inputText id="amount" value="#{payCartBean.payment.amount}" disabled="true"/>
+
+                    <h:outputLabel for="holder" value="Kortelės savininko vardas ir pavardė:"/>
+                    <p:inputText id="holder" value="#{payCartBean.payment.holder}"/>
+
+                    <h:outputLabel for="cardNumber" value="Kortelės numeris:"/>
+                    <p:inputText id="cardNumber" value="#{payCartBean.payment.number}"/>
+
+                    <h:outputLabel for="cvv" value="CVV saugos kodas:"/>
+                    <p:inputText id="cvv" value="#{payCartBean.payment.cvv}"/>
+
+                    <h:outputLabel for="expYear" value="Kortelės galiojimo metai:"/>
+                    <p:inputText id="expYear" value="#{payCartBean.payment.exp_year}"/>
+
+                    <h:outputLabel for="expMonth" value="Kortelės galiojimo mėnuo:"/>
+                    <p:inputText id="expMonth" value="#{payCartBean.payment.exp_month}"/>
+
+                    <f:facet name="footer">
+                        <p:commandButton id="payBtn" value="Apmokėti" action="#{payCartBean.payForCart()}" update="messages"/>
+                    </f:facet>
+                </h:panelGrid>
+            </p:dialog>
+        </h:form>
+
     </ui:define>
     <!-- Content ends here -->
 
