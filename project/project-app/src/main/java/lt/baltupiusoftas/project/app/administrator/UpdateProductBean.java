@@ -4,6 +4,7 @@ import lt.baltupiusoftas.project.app.AdministratorLogin;
 import lt.baltupiusoftas.project.domain.Product;
 import lt.baltupiusoftas.project.service.CategoryService;
 import lt.baltupiusoftas.project.service.ProductService;
+import lt.baltupiusoftas.project.service.intersector.LoggedInvocation;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;
@@ -70,6 +71,7 @@ public class UpdateProductBean {
     }
 
     @Transactional(Transactional.TxType.REQUIRED)
+    @LoggedInvocation
     public void updateProduct(){
         Map<String,String> params = FacesContext.getCurrentInstance()
                 .getExternalContext()

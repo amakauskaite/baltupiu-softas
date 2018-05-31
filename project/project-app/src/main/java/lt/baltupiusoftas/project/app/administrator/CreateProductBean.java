@@ -5,6 +5,7 @@ import lt.baltupiusoftas.project.domain.Category;
 import lt.baltupiusoftas.project.domain.Product;
 import lt.baltupiusoftas.project.service.CategoryService;
 import lt.baltupiusoftas.project.service.ProductService;
+import lt.baltupiusoftas.project.service.intersector.LoggedInvocation;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;
@@ -46,6 +47,7 @@ public class CreateProductBean {
 
 
     @Transactional(Transactional.TxType.REQUIRED)
+    @LoggedInvocation
     public void addProduct(){
         product.setCategory(categoryService.addCategory(categoryName));
         productService.add(product);

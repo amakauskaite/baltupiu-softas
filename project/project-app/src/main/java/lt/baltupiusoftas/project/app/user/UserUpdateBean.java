@@ -8,6 +8,7 @@ import lt.baltupiusoftas.project.persistence.impl.UserDaoImpl;
 import lt.baltupiusoftas.project.service.PasswordHashingService;
 import lt.baltupiusoftas.project.service.UserService;
 import lt.baltupiusoftas.project.service.UserAddressService;
+import lt.baltupiusoftas.project.service.intersector.LoggedInvocation;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;
@@ -88,6 +89,7 @@ public class UserUpdateBean {
     }
 
     @Transactional(Transactional.TxType.REQUIRED)
+    @LoggedInvocation
     public String updatePassword () {
         oldPassword = user.getPassword();
         if (oldPassword.equals(newPassword))
@@ -108,6 +110,7 @@ public class UserUpdateBean {
     }
 
     @Transactional(Transactional.TxType.REQUIRED)
+    @LoggedInvocation
     public String updateAddress () {
 
             if (userAddress != null) {
@@ -131,6 +134,7 @@ public class UserUpdateBean {
     }
 
     @Transactional(Transactional.TxType.REQUIRED)
+    @LoggedInvocation
     public String updateUserInfo () {
         fillUserInfo();
         User user = userService.updateUserInfo(login.getUser().getId(), firstname, lastname, email, phoneNumber);

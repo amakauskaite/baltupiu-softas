@@ -7,6 +7,7 @@ import lt.baltupiusoftas.project.domain.Cart;
 import lt.baltupiusoftas.project.domain.CartItem;
 import lt.baltupiusoftas.project.service.CartHistoryService;
 import lt.baltupiusoftas.project.service.CartService;
+import lt.baltupiusoftas.project.service.intersector.LoggedInvocation;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;
@@ -49,6 +50,7 @@ public class AdministratorCartBean {
 
 
     @Transactional
+    @LoggedInvocation
     public String updateCartStatus (Long cartId) {
         Cart cart = cartService.updateCartStatus (cartId);
        return "adminOrders";

@@ -5,6 +5,7 @@ import lt.baltupiusoftas.project.domain.Cart;
 import lt.baltupiusoftas.project.domain.CartItem;
 import lt.baltupiusoftas.project.domain.Product;
 import lt.baltupiusoftas.project.service.CartService;
+import lt.baltupiusoftas.project.service.intersector.LoggedInvocation;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;
@@ -42,6 +43,7 @@ public class ManageCartBean {
     }
 
     @Transactional(Transactional.TxType.REQUIRED)
+    @LoggedInvocation
     public void addProductToCart(Product product) {
         Optional<CartItem> productInCart = cart.getItems().stream().filter(i -> i.getProduct().getId().equals(product.getId())).findFirst();
         if (productInCart.isPresent()) {
@@ -55,6 +57,7 @@ public class ManageCartBean {
         context.addMessage(null, new FacesMessage("Successful",  "Prekė "+product.getName()+" pridėta į krepšelį") );
     }
 
+    @LoggedInvocation
     public String removeItemFromCart(CartItem item) {
         cart.getItems().remove(item);
         cartService.updateCart(cart);

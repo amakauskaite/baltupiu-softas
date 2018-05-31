@@ -2,6 +2,7 @@ package lt.baltupiusoftas.project.app.products;
 
 import lt.baltupiusoftas.project.domain.Product;
 import lt.baltupiusoftas.project.service.ProductService;
+import lt.baltupiusoftas.project.service.intersector.LoggedInvocation;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
@@ -12,7 +13,6 @@ import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Map;
 
-@RequestScoped
 @Model
 public class ProductsBean {
     private List<Product> products;

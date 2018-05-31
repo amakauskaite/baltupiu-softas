@@ -3,6 +3,7 @@ package lt.baltupiusoftas.project.app.administrator;
 import lt.baltupiusoftas.project.app.AdministratorLogin;
 import lt.baltupiusoftas.project.domain.Product;
 import lt.baltupiusoftas.project.service.ProductService;
+import lt.baltupiusoftas.project.service.intersector.LoggedInvocation;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;
@@ -40,6 +41,7 @@ public class DeleteProductBean {
 
 
     @Transactional(Transactional.TxType.REQUIRES_NEW)
+    @LoggedInvocation
     public void deleteProduct(){
         Map<String,String> params = FacesContext.getCurrentInstance()
                 .getExternalContext()

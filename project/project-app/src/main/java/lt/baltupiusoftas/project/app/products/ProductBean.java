@@ -2,16 +2,17 @@ package lt.baltupiusoftas.project.app.products;
 
 import lt.baltupiusoftas.project.domain.Product;
 import lt.baltupiusoftas.project.service.ProductService;
+import lt.baltupiusoftas.project.service.intersector.LoggedInvocation;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Model;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
+import javax.inject.Named;
 import javax.transaction.Transactional;
 import java.util.Map;
 
-@RequestScoped
 @Model
 public class ProductBean {
 

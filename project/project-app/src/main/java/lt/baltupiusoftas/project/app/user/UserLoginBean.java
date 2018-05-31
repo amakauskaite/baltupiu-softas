@@ -5,6 +5,8 @@ import lt.baltupiusoftas.project.app.HeaderStatusBean;
 import lt.baltupiusoftas.project.app.Login;
 import lt.baltupiusoftas.project.domain.Cart;
 import lt.baltupiusoftas.project.domain.User;
+import lt.baltupiusoftas.project.service.LoggerService;
+import lt.baltupiusoftas.project.service.intersector.LoggedInvocation;
 import lt.baltupiusoftas.project.service.CartService;
 import lt.baltupiusoftas.project.service.PasswordHashingService;
 import lt.baltupiusoftas.project.service.UserService;
@@ -21,9 +23,7 @@ import java.io.Serializable;
 @RequestScoped
 public class UserLoginBean implements Serializable {
 
-    /*
-     * Session scoped login bean
-     */
+
     @Inject
     private Login login;
 
@@ -42,9 +42,13 @@ public class UserLoginBean implements Serializable {
     private UserService userService;
 
     @Inject
+    private LoggerService loggerService;
+
+    @Inject
     private PasswordHashingService passwordHashing;
 
-    @Transactional
+    @Transactional(Transactional.TxType.REQUIRED)
+    @LoggedInvocation
     public String login() {
         // Ignore if logged in already
         if (isLoggedIn()) {
@@ -67,6 +71,7 @@ public class UserLoginBean implements Serializable {
                     cartService.addOldCart(oldCart.getId());
                 }
                 login.setUser(user);
+                loggerService.setUserAndIsAdmin(email, false);
 
                 headerStatusBean.showLogoutAndUserProfile();
             }
@@ -79,11 +84,13 @@ public class UserLoginBean implements Serializable {
         }
     }
 
+    @LoggedInvocation
     public String logout() {
         if (isLoggedIn()) {
             login.setUser(userService.initTemporaryUser());
 
             headerStatusBean.showLoginAndRegistration();
+            loggerService.setUserAndIsAdmin(null, false);
             return "login";//success_logout_user
         } else {
             return "index";

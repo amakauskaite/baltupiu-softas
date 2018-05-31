@@ -4,8 +4,11 @@ import lt.baltupiusoftas.project.app.AdminHeaderStatusBean;
 import lt.baltupiusoftas.project.app.AdministratorLogin;
 import lt.baltupiusoftas.project.domain.Administrator;
 import lt.baltupiusoftas.project.service.AdministratorService;
+import lt.baltupiusoftas.project.service.LoggerService;
+import lt.baltupiusoftas.project.service.intersector.LoggedInvocation;
 import lt.baltupiusoftas.project.service.PasswordHashingService;
 
+import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
@@ -15,8 +18,8 @@ import javax.transaction.Transactional;
 import java.io.Serializable;
 
 @Named
-@SessionScoped
-public class AdministratorLoginBean implements Serializable {
+@RequestScoped
+public class AdministratorLoginBean{
 
     @Inject
     private AdministratorLogin adminLogin;
@@ -29,6 +32,9 @@ public class AdministratorLoginBean implements Serializable {
 
     @Inject
     private AdministratorService adminService;
+
+    @Inject
+    private LoggerService loggerService;
 
     @Inject
     private PasswordHashingService passwordHashingService;
@@ -50,6 +56,7 @@ public class AdministratorLoginBean implements Serializable {
     }
 
     @Transactional(Transactional.TxType.REQUIRED)
+    @LoggedInvocation
     public String login () {
 
         if (isLoggedIn()) {
@@ -62,6 +69,8 @@ public class AdministratorLoginBean implements Serializable {
                 return "admin";
             } else {
                 adminLogin.setAdministrator(administrator);
+                loggerService.setUserAndIsAdmin(username, true);
+
                 adminHeaderStatusBean.showLogoutAndUserProfile();
                 return "adminIndex";
             }
@@ -75,8 +84,10 @@ public class AdministratorLoginBean implements Serializable {
     }
 
 
+    @LoggedInvocation
     public String logout () {
         if (isLoggedIn()) {
+            loggerService.setUserAndIsAdmin(null, false);
             adminLogin.setAdministrator(null);
             adminHeaderStatusBean.showLoginAndRegistration();
             return "admin";

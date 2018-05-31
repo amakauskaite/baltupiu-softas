@@ -1,6 +1,7 @@
 package lt.baltupiusoftas.project.app.user;
 
 import lt.baltupiusoftas.project.domain.User;
+import lt.baltupiusoftas.project.service.intersector.LoggedInvocation;
 import lt.baltupiusoftas.project.service.PasswordHashingService;
 import lt.baltupiusoftas.project.service.UserService;
 
@@ -38,6 +39,7 @@ public class UserRegistrationBean{
 
 
     @Transactional(Transactional.TxType.REQUIRES_NEW)
+    @LoggedInvocation
     public String register() {
         user = userService.register(email, password, firstname, lastname, phoneNumber);
 

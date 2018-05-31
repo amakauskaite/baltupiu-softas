@@ -5,6 +5,7 @@ import lt.baltupiusoftas.project.app.cart.ManageCartBean;
 import lt.baltupiusoftas.project.domain.Cart;
 import lt.baltupiusoftas.project.service.CartHistoryService;
 import lt.baltupiusoftas.project.service.CartService;
+import lt.baltupiusoftas.project.service.intersector.LoggedInvocation;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
@@ -57,6 +58,7 @@ public class UserCartHistoryBean {
     }
 
     @Transactional
+    @LoggedInvocation
     public void addCartAgain (Long cartId) {
         Cart cart = cartService.addOldCart(cartId);
         manageCartBean.setCart(cart);
