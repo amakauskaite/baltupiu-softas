@@ -65,7 +65,7 @@ public class UserCartHistoryBean {
     }
 
     public BigDecimal countCartPrice(Cart cart) {
-        return cartService.cartPrice(cart);
+        return cartService.cartPrice(cart).setScale(2, BigDecimal.ROUND_UNNECESSARY);
     }
 
     public List<Cart> getCarts() {
