@@ -15,6 +15,7 @@ import javax.transaction.Transactional;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 public class CartServiceImpl implements CartService {
 
@@ -53,13 +54,16 @@ public class CartServiceImpl implements CartService {
         List<CartItem> activeItems = activeCart.getItems();
         for (CartItem i : oldItems) {
             Long productId = i.getProduct().getId();
+            Optional<CartItem> productInCart = activeCart.getItems().stream().filter(j -> j.getProduct().getId().equals(productId)).findFirst();
             Product product = productDao.find(productId);
             if (product.getActive()) {
-                CartItem item = new CartItem();
-                item.setPrice(product.getPrice());
-                item.setProduct(product);
-                item.setCount(new BigDecimal(1));
-                activeItems.add(item);
+                if (productInCart.isPresent()) {
+                    CartItem item = productInCart.get();
+                    item.setCount(item.getCount().add(i.getCount()));
+                    activeItems.add(item);
+                } else {
+                    activeItems.add(new CartItem(product, i.getCount()));
+                }
             }
         }
         activeCart.setItems(activeItems);
@@ -87,7 +91,7 @@ public class CartServiceImpl implements CartService {
             for (CartItem cartItem : cart.getItems()) {
                 cartItem.setPrice(cartItem.getProduct().getPrice());
             }
-            cart.setOrderStatus(OrderStatusType.COMPLETED);
+            cart.setOrderStatus(OrderStatusType.ORDERED);
             cart.setLastUpdated(LocalDateTime.now());
             cartDao.update(cart);
             return true;
