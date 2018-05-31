@@ -20,9 +20,9 @@
         <section class="main">
             <h2>Pirkimų istorija</h2>
             <h:form styleClass="history">
-            <p:dataTable var = "cart" value="#{userCartHistoryBean.carts}" id ="userCartHistory">
+            <p:dataTable var = "cart" styleClass="history-table" value="#{userCartHistoryBean.carts}" id ="userCartHistory" scrollable="true">
                 <p:column headerText="Krepšelis" width="30%">
-                    <p:dataTable var ="item" value="#{cart.items}">
+                    <p:dataTable var ="item" value="#{cart.items}" scrollable="false">
                         <p:column headerText="Prekė">
                             <h:outputText value="#{item.product.name}" />
                         </p:column>
